@@ -23,7 +23,7 @@ Date Work Commenced: 2nd February 2021
 
 //***********************************************************************
 
-int stringSearch(struct Book findBook,char bookSearch[99],char type[1]){
+int stringSearch(struct Book findBook, char bookSearch[99],char type[1]){
 
     if(findBook.authors == NULL && findBook.title == NULL) return -1;
     else{
@@ -165,7 +165,7 @@ struct BookArray find_book_by_title (const char *title){
     returnArr.array = NULL;
     returnArr.length = 0;
 
-    struct Book bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
+    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
 
     if(title == NULL){
         return returnArr;
@@ -183,14 +183,14 @@ struct BookArray find_book_by_title (const char *title){
             searchResult = stringSearch(findTitle,title,"t");
 
             if(searchResult == 0){
-                bookArr[bookArrCount] = *library[i];
+                bookArr[bookArrCount] = library[i];
                 elementCount = library[i]->copies + elementCount;
                 bookArrCount++;
             }
 
         }
 
-        returnArr.array = &bookArr;
+        returnArr.array = bookArr;
         returnArr.length = elementCount;
 
         return returnArr;
@@ -201,11 +201,48 @@ struct BookArray find_book_by_title (const char *title){
 
 struct BookArray find_book_by_author (const char *author){
 
-    //finds books with the given authors.
+    //finds books with a given author.
     //returns a BookArray structure, where the field "array" is a newly allocated array of books, or null if no book with the 
-    //provided title can be found. The length of the array is also recorded in the returned structure, with 0 in case
+    //provided author can be found. The length of the array is also recorded in the returned structure, with 0 in case
     //array is the null pointer.
+
+    struct BookArray returnArr; //self explanatory : value to be returned from function
+    returnArr.array = NULL;
+    returnArr.length = 0;
+
+    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
+
+    if(author == NULL){
+        return returnArr;
+    }
+    else{
+        //loop into the library array to find the book (or attempt to find closest match)
+        struct Book findAuthor; //dereference book from library
+        int searchResult; //search result from stringSearch function
+        int elementCount = 0; //number of total books retrieved
+        int bookArrCount = 0; //to ensure found books are ordered correctly in the array of books
+
+
+        for(int i = 0; i<numBooks ; i++){
+            findAuthor = *library[i];
+            searchResult = stringSearch(findAuthor,author,"a");
+
+            if(searchResult == 0){
+                bookArr[bookArrCount] = library[i];
+                elementCount = library[i]->copies + elementCount;
+                bookArrCount++;
+            }
+
+        }
+
+        returnArr.array = bookArr;
+        returnArr.length = elementCount;
+
+        return returnArr;
+    }
+
 }
+
 
 struct BookArray find_book_by_year (unsigned int year){
 
@@ -213,6 +250,41 @@ struct BookArray find_book_by_year (unsigned int year){
     //returns a BookArray structure, where the field "array" is a newly allocated array of books, or null if no book with the 
     //provided title can be found. The length of the array is also recorded in the returned structure, with 0 in case
     //array is the null pointer.
+
+    struct BookArray returnArr; //self explanatory : value to be returned from function
+    returnArr.array = NULL;
+    returnArr.length = 0;
+
+    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
+
+    if(year < 1){
+        return returnArr;
+    }
+    else{
+        //loop into the library array to find the book (or attempt to find closest match)
+        struct Book findYear; //dereference book from library
+        int searchResult; //search result from stringSearch function
+        int elementCount = 0; //number of total books retrieved
+        int bookArrCount = 0; //to ensure found books are ordered correctly in the array of books
+
+
+        for(int i = 0; i<numBooks ; i++){
+            findYear = *library[i];
+
+            if(findYear.year == year){
+                bookArr[bookArrCount] = library[i];
+                elementCount = library[i]->copies + elementCount;
+                bookArrCount++;
+            }
+
+        }
+
+        returnArr.array = bookArr;
+        returnArr.length = elementCount;
+
+        return returnArr;
+    }    
+
 }
 
 //test main function
