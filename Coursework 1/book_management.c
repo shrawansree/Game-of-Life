@@ -63,6 +63,27 @@ int add_book(struct Book book){
 
     //adds a book to the ones available to the library
     //returns 0 if the book could be added, or an error code otherwise
+    char findBook[100];  //attempt to find the book within the library
+    
+    if(book.title == NULL || book.authors == NULL) return -1;
+    else{
+        //attempting to find book in library
+        if(find_book_by_author(book.authors).length == 0){
+
+            if(find_book_by_title(book.title).length == 0){
+                return -1;
+            }
+            else{
+                //find book by title
+            }
+        }
+        else{
+            //find book by author
+        }
+
+    }
+
+
 }
 
 
@@ -70,6 +91,28 @@ int remove_book(struct Book book){
 
     //removes a book from the library
     //returns 0 if the book could be successfully removed, or an error code otherwise.
+    
+    char findBook[100];  //attempt to find the book within the library
+    
+    if(book.title == NULL || book.authors == NULL) return -1;
+    else{
+        //attempting to find book in library
+        if(find_book_by_author(book.authors).length == 0){
+
+            if(find_book_by_title(book.title).length == 0){
+                return -1;
+            }
+            else{
+                //find book by title
+            }
+        }
+        else{
+            //find book by author
+        }
+
+    }
+
+
 }
 
 
