@@ -235,8 +235,6 @@ int store_books(FILE *file){
 
         return 0;
     }
-
-
 }
 
 
@@ -254,7 +252,6 @@ int load_books(FILE *file){
 
         return 0;
     }
-
 }
 
 
@@ -367,8 +364,8 @@ int remove_book(struct Book book){
 
 
 //test main function
-// int main(){
+int main(){
 
-//     //testing code goes here
+    //testing code goes here
 
-// }
+}
