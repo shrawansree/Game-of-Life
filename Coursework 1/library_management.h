@@ -9,3 +9,7 @@
 extern struct Book *library[stockSize];
 
 extern int numBooks;
+
+//additional created functions
+struct Book* addRemBook(struct BookArray foundBooks, const char searchString[99]);
+int stringSearch(struct Book findBook, char bookSearch[99],char type[1]);
