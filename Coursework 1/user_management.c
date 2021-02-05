@@ -59,6 +59,29 @@ int load_users(FILE *file){
 }
 
 
-int main(){
-    //skeleton framework
+int add_users(struct User newUser){
+
+    //code to add new user
 }
+
+
+int remove_users(struct User newUser){
+
+    //code to remove user
+}
+
+
+int borrow_book(struct User borrower){
+
+    //code for when user borrows book
+}
+
+
+int return_book(struct User returner){
+
+    //code for when user returns book
+}
+
+// int main(){
+//     //skeleton framework
+// }
