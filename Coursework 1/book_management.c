@@ -19,8 +19,8 @@ Date Work Commenced: 2nd February 2021
 
 
 //declaration
-struct Book *library[stockSize];
-int numBooks;
+// struct Book *library[stockSize]; //uncomment only for tests
+// int numBooks;
 
 //***********************************************************************
 
