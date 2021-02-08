@@ -2,29 +2,29 @@
 //updated 2nd February 2021
 
 #include <stdlib.h>
+#include <ctype.h>
 #include "book_management.h"
 
 #define stockSize 99          //Maximum number of different books that can be held in the library
 #define userSize 99
 
-struct User {
+struct User{
 		char* f_name; //user first name
 		char* l_name; //user last name
 		char* email; // user email : ensure @ symbol is present when taking input
 		char* username; //user login username
         char* password; //user login password
-        struct Book borrows[userSize]; //books borrowed by user is set in this array
-};
+        int isAdmin;
+        struct Book* borrowedBook; 
+        struct Book booksOnHand[userSize]; //books with the user is set in this array
+        int numBooksOnHand; //number of books with the user
+    };
 
 extern struct Book *library[stockSize];
 extern struct User *users[userSize];
 extern int numBooks;
 extern int numUsers;
-
-//******************| additional created functions for book_management.c |******************
-
-struct Book* addRemBook(struct BookArray foundBooks, const char searchString[99]);
-int stringSearch(struct Book findBook, char bookSearch[99],char type[1]);
+ 
 
 //******************| additional created functions for user_management.c |******************
 

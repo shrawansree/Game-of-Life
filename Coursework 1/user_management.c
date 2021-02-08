@@ -48,38 +48,128 @@ int load_users(FILE *file){
 
     if(file == NULL) return -1;
     else{
-        free(users);
-        *users = (struct User*)malloc(sizeof(struct User*)*stockSize);
-
+        
         fread(&numUsers,sizeof(int),1,file);
-        fread(&users,sizeof(struct Book),numBooks,file); //dont forget to free the *library array
+        for(int i=0; i < numBooks; i++ ){
+            free(users[i]->f_name);
+            free(users[i]->l_name);
+            free(users[i]->email);
+            free(users[i]->username);
+            free(users[i]->password);
+            // free(users[i]->isAdmin);
+            free(users[i]->borrowedBook);
+        }
+        free(users);
+
+        *users = (struct User*)malloc(sizeof(struct User*)*userSize);
+        fread(&users,sizeof(struct User),numUsers,file); //dont forget to free the *library array
 
         return 0;
     }
 }
 
 
-int add_users(struct User newUser){
+int register_user(struct User newUser){
 
     //code to add new user
+    //first name checks
+    if(newUser.f_name == NULL) return -1;
+    
+    //last name checks
+    if(newUser.l_name == NULL) return -1;
+
+    //email check
+    if(newUser.email == NULL) return -1;
+    else if( strstr(newUser.email,"@") == NULL ) return -1;
+    //else if( strstr(newUser.email,".co.uk") == NULL ) return -1; //popular email domains
+    //else if( strstr(newUser.email,".org") == NULL ) return -1; 
+    //else if( strstr(newUser.email,".com") == NULL ) return -1;
+
+    //user username check
+    if(newUser.username == NULL) return -1;
+    else{
+        for(int i =0 ; i<numUsers ; i++){
+            if(strcmp(newUser.username, users[i]->username ) == 0){
+                return -1;
+            }
+        }
+    }
+
+    //user password check
+    if(newUser.password == NULL)return -1;
+    else if(strlen(newUser.password) < 8) return -1;
+
+    for(int i=0; i < strlen(newUser.password) ; i++){ //check for captial letter in password
+        if(isupper(newUser.password[i]) != 0) break ;
+        else return -1;
+    }
+
+    //if all checks are good then add user 
+    users[numUsers] = &newUser;
+    numUsers++;
+
+    return 0;
 }
 
 
-int remove_users(struct User newUser){
+int remove_users(struct User oldUser){
 
-    //code to remove user
+    //check if empty input
+    struct User* foundUser = (struct User*)malloc(sizeof(struct User*));
+
+    if(oldUser.username==NULL) return -1;
+    else{
+        for(int i = 0; i < numUsers; i++){
+            if(strcmp(users[i]->username , oldUser.username)==0){ 
+                foundUser = users[i];
+                break;
+            }
+            else return -1;
+        }
+
+        free(foundUser->f_name);
+        free(foundUser->l_name);
+        free(foundUser->email);
+        free(foundUser->username);
+        free(foundUser->password);
+        free(foundUser->borrowedBook);
+        free(foundUser);
+        
+        return 0;
+    }
 }
 
 
 int borrow_book(struct User borrower){
 
     //code for when user borrows book
+    struct Book* foundBook = (struct Book*)malloc(sizeof(struct Book*));
+
+    if(borrower.borrowedBook == NULL ) return -1;
+    else{ //find book in library and subtract a copy from it
+        for(int i = 0; i < numBooks; i++){
+            if(strcmp(borrower.borrowedBook->title,library[i]->title) == 0){
+                foundBook = library[i];
+                break;
+            }
+            else return -1;
+        }
+
+        foundBook->copies = foundBook->copies-1;
+        borrower.booksOnHand[borrower.numBooksOnHand] = *foundBook;
+        borrower.numBooksOnHand ++;
+
+        free(foundBook);
+        return 0;
+    }
+
 }
 
 
 int return_book(struct User returner){
 
     //code for when user returns book
+    
 }
 
 // int main(){
