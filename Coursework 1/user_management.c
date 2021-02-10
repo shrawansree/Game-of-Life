@@ -24,6 +24,21 @@ Date Work Commenced: 5th February 2021
 
 //***********************************************************************
 
+int user_login(const char username,const char password){
+    //check validity
+    if(username == NULL || password == NULL){
+        return -1;
+    } 
+    else{
+        for(int i = 0; i<numUsers; i++){
+            if(strcmp(username,users[i]->username) == 0 && strcmp(password,users[i]->password) == 0){
+                return users[i]->isAdmin;
+            }
+        }
+        return -1;
+    }
+}
+
 
 int store_users(FILE *file){
 
@@ -57,7 +72,6 @@ int load_users(FILE *file){
             free(users[i]->username);
             free(users[i]->password);
             // free(users[i]->isAdmin);
-            free(users[i]->borrowedBook);
         }
         free(users);
 
@@ -112,51 +126,55 @@ int register_user(struct User newUser){
 }
 
 
-int remove_users(struct User oldUser){
+// int remove_users(struct User* oldUser){
 
-    //check if empty input
-    struct User* foundUser = (struct User*)malloc(sizeof(struct User*));
+//     //check if empty input
+    
+//     if(oldUser->username==NULL){
+//         free(oldUser);
+//         return -1;
+//     } 
+//     else{
+//         for(int i = 0; i < numUsers; i++){
+//             if(strcmp(users[i]->username , oldUser->username)==0){ 
+//                 oldUser = users[i];
+//                 break;
+//             }
+//             else return -1;
+//         }
 
-    if(oldUser.username==NULL) return -1;
-    else{
-        for(int i = 0; i < numUsers; i++){
-            if(strcmp(users[i]->username , oldUser.username)==0){ 
-                foundUser = users[i];
-                break;
-            }
-            else return -1;
-        }
-
-        free(foundUser->f_name);
-        free(foundUser->l_name);
-        free(foundUser->email);
-        free(foundUser->username);
-        free(foundUser->password);
-        free(foundUser->borrowedBook);
-        free(foundUser);
+//         free(oldUser->f_name);
+//         free(oldUser->l_name);
+//         free(oldUser->email);
+//         free(oldUser->username);
+//         free(oldUser->password);
+//         free(oldUser);
         
-        return 0;
-    }
-}
+//         return 0;
+//     }
+// }
 
 
-int borrow_book(struct User borrower){
+int borrow_book(struct User borrower, struct Book* borrowedBook){
 
     //code for when user borrows book
     struct Book* foundBook = (struct Book*)malloc(sizeof(struct Book*));
 
-    if(borrower.borrowedBook == NULL ) return -1;
+    if(borrowedBook == NULL ) 
+    {   
+        free(foundBook);
+        return -1;
+    }
     else{ //find book in library and subtract a copy from it
         for(int i = 0; i < numBooks; i++){
-            if(strcmp(borrower.borrowedBook->title,library[i]->title) == 0){
+            if(strcmp(borrowedBook->title,library[i]->title) == 0){
                 foundBook = library[i];
                 break;
             }
-            else return -1;
         }
 
         foundBook->copies = foundBook->copies-1;
-        borrower.booksOnHand[borrower.numBooksOnHand] = *foundBook;
+        borrower.booksOnHand[borrower.numBooksOnHand] = foundBook;
         borrower.numBooksOnHand ++;
 
         free(foundBook);
@@ -166,11 +184,36 @@ int borrow_book(struct User borrower){
 }
 
 
-int return_book(struct User returner){
+int return_book(struct User returner,struct Book* returnBook){
 
     //code for when user returns book
-    
+    struct Book* foundBook = (struct Book*)malloc(sizeof(struct Book*));
+
+    if(returnBook == NULL ) 
+    {   
+        free(foundBook);
+        return -1;
+    }
+    else{
+        for(int i =0; i < numBooks; i++){
+            if(strcmp(returnBook->title, library[i]->title) == 0){
+                foundBook = library[i];
+                break;
+            }
+        }
+
+        foundBook->copies = foundBook->copies+1;
+        free(returnBook->authors);
+        free(returnBook->title);
+        free(returnBook->year);
+        free(returnBook->copies);
+        free(foundBook);
+
+        return 0;
+    }
 }
+
+
 
 // int main(){
 //     //skeleton framework

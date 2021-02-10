@@ -97,7 +97,7 @@ struct BookArray find_book_by_title (const char *title){
     returnArr.array = NULL;
     returnArr.length = 0;
 
-    struct Book** bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
+    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
 
     if(title == NULL){
         return returnArr;
