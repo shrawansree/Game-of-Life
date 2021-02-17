@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "process",
+            "group": "build",
+            "options": {
+                "cwd": ""
+            },
+            "command": "E:/_Achu documents/UNI/COMP1921/Coursework 1/.vscode/cw1_build.bat",
+            "problemMatcher": []
+        }
+    ]
+}

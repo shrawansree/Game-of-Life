@@ -17,72 +17,26 @@ Date Work Commenced: 2nd February 2021
 
 #include "library_management.h"
 
-
+struct Book library[library_size]; //array of  books in library
+static int numBooks = 0;
+static char *output;
 //******************| additional created functions for book_management.c |******************
 
-static struct Book* addRemBook(struct BookArray foundBooks, const char searchString[99]){
-    //function to add/remove books from library by title or author
-    //returns 0 if successfully added or removed book
-    //char type variable used to control : "a" to add ; "r" to remove by author 
-    
-    if(foundBooks.array == NULL) return -1;
-    else{
-        struct Book* returnBook; //pointer to found book
+char *returnString(const char *prompt) {
+    //function to return string
 
-        if(searchString == NULL) return -1;
+	printf("%s",prompt);
 
-        //look into the array of books supplied to find exact book to add
-        else{
-            for(int i = 0; i<foundBooks.length; i++){
-                //try to find exact book
-                if(foundBooks.array[i].authors == searchString){ returnBook = &foundBooks.array[i]; return returnBook; }
-                else if(foundBooks.array[i].title == searchString){ returnBook = &foundBooks.array[i]; return returnBook; }
-                else {returnBook = NULL ; return returnBook;}
+    size_t size = 32;
+    char *output = malloc(sizeof(char)*4);
 
-                //dont forget to free the returned pointer
-            }
-        }
+    scanf("%s",output);
 
-    }
+	return output;
 }
 
 
-static int stringSearch(struct Book findBook, char bookSearch[99],char type[1]){
 
-    if(findBook.authors == NULL && findBook.title == NULL) return -1;
-    else{
-        //attempt to find string within string
-        char* testPtr = (char*)malloc(sizeof(char*)); //to test for presence of string within string
-
-        if(type != "t" && type != "a") return -1;
-        else if (type == "t"){
-            //find book by title
-            testPtr = strstr(findBook.title,bookSearch);
-            if(testPtr == NULL){
-                free(testPtr);
-                return -1; 
-            } 
-            else{
-                free(testPtr);
-                return 0;
-            }
-        } 
-        else{
-            //find book by author
-            testPtr = strstr(findBook.authors,bookSearch);
-            if(testPtr == NULL){
-                free(testPtr);
-                return -1; 
-            } 
-            else{
-                free(testPtr);
-                return 0;
-            }
-
-        }
-
-    }
-}
 
 //***********************************************************************
 
@@ -92,42 +46,22 @@ struct BookArray find_book_by_title (const char *title){
     //returns a BookArray structure, where the field "array" is a newly allocated array of books, or null if no book with the 
     //provided title can be found. The length of the array is also recorded in the returned structure, with 0 in case
     //array is the null pointer.
+    struct BookArray returnArray; 
+    returnArray.array[loan_size];
+    returnArray.length = 0; //set to 0
 
-    struct BookArray returnArr; //self explanatory : value to be returned from function
-    returnArr.array = NULL;
-    returnArr.length = 0;
-
-    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
-
-    if(title == NULL){
-        return returnArr;
-    }
+    if(title == NULL) return returnArray; //check if input empty
     else{
-        //loop into the library array to find the book (or attempt to find closest match)
-        struct Book findTitle; //dereference book from library
-        int searchResult; //search result from stringSearch function
-        int elementCount = 0; //number of total books retrieved
-        int bookArrCount = 0; //to ensure found books are ordered correctly in the array of books
-
-
-        for(int i = 0; i<numBooks ; i++){
-            findTitle = *library[i];
-            searchResult = stringSearch(findTitle,title,"t");
-
-            if(searchResult == 0){
-                bookArr[bookArrCount] = &library[i];
-                elementCount = library[i]->copies + elementCount;
-                bookArrCount++;
+        //find book using title
+        for(int i=0; i<numBooks; i++){
+            if(strstr(title, library[i].title) != NULL){
+                returnArray.array[returnArray.length] = library[i];
+                returnArray.length++;
             }
-
         }
 
-        returnArr.array = bookArr;
-        returnArr.length = bookArrCount; //switch to element count as needed
-
-        return returnArr;
+        return returnArray;
     }
-
 }
 
 
@@ -138,41 +72,22 @@ struct BookArray find_book_by_author (const char *author){
     //provided author can be found. The length of the array is also recorded in the returned structure, with 0 in case
     //array is the null pointer.
 
-    struct BookArray returnArr; //self explanatory : value to be returned from function
-    returnArr.array = NULL;
-    returnArr.length = 0;
+   struct BookArray returnArray; 
+    returnArray.length = 0; //set to 0
+    returnArray.array[loan_size];
+    if(author == NULL) return returnArray; //check if input empty
 
-    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
-
-    if(author == NULL){
-        return returnArr;
-    }
     else{
-        //loop into the library array to find the book (or attempt to find closest match)
-        struct Book findAuthor; //dereference book from library
-        int searchResult; //search result from stringSearch function
-        int elementCount = 0; //number of total books retrieved
-        int bookArrCount = 0; //to ensure found books are ordered correctly in the array of books
-
-
-        for(int i = 0; i<numBooks ; i++){
-            findAuthor = *library[i];
-            searchResult = stringSearch(findAuthor,author,"a");
-
-            if(searchResult == 0){
-                bookArr[bookArrCount] = library[i];
-                elementCount = library[i]->copies + elementCount;
-                bookArrCount++;
+        //find book using author
+        for(int i=0; i<numBooks; i++){
+            if(strstr(author, library[i].authors) != NULL){
+                returnArray.array[returnArray.length] = library[i];
+                returnArray.length++;
             }
-
         }
 
-        returnArr.array = bookArr;
-        returnArr.length = bookArrCount; //switch to element count as needed
-
-        return returnArr;
+        return returnArray;
     }
-
 }
 
 
@@ -183,42 +98,26 @@ struct BookArray find_book_by_year (unsigned int year){
     //provided title can be found. The length of the array is also recorded in the returned structure, with 0 in case
     //array is the null pointer.
 
-    struct BookArray returnArr; //self explanatory : value to be returned from function
-    returnArr.array = NULL;
-    returnArr.length = 0;
 
-    struct Book* bookArr[stockSize]; //array of books to be pointed to by returnArr.array - make sure to free after calling function
+   struct BookArray returnArray; 
+    returnArray.length = 0; //set to 0
+    returnArray.array[loan_size];
+    if(year < 0) return returnArray; //check if input empty
 
-    if(year < 1){
-        return returnArr;
-    }
     else{
-        //loop into the library array to find the book (or attempt to find closest match)
-        struct Book findYear; //dereference book from library
-        int searchResult; //search result from stringSearch function
-        int elementCount = 0; //number of total books retrieved
-        int bookArrCount = 0; //to ensure found books are ordered correctly in the array of books
-
-
-        for(int i = 0; i<numBooks ; i++){
-            findYear = *library[i];
-
-            if(findYear.year == year){
-                bookArr[bookArrCount] = library[i];
-                elementCount = library[i]->copies + elementCount;
-                bookArrCount++;
+        //find book using year
+        for(int i=0; i<numBooks; i++){
+            if(library[i].year == year){
+                returnArray.array[returnArray.length] = library[i];
+                returnArray.length++;
             }
-
         }
 
-        returnArr.array = bookArr;
-        returnArr.length = bookArrCount; //switch to element count as needed
-
-        return returnArr;
-    }    
+        return returnArray;
+    }
 
 }
-
+ 
 
 int store_books(FILE *file){
 
@@ -228,8 +127,14 @@ int store_books(FILE *file){
     else{
         
         fwrite(&numBooks,sizeof(int),1,file);
-        fwrite(&library,sizeof(struct Book),numBooks,file);
-
+        for(int i=0; i<=numBooks; i++){
+            fwrite(&library[i].ID,sizeof(int),numBooks,file);
+            fwrite(&(*library[i].authors),sizeof(char*),numBooks,file);
+            fwrite(&(*library[i].title),sizeof(unsigned int),numBooks,file);
+            fwrite(&library[i].year,sizeof(unsigned int),numBooks,file);
+            fwrite(&library[i].copies,sizeof(unsigned int),numBooks,file);
+        }
+        fclose(file);
         return 0;
     }
 }
@@ -242,19 +147,16 @@ int load_books(FILE *file){
     //returns 0 if books were loaded correctly, or an error code otherwise
     if(file == NULL) return -1;
     else{
-        
         fread(&numBooks,sizeof(int),1,file);
-        for(int i=0; i < numBooks; i++ ){
-            free(library[i]->authors);
-            free(library[i]->title);
-            free(library[i]->year);
-            free(library[i]->copies);
+        for(int i=0; i<=numBooks; i++){
+            fread(&library[i].ID,sizeof(int),1,file);
+            fread(&(*library[i].authors),sizeof(char*),1,file);
+            fread(&(*library[i].title),sizeof(char*),1,file);
+            fread(&library[i].year,sizeof(unsigned int),1,file);
+            fread(&library[i].copies,sizeof(unsigned int),1,file);
+             //dont forget to free the *library array
         }
-        free(library);
-
-        *library = (struct Book*)malloc(sizeof(struct Book*)*stockSize);
-        fread(&library,sizeof(struct Book),numBooks,file); //dont forget to free the *library array
-
+        fclose(file);
         return 0;
     }
 }
@@ -264,58 +166,21 @@ int add_book(struct Book book){
 
     //adds a book to the ones available to the library
     //returns 0 if the book could be added, or an error code otherwise
-    char findBook[100];  //attempt to find the book within the library
-    
-    if(book.title == NULL || book.authors == NULL) return -1;
+    if(book.authors == NULL) return -1;
+    else if(book.title == NULL) return -1;
     else{
-        //attempting to find book in library
-        struct Book* foundBook = (struct Book*)malloc(sizeof(struct Book*)); //catch found book 
-
-        if(find_book_by_author(book.authors).length == 0){
-
-            if(find_book_by_title(book.title).length == 0){ return -1; }
-            else{
-                //add book by title
-                foundBook = addRemBook(find_book_by_title(book.title), book.title);
-
-                if(foundBook == NULL){ //if exact book is not found : add book to library
-                    library[numBooks+1]->authors =  book.authors;
-                    library[numBooks+1]->title = book.title;
-                    library[numBooks+1]->copies = book.copies;
-                    library[numBooks+1]->year = book.year;
-                    numBooks++;
-                    free(foundBook);
-                    return 0;
-                }
-                else{ //if exact book found : add copy to library
-                    foundBook->copies = foundBook->copies + 1;
-                    free(foundBook);
-                    return 0;
-                }
-            }
-        }
         
-        else{
-            //add book by author
-            foundBook = addRemBook(find_book_by_author(book.authors), book.authors);
 
-            if(foundBook == NULL){ //if exact book is not found : add book to library
-                library[numBooks+1]->authors =  book.authors;
-                library[numBooks+1]->title = book.title;
-                library[numBooks+1]->copies = book.copies;
-                library[numBooks+1]->year = book.year;
-                free(foundBook);
-                return 0;
-            }
-            else{ //if exact book found : add copy to library
-                foundBook->copies = foundBook->copies + 1;
-                free(foundBook);
-                return 0;
-            }
-        }
+        library[numBooks].ID = numBooks+1;
+        library[numBooks].authors = book.authors;
+        library[numBooks].title = book.title;
+        library[numBooks].year = book.year;
+        library[numBooks].copies = book.copies;
 
+        numBooks++; 
+        printf("\nSuccessfully added book \n");
+        return 0;
     }
-
 
 }
 
@@ -324,53 +189,85 @@ int remove_book(struct Book book){
 
     //removes a book from the library
     //returns 0 if the book could be successfully removed, or an error code otherwise.
-
-    char findBook[100];  //attempt to find the book within the library
-    
-    if(book.title == NULL || book.authors == NULL) return -1;
+    if(book.authors == NULL)return -1;
+    else if(book.title == NULL) return -1;
     else{
-        struct Book* foundBook = (struct Book*)malloc(sizeof(struct Book*)); //catch found book 
-
-        //attempting to find book in library
-        if(find_book_by_author(book.authors).length == 0){
-
-            if(find_book_by_title(book.title).length == 0){return -1;}
-            else{
-                //find book by title
-                foundBook = addRemBook(find_book_by_title(book.title),book.title);
-                if(foundBook==NULL){ free(foundBook); return -1; }
-                else{
-                free(foundBook->authors);
-                free(foundBook->copies);
-                free(foundBook->title);
-                free(foundBook->year);
-
-                free(foundBook);
+        for(int i =0; i<numBooks; i++){
+            if( strcmp(library[i].authors, book.authors) == 0 ){
+                if( strcmp(library[i].title, book.title ) == 0 ){
+                    for(int j = i; j<numBooks; j++){
+                        library[j] = library[j + 1];
+                    }
+                    numBooks--;
+                    printf("Successfully removed book\n");
                     return 0;
                 }
             }
         }
-        else{
-            //find book by author
-            foundBook = addRemBook(find_book_by_title(book.title),book.title);
-            if(foundBook==NULL){ free(foundBook); return -1; }
-            else{
-                free(foundBook->authors);
-                free(foundBook->copies);
-                free(foundBook->title);
-                free(foundBook->year);
 
-                free(foundBook);
-                    return 0;        
-            }    
-        }
+        printf("Sorry! Could not remove book.\n");
+        return -1;
     }
+
+}
+
+const struct Book create_book(){
+    //creates a new Book to be added to the library
+    
+    struct Book newBook;
+
+    newBook.authors = returnString("Enter Author : ");
+    free(output);
+    newBook.title = returnString("Enter Title : ");
+    free(output);
+    printf("\nEnter Year : ");
+    scanf("%d",&newBook.year);
+
+    printf("Enter Copies : ");
+    scanf("%d",&newBook.copies);
+
+    return newBook;
 }
 
 
+int display_book(){
+    //function to display all books
+    printf("ID          Title           Author          Year            Copies\n");
+
+    for(int i=0; i<numBooks; i++){
+        printf("%d          %s              %s              %d              %d\n",
+            library[i].ID, library[i].title, library[i].authors, library[i].year, library[i].copies);
+    }
+}
+
 //test main function
-//int main(){
+int main(){
 
+    if(!library){//attempt to load library if already present
+        FILE *ptr = fopen("library_books.txt","r");
+        load_books(ptr);
+        free(ptr);  
+    }
+    numBooks = 0;
+    
+    add_book(create_book());
+    add_book(create_book());
+ 
+    display_book();
+    FILE *ftprw = fopen("library.txt","w");
+    store_books(ftprw);
+    free(ftprw);
+
+    struct Book remover;
+    remover.authors = "asd";
+    remover.title = "qwe";
+    remover.year = 1990;
+
+    remove_book(remover);
+    display_book();
+    FILE *ftprr = fopen("library.txt","r");
+    load_books(ftprr);
+    free(ftprr);
+    display_book();
     //testing code goes here
-
-//}
+}

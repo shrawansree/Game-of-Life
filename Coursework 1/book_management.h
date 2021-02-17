@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 struct Book {
+		int ID;
 		char *title; //book title
 		char *authors; //comma separated list of authors
 		unsigned int year; // year of publication
@@ -16,6 +17,10 @@ struct BookArray {
 	 unsigned int length; // number of elements in the struct Book * BookArray::find_book_by_author(const char* title)
 };
 
+#define library_size 99
+#define loan_size 9
+
+extern struct Book library[library_size]; //array of books in library
 
 //saves the database of books in the specified file
 //returns 0 if books were stored correctly, or an error code otherwise
@@ -52,5 +57,8 @@ struct BookArray find_book_by_author (const char *author);
 //array is the null pointer.
 struct BookArray find_book_by_year (unsigned int year);
 
+int display_book(); //displays books in library
+
+const struct Book create_book(); //creates a new book to be added to the library
 
 #endif

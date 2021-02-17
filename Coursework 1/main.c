@@ -15,21 +15,26 @@ Email: el20ss@leeds.ac.uk
 Date Work Commenced: 8th February 2021
 *************************************************************************/
 #include "library_management.h"
+//#include "book_management.h"
 
+struct Book *library[stockSize];
+struct User *users[userSize];
+int numBooks;
+int numUsers;
 
 //***********************************************************************
-char invalid_credentials(int type){
+char* invalid_credentials(int type){
     //prints invalid cred output
     //type 1 for invalid registration fields
     if(type == 1) printf("\n Sorry! One or more fields entered are invalid!");
     //type 2 for invalid login
     else if(type == 2) printf("\n Sorry! One or more credentials entered are invalid!");
 
-    char choice[1];
+    char* choice = (char*)malloc(sizeof(char*));
     do{
         printf("\n Would you like to try again.? (y/n) :");
-        scanf("%c",choice);
-    }   while(choice != 'y' && choice != 'n');
+        scanf("%c",*choice);
+    }   while(choice != "y" || choice != "n");
 
     return choice;
 }
@@ -38,46 +43,163 @@ char invalid_credentials(int type){
 struct User createUser(int type){
     //upon first initialising the program from scratch : no userbase,library or data : create the first admin user
     //set type 1 for admin and type 0 for normal user.
-    struct User newUser;
+    char f_name[30];
+    char l_name[30];
+    char email[30];
+    char username[30];
+    char password[30];
 
     printf("\n Enter User First Name : ");
-    scanf("%c",newUser.f_name);
+    scanf("%s",f_name);
 
     printf("\n Enter User Last Name : ");
-    scanf("%c",newUser.l_name);  
+    scanf("%s",l_name);  
 
     printf("\n Enter User Email ID : ");
-    scanf("%c",newUser.email);
+    scanf("%s",email);
 
     printf("\n Enter User Username : ");
-    scanf("%c",newUser.username);
+    scanf("%s",username);
 
     printf("\n Enter User Password");
     printf("\n (at least 8 characters long : including captial letter and special characters) : ");
-    scanf("%c",newUser.password);
+    scanf("%s",password);
 
-    newUser.isAdmin = type;
+   
+
+    struct User newUser;
+     newUser.isAdmin = type;
+     newUser.f_name = f_name;
+     newUser.l_name = l_name;
+     newUser.email = email;
+     newUser.username = username;
+     newUser.password = password;
 
     //pass the struct to register_user function
     return newUser;
 }
 
 
-void borrow_return_book(int type,struct User* borrower){
-    //
+struct BookArray searchBook(){
+    //search using functions in book_management.c
+    int choice = -1; //user choice
+    char* findBy; //string holder
+    int findByYear;
+    struct BookArray tempStore;
+
+    printf("\n 1. Find book by title ");
+    printf("\n 2. Find book by author ");
+    printf("\n 3. Find book by year ");
+
+    do{
+        printf("\n >>>");
+        choice = scanf("%d",choice);
+    }   while(choice < 1 && choice > 3);
+
+
+    switch (choice)
+    {
+    case 1:{
+        printf("\n Enter title of book : ");
+        scanf("%s",&findBy);
+        tempStore = find_book_by_title (findBy);
+        break;
+    }
+    case 2:{
+        printf("\n Enter author of book : ");
+        scanf("%s",&findBy);
+        tempStore = find_book_by_author (findBy);
+        break;
+    }
+    case 3:{
+        printf("\n Enter year of book : ");
+        scanf("%d",findByYear);
+        tempStore = find_book_by_year (findByYear);
+        break;
+    }
+    default:
+        break;
+    }
+
+    return tempStore;
+}
+
+
+void add_remove_book(int type){
+    //function to let admins add or remove books
+    struct Book tempStore;
+
+    printf("\n*Add/Remove Book Menu*");
+    //grab details
+    printf("\n Enter title of book :");
+        scanf("%s",&tempStore.title);
+    printf("\n Enter author of book :");
+        scanf("%s",&tempStore.authors);
+    printf("\n Enter year of book :");
+        scanf("%s",&tempStore.year);
+    printf("\n Enter copies of book :");
+        scanf("%s",&tempStore.copies);
+
+    if(type == 3){
+        add_book(tempStore);
+    }
+    else{
+        remove_book(tempStore);
+    }
+    return;  
 
 }
 
 
-void library_menu(int type, const char* username, const char* password){
+void borrow_return_book(int type,struct User* user){
+    //function to allow user to borrow or return book
+    struct BookArray tempStore;
+
+    if(user == NULL){ free(user); return; }
+
+    else{
+        printf("\n*Borrow/Return Menu*");
+        tempStore = searchBook();
+        printf("\n Found %d results ",tempStore.length);
+
+        for(int i = 0; i<tempStore.length ; i++){//ask user to find exact book
+            
+            printf("\n Title : %c",tempStore.array[i].title);
+            printf("\n Author : %c",tempStore.array[i].authors);
+            printf("\n Year : %c",tempStore.array[i].year);
+
+            char choice[1];
+            do{
+                printf("\n Is this the book .? (y/n) : " );
+                scanf("%s",&choice);
+            }   while(choice != "y" && choice != "n");
+
+            if(choice == "y"){
+                if(type == 1) borrow_book(user,tempStore.array[i]);
+                else return_book(user, tempStore.array[i]);
+
+                break;
+            }
+            else continue;
+
+        }
+        return;
+    }
+
+}
+
+
+void library_menu(int type,char* username,char* password){
     //logon view into library
     //type 1 is for admin only functionality , type 0 for normal users
     // the actual library menu
     int choice; //menu choice holder
-    struct User** currentUser = (struct User**)malloc(sizeof(struct User**));
+    struct User* currentUser = (struct User*)malloc(sizeof(struct User*));
     for(int i = 0; i< numUsers; i++){
-        if(strcmp(users[i]->username,username) == 0 && strcmp(users[i]->password, password) == 0 ){
-            currentUser = &users[i]; //get current user details
+        if(strcmp(users[i]->username,username) == 0){
+            if(strcmp(users[i]->password, password) == 0 ){
+                currentUser = users[i]; //get current user details
+            }
         }
     }
 
@@ -96,21 +218,29 @@ void library_menu(int type, const char* username, const char* password){
         printf("\n*Admin Mode*");
         printf("\n 3. Add Book");
         printf("\n 4. Remove Book");
-
+        printf("\n 5. Exit");
         do{
             printf("\n >>>");
             choice = scanf("%d",choice);
-        }   while(choice < 1 && choice > 5);
+        }   while(choice < 1 && choice > 6);
     }
 
     //control flow for user choice
     if(choice == 1 || choice == 2){
         borrow_return_book(choice,currentUser);
+        free(currentUser);
+        library_menu(type,username,password);
+
     }
     else if(choice == 3 || choice == 4){
-        add_remove_book(choice,currentUser);
+        add_remove_book(choice);
+        free(currentUser);
+        library_menu(type,username,password);
     }
-
+    else{
+        free(currentUser);
+        exit(0);
+    }
     return;
 }
 
@@ -118,12 +248,14 @@ void library_menu(int type, const char* username, const char* password){
 void userRegisterMenu(){
     //register new normal users
     printf("\n*Welcome*");
+    struct User* newUser = (struct User*)malloc(sizeof(struct User*));
+    *newUser = createUser(0);
 
-RESET:    
-    struct User newUser = createUser(0);
+RESET:   
     if(register_user(newUser) == -1 ){
-        char choice[1] = invalid_credentials(1);
-        if(choice == 'y'){ goto RESET;}
+        char* choice;
+        choice = invalid_credentials(1);
+        if(choice == "y"){ free(choice); goto RESET;}
         else exit(0);
     }
 
@@ -145,14 +277,15 @@ void userLoginMenu(){
 
 RESET: 
     printf("\n Enter Username : ");
-    scanf("%c",username);
+    scanf("%s",&username);
 
     printf("\n Enter Password : ");
-    scanf("%c",password);
+    scanf("%s",&password);
 
     if( user_login(username,password) == -1){
-        char choice[1] = invalid_credentials(2);
-        if(choice == 'y'){ goto RESET;}
+        char* choice;
+        choice = invalid_credentials(2);
+        if(choice == "y"){ free(choice); goto RESET;}
         else exit(0);
     }
 
@@ -177,7 +310,7 @@ void libLoginMenu(){
 
     do{ //loop prompt till valid choice provided - saves time having to implement a check for user input
         printf("\n >>>");
-        scanf("%i",choice);
+        scanf("%d",choice);
     }   while( choice < 1 && choice > 3);
 
     switch (choice){
@@ -212,16 +345,23 @@ void main(){
         free(ptr);
         while(1){
             //program critical step : loop to ensure that admin user is properly initialised
-
+            printf("\n Hello! This is the first instance of the library system boot!");
+            printf("\n As the first user, you shall be the admin! Please enter details below. ");
+            struct User* newUser = (struct User*)malloc(sizeof(struct User*)); 
+            *newUser = createUser(1);
+            printf("here");
             RESET : 
-            struct User newUser = createUser(1); //set type 1 for admin and type 0 for normal user.
+                //set type 1 for admin and type 0 for normal user.
             if( register_user(newUser) != 0){
-                char choice[1] = invalid_credentials(1);
-                if(choice == 'y'){ goto RESET; }
-                else exit(0);
+                
+                char* choice;
+                choice = invalid_credentials(1);
+                if(choice == "y"){ free(choice); goto RESET; }
+                else if(choice == "n") exit(0);
             }
 
             else{
+                free(newUser);
                 libLoginMenu();
             }
         }
