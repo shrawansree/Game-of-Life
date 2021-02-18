@@ -10,25 +10,13 @@
 #include <string.h>
 #include <ctype.h>
 #include "book_management.h"
+#include "user_management.h"
 
+#define MAX_STRING 1024
 
-struct User{
-		char* name; //user first name
-		char* email; // user email : ensure @ symbol is present when taking input
-		char* username; //user login username
-        char* password; //user login password
-        int isAdmin;
-        struct Book* booksOnHand; //books with the user is set in this array
-        int numBooksOnHand; //number of books with the user
-    };
+extern char *output;
 
-extern struct User* users; //array of users
-extern int numUsers;
- 
-
-//******************| additional created functions for user_management.c |******************
-
-char *returnString(const char *prompt); //returns string to user prompt
-
+//returns a char* to a prompt 
+char *returnString(const char *prompt);
 
 #endif

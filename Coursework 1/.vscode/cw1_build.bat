@@ -1,1 +1,1 @@
-gcc -g book_management.c -o library
+gcc -g main.c user_management.c -o library

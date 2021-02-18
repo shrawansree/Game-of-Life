@@ -18,28 +18,8 @@ Date Work Commenced: 2nd February 2021
 #include "library_management.h"
 
 struct Book library[library_size]; //array of  books in library
-static int numBooks = 0;
-static char *output;
-//******************| additional created functions for book_management.c |******************
-
-char *returnString(const char *prompt) {
-    //function to return string
-    fflush(stdin);
-	printf("%s",prompt);
-
-    size_t size = 32;
-    char temp[1024];
-    char *output = malloc(sizeof(char)*1024);
-
-    fgets(temp,1023,stdin);
-
-    temp[strcspn(temp,"\n")] = 0;
-    strcpy(output,temp);
-	return output;
-}
-
-
-
+int numBooks = 0;
+char *output;
 
 //***********************************************************************
 
@@ -107,7 +87,7 @@ struct BookArray find_book_by_year (unsigned int year){
     returnArray.array[loan_size];
     returnArray.array = (struct Book*)malloc(sizeof(struct Book*)*loan_size);
     returnArray.length = 0; //set to 0
-    
+
     if(year < 0) return returnArray; //check if input empty
 
     else{
@@ -131,8 +111,8 @@ int store_books(FILE *file){
     //returns 0 if books were stored correctly, or an error code otherwise
     if(file == NULL) return -1;
     else{
-        char tmpauthor[50];
-        char tmptitle[50];
+        static char tmpauthor[MAX_STRING];
+        static char tmptitle[MAX_STRING];
 
         fprintf(file,"%d\n",numBooks);
         for(int i=0; i<numBooks; i++){
@@ -158,14 +138,14 @@ int load_books(FILE *file){
     else{
 
         fscanf(file,"%d\n",&numBooks); 
-        char tmpAut[1024];
-        char tmpTitle[1024];
+        static char tmpAut[MAX_STRING];
+        static char tmpTitle[MAX_STRING];
 
         for(int i=0; i<numBooks; i++){
 
             fscanf(file,"%d \t",&library[i].ID);
-            fgets(tmpAut,1024,file);
-            fgets(tmpTitle,1024,file);
+            fgets(tmpAut,MAX_STRING,file);
+            fgets(tmpTitle,MAX_STRING,file);
             fscanf(file,"%d \t",&library[i].year);
             fscanf(file,"%d \n",&library[i].copies);
 
@@ -257,43 +237,3 @@ int display_all_book(){
             library[i].ID, library[i].authors, library[i].title, library[i].year, library[i].copies);
     }
 }
-
-//test main function
-int main(){
-
-    //if(library){//attempt to load library if already present
-    FILE *ptr = fopen("library.txt","r+");
-    load_books(ptr);
-    free(ptr);  
-    //}
-
-    // add_book(create_book());
-    // add_book(create_book());
- 
-    // display_book();
-    // FILE *ftprw = fopen("library.txt","w+");
-    // store_books(ftprw);
-    // free(ftprw);
-
-    // struct Book remover;
-    // remover.authors = "asd";
-    // remover.title = "qwe";
-    // remover.year = 1990;
-
-    // remove_book(remover);
-    // display_book();
-    // FILE *ftprr = fopen("library.txt","r+");
-    // load_books(ftprr);
-    // free(ftprr);
-    display_all_book();
-
-    struct BookArray testArray;
-    testArray = find_book_by_title("fggr");
-
-    printf("|%-3s|-|%-25s|-|%-25s|-|%-3s|-|%-3s| \n","ID","Author","Title","Year","Copies");
-    for(int i=0; i< testArray.length; i++){
-        printf("|%-3d| |%-25s| |%-25s| |%-3d| |%-3d| \n",
-            testArray.array[i].ID,  testArray.array[i].authors,  testArray.array[i].title,  testArray.array[i].year,  testArray.array[i].copies);
-    }
-}
-    //testing code goes here}

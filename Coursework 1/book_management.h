@@ -21,7 +21,7 @@ struct BookArray {
 #define loan_size 9
 
 extern struct Book library[library_size]; //array of books in library
-
+extern int numBooks;
 //saves the database of books in the specified file
 //returns 0 if books were stored correctly, or an error code otherwise
 int store_books(FILE *file);
