@@ -11,6 +11,8 @@
 #include <ctype.h>
 #include "book_management.h"
 #include "user_management.h"
+#include "loan_management.h"
+#include "interface_management.h"
 
 #define MAX_STRING 1024
 

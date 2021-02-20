@@ -29,9 +29,9 @@ int load_users(FILE *file);
 //returns 0 if the users could be added, or an error code otherwise
 int register_users(struct User* user, int type);
 
-//allows existing users to login to access the main menu
-//returns 0 if the user could not successfully login
-char login_users(const char* username, const char* password);
+//allows existing users to login to access the main menu : returns 'a' if admin and 'u' if user
+//returns 'f' if the user could not successfully login
+struct User login_users(const char* username, const char* password);
 
 
 //creates a new struct User newUser who can be added to the userbase

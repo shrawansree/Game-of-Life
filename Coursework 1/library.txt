@@ -1,7 +1,16 @@
-2
-1 	 qwerert gsrg hfht 
- asdjafk sdfsf sf 
- 1920 	 10 
-2 	 asddfdfsdf 
- fggrsfgsg 
- 1990 	 20 
+5
+2 	 CGP   
+   Physics   
+ 2015 	 21 
+2 	 CGP   
+   Chemistry   
+ 2015 	 15 
+3 	 CGP   
+   Physics   
+ 2015 	 21 
+4 	 CGP 
+ Biology 
+ 2015 	 15 
+5 	 AA 
+ Direct Drive 
+ 2019 	 12 

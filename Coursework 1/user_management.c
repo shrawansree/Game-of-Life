@@ -21,6 +21,7 @@ Date Work Commenced: 5th February 2021
 struct User usersbase[MAX_USERS]; 
 int numUsers = 0;
 char *output;
+struct User* newUser; //holds the created user before registration
 //***********************************************************************
 
 int store_users(FILE *file){
@@ -97,7 +98,7 @@ struct User* create_new_user(){
     //creates a new struct User newUser who can be added to the usersbase
     //returns null if the user could not be created
 
-    struct User* newUser = (struct User*)malloc(sizeof(struct User*));
+    newUser = (struct User*)malloc(sizeof(struct User*));
 
     printf("\n*Create New User*");
 
@@ -147,7 +148,9 @@ int register_users(struct User* user, int type){
     }
     else if(strlen(user->password) < 8){
         printf("\nPassword not long enough");
+        return -1;
     }
+    
     usersbase[numUsers].ID = user->ID;
     usersbase[numUsers].name = user->name;
     usersbase[numUsers].email = user->email;
@@ -157,18 +160,20 @@ int register_users(struct User* user, int type){
     user->isAdmin = type;
     usersbase[numUsers].isAdmin = user->isAdmin;
     numUsers++;
-    free(user);
+    free(newUser);
     printf("\nSuccessfully Added User!");
     return 0;
 }
 
 
-char login_users(const char* username, const char* password){
+struct User login_users(const char* username, const char* password){
     //allows existing users to login to access the main menu
-    //returns 0 if the user could not successfully login
-    
-    if( username == NULL ) return 'f';
-    else if( password == NULL ) return 'f';
+    //returns f if the user could not successfully login
+    struct User returnNull;
+    returnNull.username = NULL;
+
+    if( username == NULL ) return returnNull;
+    else if( password == NULL ) return returnNull;
 
     else{
         //find username and password in usersbase
@@ -178,25 +183,18 @@ char login_users(const char* username, const char* password){
                 if( strcmp(password, usersbase[i].password) == 0){
                     if( usersbase[i].isAdmin == 1){
                         printf("\nWelcome Admin");
-                        return 'a';
+                        return usersbase[i];
                     }
                     else{
                         printf("\nWelcome %s",usersbase[i].name);
-                        return 'u';
+                        return usersbase[i];
                     }
                 }
-                else{
-                    printf("\nPassword could not be verified");
-                    return 'f';
-                }
-            }
-            else{
-                printf("\nUsername could not be found");
-                return 'f';
             }
         }
 
-        return 'f';
+        printf("\n *User not found* ");     
+        return returnNull;
     }
 
 }

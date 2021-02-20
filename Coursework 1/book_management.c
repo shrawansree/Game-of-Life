@@ -169,8 +169,20 @@ int add_book(struct Book book){
     if(book.authors == NULL) return -1;
     else if(book.title == NULL) return -1;
     else{
+
+        for(int i = 0; i<numBooks; i++){
+            if( strcmp(library[i].authors, book.authors) == 0){
+                if( strcmp(library[i].title, book.title) == 0){
+                    if( library[i].year == book.year){
+                        library[i].copies = library[i].copies + book.copies;
+                        printf("\nSuccessfully added copies \n");
+                        return 0;
+                    }
+                }
+            }
+        }
         
-        library[numBooks].ID = numBooks+1;
+        library[numBooks].ID = library[numBooks-1].ID + 1;
         library[numBooks].authors = book.authors;
         library[numBooks].title = book.title;
         library[numBooks].year = book.year;
@@ -198,13 +210,13 @@ int remove_book(struct Book book){
                         library[j] = library[j + 1];
                     }
                     numBooks--;
-                    printf("Successfully removed book\n");
+                    printf("\nSuccessfully removed book\n");
                     return 0;
                 }
             }
         }
 
-        printf("Sorry! Could not remove book.\n");
+        printf("\nSorry! Could not remove book.\n");
         return -1;
     }
 
@@ -231,7 +243,7 @@ const struct Book create_book(){
 
 int display_all_book(){
     //function to display all books
-    printf("|%-3s|-|%-25s|-|%-25s|-|%-3s|-|%-3s| \n","ID","Author","Title","Year","Copies");
+    printf("|%-3s|-|%-25s|-|  %-25s|-|%-3s|-|%-3s| \n","ID","Author","Title","Year","Copies");
     for(int i=0; i<numBooks; i++){
         printf("|%-3d| |%-25s| |%-25s| |%-3d| |%-3d| \n",
             library[i].ID, library[i].authors, library[i].title, library[i].year, library[i].copies);

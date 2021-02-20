@@ -30,7 +30,33 @@ char *returnString(const char *prompt) {
 
     fgets(temp,MAX_STRING-1,stdin);
 
+    if(temp == NULL) return NULL;
+
     temp[strcspn(temp,"\n")] = 0;
     strcpy(output,temp);
 	return output;
+}
+
+void main(){
+    //main function
+    //attempt to load users, library and loans from file
+    FILE* ptrUser = fopen("usersbase.txt","r+");
+    if(ptrUser == NULL){
+        register_interface(1); //if no previous users are created : create admin on first boot
+    }
+    else{
+        load_users(ptrUser);
+    }
+    free(ptrUser);
+
+    FILE* ptrBook = fopen("library.txt","r+");
+    load_books(ptrBook); //load books if previously created
+    free(ptrBook);
+
+    FILE* ptrLoan = fopen("loans.txt","r+");
+    load_loans(ptrLoan);//load previous loans
+    free(ptrLoan);
+
+    //start the program
+    boot_interface();
 }
