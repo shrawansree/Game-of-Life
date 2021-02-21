@@ -26,14 +26,14 @@ char *returnString(const char *prompt) {
 
     size_t size = 32;
     char temp[MAX_STRING];
-    char *output = malloc(sizeof(char)*1024);
+    char *output = malloc(sizeof(char)*MAX_STRING);
 
     fgets(temp,MAX_STRING-1,stdin);
 
     if(temp == NULL) return NULL;
 
     temp[strcspn(temp,"\n")] = 0;
-    strcpy(output,temp);
+    output = temp;
 	return output;
 }
 

@@ -107,7 +107,7 @@ struct Book* find_book(struct BookArray* books){
     for(int i=0; i<books->length; i++){
 
         if( books->array[i].ID == ID ){
-            *found_book = books->array[i];
+            found_book = &books->array[i];            
             return found_book;
         }
     }
@@ -153,6 +153,7 @@ int borrow_books(struct User user, struct Book* loan){
                 if( strcmp(library[i].title, loan->title) == 0){
                     if( library[i].year = loan->year){
                         *loan = library[i];
+                        library[i].copies = library[i].copies - 1;
                     }
                 }
             }
@@ -163,8 +164,8 @@ int borrow_books(struct User user, struct Book* loan){
         loan->copies = loan->copies - 1;
 
         loans[numLoans].userID = user.ID;
-        loans[numLoans].username = (char*)malloc(sizeof(char*));
-        strcpy( loans[numLoans].username, user.username);
+//        loans[numLoans].username = (char*)malloc(sizeof(char*)*MAX_STRING);
+        loans[numLoans].username = user.username;
 
         printf("\n *Successfully borrowed book* ");
         free(found_book);

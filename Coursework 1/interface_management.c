@@ -130,7 +130,7 @@ void main_interface(struct User user){
             case 6:{    
                 store_all();
                 free(currentUser);
-                boot_interface();
+                return;
             }
             default:{ //attempts retry
                 printf("\n* Invalid choice *");
