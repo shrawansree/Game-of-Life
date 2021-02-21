@@ -1,16 +1,13 @@
-5
-2 	 CGP   
-   Physics   
- 2015 	 21 
-2 	 CGP   
-   Chemistry   
- 2015 	 15 
-3 	 CGP   
-   Physics   
- 2015 	 21 
-4 	 CGP 
- Biology 
- 2015 	 15 
-5 	 AA 
- Direct Drive 
- 2019 	 12 
+4
+1	CGP
+Biology
+2015	21
+3	CGP
+Physics
+2020	10
+4	CGP
+English
+2020	15
+5	CGP
+Drama
+2018	25

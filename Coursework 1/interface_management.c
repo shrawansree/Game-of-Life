@@ -46,9 +46,13 @@ static void remove_book_byID(){
     display_all_book(); //displays all books
     printf("\n");
 
-    int ID = 0;
-    printf("\n>>>Enter ID : ");//gets ID of book required
-    scanf("%d",&ID);
+    char* errCh; //error handling possible string input from user
+    do{
+        errCh = returnString("\n>>>Enter choice : ");
+        free(output);
+    }   while( isdigit(*errCh) == 0);
+    int ID = atoi(errCh);
+   
 
     for( int i =0; i<numLoans; i++){
         if( loans->loanBook.ID == ID){
@@ -85,13 +89,13 @@ void main_interface(struct User user){
         }
         printf("\n 6. Exit");
 
-        int choice;
-
+        char* errCh; //error handling possible string input from user
         do{
-            printf("\n>>>Enter choice : ");
-            scanf("%d",&choice);
-        }   while(choice < 1 && choice > 6);
-    
+            errCh = returnString("\n>>>Enter choice : ");
+            free(output);
+        }   while( isdigit(*errCh) == 0);
+        int choice = atoi(errCh);
+   
         switch(choice){
             case 1:{//finds book to borrow
                 search_interface(1);
@@ -163,6 +167,7 @@ void display_found_books(struct BookArray foundBooks){
 
 
 static void search_interface_sub(int choice , int type){
+
     //sub-function to the search function to prevent repeating code
     //choice routes to the type of search and type routes if search is from the boot menu or from the main menu
     // type - 0 : boot menu , type - 1 : main menu
@@ -170,18 +175,21 @@ static void search_interface_sub(int choice , int type){
 
     if(choice == 1) *foundBooks = find_book_by_title(returnString("\n Enter title of book : "));
     else if(choice == 2) *foundBooks = find_book_by_author(returnString("\n Enter title of author : "));
-    else *foundBooks = find_book_by_year((int)returnString("\n Enter year of publication : "));
-
+    else {
+        printf("\n Enter year of publication : ");
+        int yearFind = 0;
+        scanf("%d",&yearFind);
+        *foundBooks = find_book_by_year(yearFind);
+    }
+    free(output);
     display_found_books(*foundBooks);
 
     if(type == 0){
-        free(output);
         return;
     }
 
     if(type == 1){
         borrow_books(*currentUser, find_book(foundBooks));
-        free(output);
         return;
     }
 
@@ -199,13 +207,13 @@ void search_interface(int type){
         printf("\n 4. Display all books in library.");
         printf("\n 5. Quit to previous menu.");
 
-        int choice; //user input
-
+        char* errCh; //error handling possible string input from user
         do{
-        printf("\n>>>Enter choice : ");
-        scanf("%d",&choice);
-        }   while(choice < 1 && choice > 5);
-
+            errCh = returnString("\n>>>Enter choice : ");
+            free(output);
+        }   while( isdigit(*errCh) == 0);
+        int choice = atoi(errCh);
+   
         switch(choice){
 
             case 1:{// finds books with required title
@@ -319,43 +327,41 @@ int login_interface(){
 void boot_interface(){
     //Initial interface that user meets. Prompts user to login, register or search for books
 
-    printf("\n* Welcome to the Library *");
-
-    printf("\n Would you like to : ");
-    printf("\n 1. Login ");
-    printf("\n 2. Register ");
-    printf("\n 3. Browse books ");
-    printf("\n 4. Quit ");
-
-    int choice;
-
-    do{
-        printf("\n>>>Enter choice : ");
-        scanf("%d",&choice);
-    }   while(choice < 1 && choice > 4);
-
     while(1){
+        printf("\n* Welcome to the Library *");
+
+        printf("\n Would you like to : ");
+        printf("\n 1. Login ");
+        printf("\n 2. Register ");
+        printf("\n 3. Browse books ");
+        printf("\n 4. Quit ");
+
+        char* errCh; //error handling possible string input from user
+        do{
+            errCh = returnString("\n>>>Enter choice : ");
+            free(output);
+        }   while( isdigit(*errCh) == 0);
+        int choice = atoi(errCh);
+   
         switch(choice){
             case 1:{// routes to login interface
                 login_interface();
-                boot_interface();
+                break;
             }
 
             case 2:{//routes to registration interface
                 register_interface(0);
-                boot_interface();
+                break;
             }
             case 3:{// routes to search interface
                 search_interface(0);
-                boot_interface();
+                break;
             }
             case 4:{
                 exit(0);
             }
             default:{ //attempts retry
                 printf("\n* Invalid choice *");
-                printf("\n>>>Enter choice : ");
-                scanf("%d",&choice);
                 break;
             }
         }

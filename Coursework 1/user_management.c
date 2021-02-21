@@ -43,7 +43,7 @@ int store_users(FILE *file){
             strcpy(tmpUsername,usersbase[i].username);
             strcpy(tmpPassword,usersbase[i].password);
 
-            fprintf(file,"%d \t %s \n %s \n %s \n %s \n %d \n",
+            fprintf(file,"%d\t%s\n%s\n%s\n%s\n%d\n",
                         usersbase[i].ID, tmpName, tmpEmail, tmpUsername , tmpPassword, usersbase[i].isAdmin);
 
         }
@@ -69,7 +69,7 @@ int load_users(FILE *file){
 
         for(int i=0; i<numUsers; i++){
 
-            fscanf(file,"%d \t",&usersbase[i].ID);
+            fscanf(file,"%d\t",&usersbase[i].ID);
             fgets(tmpName,MAX_STRING,file);
             fgets(tmpEmail,MAX_STRING,file);
             fgets(tmpUsername,MAX_STRING,file);

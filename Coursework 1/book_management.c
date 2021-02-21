@@ -35,6 +35,7 @@ struct BookArray find_book_by_title (const char *title){
     returnArray.length = 0; //set to 0
 
     if(title == NULL) return returnArray; //check if input empty
+    else if( isdigit(*title ) != 0) return returnArray;
     else{
         //find book using title
         for(int i=0; i<numBooks; i++){
@@ -62,6 +63,7 @@ struct BookArray find_book_by_author (const char *author){
     returnArray.length = 0; //set to 0
 
     if(author == NULL) return returnArray;
+    else if( isdigit(*author ) != 0) return returnArray;
     else{
         //find book using author
         for(int i=0; i<numBooks; i++){
@@ -89,7 +91,7 @@ struct BookArray find_book_by_year (unsigned int year){
     returnArray.length = 0; //set to 0
 
     if(year < 0) return returnArray; //check if input empty
-
+    else if( isdigit(year) == 0 ) return returnArray;
     else{
         //find book using year
         for(int i=0; i<numBooks; i++){
@@ -119,7 +121,7 @@ int store_books(FILE *file){
             strcpy(tmpauthor,library[i].authors);
             strcpy(tmptitle,library[i].title);
 
-               fprintf(file,"%d \t %s \n %s \n %d \t %d \n",
+               fprintf(file,"%d\t%s\n%s\n%d\t%d\n",
                             library[i].ID, tmpauthor, tmptitle , library[i].year, library[i].copies);
 
         }
@@ -143,11 +145,11 @@ int load_books(FILE *file){
 
         for(int i=0; i<numBooks; i++){
 
-            fscanf(file,"%d \t",&library[i].ID);
+            fscanf(file,"%d\t",&library[i].ID);
             fgets(tmpAut,MAX_STRING,file);
             fgets(tmpTitle,MAX_STRING,file);
-            fscanf(file,"%d \t",&library[i].year);
-            fscanf(file,"%d \n",&library[i].copies);
+            fscanf(file,"%d\t",&library[i].year);
+            fscanf(file,"%d\n",&library[i].copies);
 
             tmpAut[strcspn(tmpAut,"\n")] = 0;
             tmpTitle[strcspn(tmpTitle,"\n")] = 0;
@@ -243,7 +245,7 @@ const struct Book create_book(){
 
 int display_all_book(){
     //function to display all books
-    printf("|%-3s|-|%-25s|-|  %-25s|-|%-3s|-|%-3s| \n","ID","Author","Title","Year","Copies");
+    printf("|%-3s|-|%-25s|-|%-25s|-|%-3s|-|%-3s| \n","ID","Author","Title","Year","Copies");
     for(int i=0; i<numBooks; i++){
         printf("|%-3d| |%-25s| |%-25s| |%-3d| |%-3d| \n",
             library[i].ID, library[i].authors, library[i].title, library[i].year, library[i].copies);

@@ -17,6 +17,7 @@ Date Work Commenced: 18th February 2021
 #include "library_management.h"
 
 struct userLoan loans[MAX_LOANS];
+struct Book* found_book;
 int numLoans = 0;
 char *output;
 /************************************************************************/
@@ -37,7 +38,7 @@ int store_loans(FILE *file){
             strcpy(tmptitle,loans[i].loanBook.title);
             strcpy(tmpUsername,loans[i].username);
 
-               fprintf(file,"%d \t %s \n %s \n %d \t %d \t %d \t %s \n",
+               fprintf(file,"%d\t%s\n%s\n%d\t%d\t%d\t%s\n",
         loans[i].loanBook.ID, tmpauthor, tmptitle , loans[i].loanBook.year, loans[i].loanBook.copies, loans[i].userID, tmpUsername );
 
         }
@@ -67,9 +68,9 @@ int load_loans(FILE *file){
             fgets(tmpAut,MAX_STRING,file);
             fgets(tmpTitle,MAX_STRING,file);
 
-            fscanf(file,"%d \t",&loans[i].loanBook.year);
-            fscanf(file,"%d \t",&loans[i].loanBook.copies);
-            fscanf(file,"%d \t",&loans[i].userID);
+            fscanf(file,"%d\t",&loans[i].loanBook.year);
+            fscanf(file,"%d\t",&loans[i].loanBook.copies);
+            fscanf(file,"%d\t",&loans[i].userID);
             fgets(tmpUsername,MAX_STRING,file);
 
             tmpAut[strcspn(tmpAut,"\n")] = 0;
@@ -91,7 +92,7 @@ struct Book* find_book(struct BookArray* books){
     //uses the find book_by functions and the display function to locate the exact book needed to have taken action on within the library returns a pointer to it
     //returns NULL if no book is found
 
-    struct Book* found_book = (struct Book*)malloc(sizeof(struct Book*));
+    found_book = (struct Book*)malloc(sizeof(struct Book*));
     int ID = 0;
 
     if(books->length<1){
@@ -123,11 +124,11 @@ int borrow_books(struct User user, struct Book* loan){
     //allows current user to borrow books from the library. Should decrease the value of copies in the library by 1 and add it to the loaned books
     //adds loaned book and its borrower to a new array of loaned books
     if( user.username == NULL ){
-        printf("*Invalid borrower*");
+        printf("\n*Invalid borrower*");
         return -1;
     }
     else if(loan == NULL){
-        printf("*Book not detected*");
+        printf("\n*Book not detected*");
         return -1;
     }
     
@@ -138,7 +139,7 @@ int borrow_books(struct User user, struct Book* loan){
                 if( strcmp(loans[i].username,user.username) == 0 ){ //username match
                     if( loans[i].loanBook.ID == loan->ID){ //book ID match
                         if( strcmp(loans[i].loanBook.title, loan->title ) == 0 ){ //book title match
-                            printf(" You already hold a copy of this book !");
+                            printf("\nYou already hold a copy of this book !");
                             return -1;
                         }
                     }
@@ -166,6 +167,7 @@ int borrow_books(struct User user, struct Book* loan){
         strcpy( loans[numLoans].username, user.username);
 
         printf("\n *Successfully borrowed book* ");
+        free(found_book);
         numLoans++;
         return 0;
     }
@@ -222,6 +224,7 @@ int return_books(struct User user){
 
                 printf("\n*Successfully returned book*");
                 numLoans--;
+                return 0;
             }
         }
         printf("\n *Failed to return book* ");
