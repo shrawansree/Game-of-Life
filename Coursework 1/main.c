@@ -33,7 +33,7 @@ char *returnString(const char *prompt) {
     if(temp == NULL) return NULL;
 
     temp[strcspn(temp,"\n")] = 0;
-    output = temp;
+    strcpy(output, temp);
 	return output;
 }
 

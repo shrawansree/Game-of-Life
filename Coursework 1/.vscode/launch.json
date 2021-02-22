@@ -8,7 +8,7 @@
                 "name": "gcc.exe build and debug active file",
                 "type": "cppdbg",
                 "request": "launch",
-                "program": "E:/_Achu documents/UNI/COMP1921/Coursework 1/library.exe",
+                "program": "E:/_Achu documents/UNI/COMP1921/Coursework 1/build/library.exe",
                 "args": [],
                 "stopAtEntry": false,
                 "cwd": "${workspaceFolder}",

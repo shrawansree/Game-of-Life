@@ -154,8 +154,9 @@ int load_books(FILE *file){
             tmpAut[strcspn(tmpAut,"\n")] = 0;
             tmpTitle[strcspn(tmpTitle,"\n")] = 0;
 
-            library[i].authors = strdup(tmpAut);
-            library[i].title = strdup(tmpTitle);
+            strcpy( library[i].authors,tmpAut);
+            strcpy(library[i].title,tmpTitle);
+
              //dont forget to free the *library array
         }
         fclose(file);

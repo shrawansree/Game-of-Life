@@ -77,9 +77,9 @@ int load_loans(FILE *file){
             tmpTitle[strcspn(tmpTitle,"\n")] = 0;
             tmpUsername[strcspn(tmpUsername,"\n")] = 0;
 
-            loans[i].loanBook.authors = strdup(tmpAut);
-            loans[i].loanBook.title = strdup(tmpTitle);
-            loans[i].username = strdup(tmpUsername);
+            strcpy(loans[i].loanBook.authors,tmpAut);
+            strcpy(loans[i].loanBook.title,tmpTitle);
+            strcpy(loans[i].username,tmpUsername);
             
         }
         fclose(file);

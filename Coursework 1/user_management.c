@@ -82,10 +82,10 @@ int load_users(FILE *file){
             tmpUsername[strcspn(tmpUsername,"\n")] = 0;
             tmpPassword[strcspn(tmpPassword,"\n")] = 0;
 
-            usersbase[i].name = strdup(tmpName);
-            usersbase[i].email = strdup(tmpEmail);
-            usersbase[i].username = strdup(tmpUsername);
-            usersbase[i].password = strdup(tmpPassword);
+            strcpy(usersbase[i].name,tmpName);
+            strcpy(usersbase[i].email,tmpEmail);
+            strcpy(usersbase[i].username,tmpUsername);
+            strcpy(usersbase[i].password,tmpPassword);
             
         }
         fclose(file);
