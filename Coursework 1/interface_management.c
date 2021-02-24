@@ -95,7 +95,7 @@ void main_interface(struct User user){
             free(output);
         }   while( isdigit(*errCh) == 0);
         int choice = atoi(errCh);
-   
+
         switch(choice){
             case 1:{//finds book to borrow
                 search_interface(1);
@@ -218,19 +218,16 @@ void search_interface(int type){
 
             case 1:{// finds books with required title
                 search_interface_sub(choice, type);
-                free(foundBooks->array);
                 free(foundBooks);
                 break;
             }
             case 2:{//finds books with required author
                 search_interface_sub(choice , type);
-                free(foundBooks->array);
                 free(foundBooks);
                 break;
             }
             case 3:{// finds books on the given year
                 search_interface_sub(choice , type);
-                free(foundBooks->array);
                 free(foundBooks);
                 break;
             }
@@ -268,7 +265,6 @@ void register_interface(int type){
 
         FILE* ptrWUser = fopen("usersbase.txt","w+");
         store_users(ptrWUser);
-        free(ptrWUser);
         return;
     }
     
@@ -280,8 +276,6 @@ void register_interface(int type){
 
         FILE* ptrWUser = fopen("usersbase.txt","w+");
         store_users(ptrWUser);
-        free(ptrWUser);
-
         return;
     }
 

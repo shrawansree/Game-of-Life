@@ -82,10 +82,10 @@ int load_users(FILE *file){
             tmpUsername[strcspn(tmpUsername,"\n")] = 0;
             tmpPassword[strcspn(tmpPassword,"\n")] = 0;
 
-            strcpy(usersbase[i].name,tmpName);
-            strcpy(usersbase[i].email,tmpEmail);
-            strcpy(usersbase[i].username,tmpUsername);
-            strcpy(usersbase[i].password,tmpPassword);
+            usersbase[i].name = tmpName;
+            usersbase[i].email = tmpEmail;
+            usersbase[i].username = tmpUsername;
+            usersbase[i].password = tmpPassword;
             
         }
         fclose(file);
@@ -101,18 +101,26 @@ struct User* create_new_user(){
     newUser = (struct User*)malloc(sizeof(struct User*));
 
     printf("\n*Create New User*");
+        static char tmpName[MAX_STRING];
+        static char tmpEmail[MAX_STRING];
+        static char tmpUsername[MAX_STRING];
+        static char tmpPassword[MAX_STRING];
 
     newUser->ID = numUsers + 1;
-    newUser->name = returnString("\n>>>Enter your name : ");
+    strcpy(tmpName, returnString("\n>>>Enter your name : "));
         free(output);
-    newUser->email = returnString("\n>>>Enter your email : ");
+    strcpy(tmpEmail, returnString("\n>>>Enter your email : "));
         free(output);
-    newUser->username = returnString("\n>>>Enter new login username : ");
+    strcpy(tmpUsername, returnString("\n>>>Enter new login username : "));
         free(output);
     printf("\n*Ensure password is at least 6 characters long!*");
-    newUser->password = returnString("\n>>>Enter new login password : ");
+    strcpy(tmpPassword, returnString("\n>>>Enter new login password : "));
         free(output);
 
+    newUser->name = tmpName;
+    newUser->email = tmpEmail;
+    newUser->username = tmpUsername;
+    newUser->password = tmpPassword;
     newUser->isAdmin = 0;
 
     return newUser;
