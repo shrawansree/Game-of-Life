@@ -103,9 +103,9 @@ struct User* create_new_user(){
     printf("\n*Create New User*");
 
     newUser->ID = numUsers + 1;
-    newUser->name = returnString("\n>>>Enter new user name : ");
+    newUser->name = returnString("\n>>>Enter your name : ");
         free(output);
-    newUser->email = returnString("\n>>>Enter new user email : ");
+    newUser->email = returnString("\n>>>Enter your email : ");
         free(output);
     newUser->username = returnString("\n>>>Enter new login username : ");
         free(output);

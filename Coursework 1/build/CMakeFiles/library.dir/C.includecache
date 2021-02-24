@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/book_management.c
+library_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/library_management.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/book_management.h
+stdio.h
+-
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/interface_management.c
+library_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/library_management.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/interface_management.h
+stdio.h
+-
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/library_management.h
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+book_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/book_management.h
+user_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/user_management.h
+loan_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/loan_management.h
+interface_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/interface_management.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/loan_management.c
+library_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/library_management.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/loan_management.h
+stdio.h
+-
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/main.c
+library_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/library_management.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/user_management.c
+library_management.h
+E:/_Achu documents/UNI/COMP1921/Coursework 1/library_management.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 1/user_management.h
+stdio.h
+-
+

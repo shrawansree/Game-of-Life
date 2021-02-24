@@ -1,0 +1,539 @@
+
+;; Function printf (printf, funcdef_no=8, decl_uid=1737, cgraph_uid=9, symbol_order=8)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 17.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (parallel [
+            (set (reg:SI 86)
+                (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "c:\devtools\mingw\include\stdio.h":424:35 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __local_argv+0 S4 A32])
+        (reg:SI 86)) "c:\devtools\mingw\include\stdio.h":424:35 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 82 [ __local_argv.0_1 ])
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __local_argv+0 S4 A32])) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 8 7 9 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg/f:SI 82 [ __local_argv.0_1 ])) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 87)
+        (mem/f/c:SI (reg/f:SI 76 virtual-incoming-args) [1 __format+0 S4 A32])) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 10 9 11 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 87)) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(call_insn 11 10 12 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("__mingw_vprintf") [flags 0x43]  <function_decl 0478b168 __mingw_vprintf>) [0 __mingw_vprintf S1 A8])
+            (const_int 8 [0x8]))) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 12 11 13 2 (set (reg/v:SI 83 [ __retval ])
+        (reg:SI 0 ax)) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 13 12 16 2 (set (reg:SI 84 [ _8 ])
+        (reg/v:SI 83 [ __retval ])) "c:\devtools\mingw\include\stdio.h":427:10 -1
+     (nil))
+(insn 16 13 20 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _8 ])) "c:\devtools\mingw\include\stdio.h":427:10 -1
+     (nil))
+(insn 20 16 21 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "c:\devtools\mingw\include\stdio.h":428:1 -1
+     (nil))
+(insn 21 20 0 2 (use (reg/i:SI 0 ax)) "c:\devtools\mingw\include\stdio.h":428:1 -1
+     (nil))
+
+;; Function returnString (returnString, funcdef_no=21, decl_uid=2088, cgraph_uid=22, symbol_order=22)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+Removing jump 39.
+Merging block 6 into block 2...
+Merged blocks 2 and 6.
+Merged 2 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 85)
+        (mem/u/c:SI (symbol_ref:SI ("*__imp___iob") [flags 0x2002]  <var_decl 047a0160 D.2120>) [5  S4 A8])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":24:5 -1
+     (nil))
+(insn 6 5 7 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 85)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":24:5 -1
+     (nil))
+(call_insn 7 6 8 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("fflush") [flags 0x43]  <function_decl 0476a960 fflush>) [0 fflush S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":24:5 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 8 7 9 2 (set (reg/f:SI 86)
+        (mem/f/c:SI (reg/f:SI 76 virtual-incoming-args) [1 prompt+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":25:2 -1
+     (nil))
+(insn 9 8 10 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg/f:SI 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":25:2 -1
+     (nil))
+(insn 10 9 11 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC0") [flags 0x2]  <var_decl 047a01b8 *LC0>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":25:2 -1
+     (nil))
+(call_insn 11 10 12 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x3]  <function_decl 0478b3c0 printf>) [0 printf S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":25:2 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 12 11 13 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [2 size+0 S4 A32])
+        (const_int 32 [0x20])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":27:12 -1
+     (nil))
+(insn 13 12 14 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (const_int 1024 [0x400])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":29:20 -1
+     (nil))
+(call_insn 14 13 15 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("malloc") [flags 0x43]  <function_decl 047120f0 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":29:20 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 15 14 16 2 (set (reg/f:SI 87)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":29:20 -1
+     (expr_list:REG_NOALIAS (reg/f:SI 87)
+        (nil)))
+(insn 16 15 17 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 output+0 S4 A32])
+        (reg/f:SI 87)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":29:20 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:SI 88)
+        (mem/u/c:SI (symbol_ref:SI ("*__imp___iob") [flags 0x2002]  <var_decl 047a0160 D.2120>) [5  S4 A8])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":31:5 -1
+     (nil))
+(insn 18 17 19 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0  S4 A32])
+        (reg:SI 88)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":31:5 -1
+     (nil))
+(insn 19 18 20 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (const_int 1023 [0x3ff])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":31:5 -1
+     (nil))
+(insn 20 19 21 2 (parallel [
+            (set (reg:SI 89)
+                (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -1032 [0xfffffffffffffbf8])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":31:5 -1
+     (nil))
+(insn 21 20 22 2 (set (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 89)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":31:5 -1
+     (nil))
+(call_insn 22 21 24 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("fgets") [flags 0x43]  <function_decl 0478bf78 fgets>) [0 fgets S1 A8])
+            (const_int 12 [0xc]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":31:5 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                            (const_int 8 [0x8])) [0  S4 A32]))
+                (nil)))))
+(insn 24 22 25 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC1") [flags 0x2]  <var_decl 047a0210 *LC1>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":35:10 -1
+     (nil))
+(insn 25 24 26 2 (parallel [
+            (set (reg:SI 90)
+                (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -1032 [0xfffffffffffffbf8])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":35:10 -1
+     (nil))
+(insn 26 25 27 2 (set (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 90)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":35:10 -1
+     (nil))
+(call_insn/i 27 26 28 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strcspn") [flags 0x43]  <function_decl 046efca8 strcspn>) [0 __builtin_strcspn S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":35:10 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 28 27 29 2 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":35:10 -1
+     (nil))
+(insn 29 28 30 2 (set (mem:QI (plus:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (reg:SI 82 [ _1 ]))
+                (const_int -1032 [0xfffffffffffffbf8])) [0 temp S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":35:30 -1
+     (nil))
+(insn 30 29 31 2 (parallel [
+            (set (reg:SI 91)
+                (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -1032 [0xfffffffffffffbf8])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":36:5 -1
+     (nil))
+(insn 31 30 32 2 (set (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 91)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":36:5 -1
+     (nil))
+(insn 32 31 33 2 (set (reg/f:SI 92)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 output+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":36:5 -1
+     (nil))
+(insn 33 32 34 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 92)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":36:5 -1
+     (nil))
+(call_insn 34 33 35 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("strcpy") [flags 0x43]  <function_decl 046efbb8 strcpy>) [0 __builtin_strcpy S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":36:5 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 35 34 38 2 (set (reg/f:SI 83 [ _12 ])
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [1 output+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":37:9 -1
+     (nil))
+(insn 38 35 42 2 (set (reg/f:SI 84 [ <retval> ])
+        (reg/f:SI 83 [ _12 ])) -1
+     (nil))
+(insn 42 38 43 2 (set (reg/i:SI 0 ax)
+        (reg/f:SI 84 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":38:1 -1
+     (nil))
+(insn 43 42 0 2 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":38:1 -1
+     (nil))
+
+;; Function main (main, funcdef_no=22, decl_uid=2096, cgraph_uid=23, symbol_order=23)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 7 into block 6...
+Merged blocks 6 and 7.
+Merged 6 and 7 without moving.
+Merging block 8 into block 6...
+Merged blocks 6 and 8.
+Merged 6 and 8 without moving.
+Merging block 9 into block 6...
+Merged blocks 6 and 9.
+Merged 6 and 9 without moving.
+Merging block 10 into block 6...
+Merged blocks 6 and 10.
+Merged 6 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 4 NOTE_INSN_DELETED)
+(note 4 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 4 3 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn 3 2 6 2 (call (mem:QI (symbol_ref:SI ("__main") [flags 0x43]) [0  S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":40:12 -1
+     (expr_list:REG_EH_REGION (const_int -2147483648 [0xffffffff80000000])
+        (nil))
+    (nil))
+(insn 6 3 7 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC2") [flags 0x2]  <var_decl 047a0268 *LC2>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":43:21 -1
+     (nil))
+(insn 7 6 8 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC3") [flags 0x2]  <var_decl 047a02c0 *LC3>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":43:21 -1
+     (nil))
+(call_insn 8 7 9 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("fopen") [flags 0x43]  <function_decl 0476a7f8 fopen>) [0 fopen S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":43:21 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 9 8 10 2 (set (reg:SI 82)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":43:21 -1
+     (nil))
+(insn 10 9 11 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 ptrUser+0 S4 A32])
+        (reg:SI 82)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":43:21 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -4 [0xfffffffffffffffc])) [3 ptrUser+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":44:7 -1
+     (nil))
+(jump_insn 12 11 13 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 18)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":44:7 -1
+     (nil)
+ -> 18)
+(note 13 12 14 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 14 13 15 4 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (const_int 1 [0x1])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":45:9 -1
+     (nil))
+(call_insn 15 14 16 4 (call (mem:QI (symbol_ref:SI ("register_interface") [flags 0x43]  <function_decl 047b9b40 register_interface>) [0 register_interface S1 A8])
+        (const_int 4 [0x4])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":45:9 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(jump_insn 16 15 17 4 (set (pc)
+        (label_ref 23)) -1
+     (nil)
+ -> 23)
+(barrier 17 16 18)
+(code_label 18 17 19 5 6 (nil) [1 uses])
+(note 19 18 20 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 5 (set (reg/f:SI 83)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 ptrUser+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":48:9 -1
+     (nil))
+(insn 21 20 22 5 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 83)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":48:9 -1
+     (nil))
+(call_insn 22 21 23 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("load_users") [flags 0x43]  <function_decl 047b95a0 load_users>) [0 load_users S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":48:9 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(code_label 23 22 24 6 7 (nil) [1 uses])
+(note 24 23 25 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 6 (set (reg/f:SI 84)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 ptrUser+0 S4 A32])) -1
+     (nil))
+(insn 26 25 27 6 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [6 __ptr+0 S4 A32])
+        (reg/f:SI 84)) -1
+     (nil))
+(insn 27 26 28 6 (set (reg/f:SI 85)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -24 [0xffffffffffffffe8])) [6 __ptr+0 S4 A32])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(insn 28 27 29 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 85)) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(call_insn 29 28 62 6 (call (mem:QI (symbol_ref:SI ("__mingw_free") [flags 0x43]  <function_decl 0476a528 __mingw_free>) [0 __mingw_free S1 A8])
+        (const_int 4 [0x4])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 62 29 31 6 (const_int 0 [0]) "c:\devtools\mingw\include\stdlib.h":586:1 -1
+     (nil))
+(insn 31 62 32 6 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC2") [flags 0x2]  <var_decl 047a0268 *LC2>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":52:21 -1
+     (nil))
+(insn 32 31 33 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC4") [flags 0x2]  <var_decl 047a0318 *LC4>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":52:21 -1
+     (nil))
+(call_insn 33 32 34 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("fopen") [flags 0x43]  <function_decl 0476a7f8 fopen>) [0 fopen S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":52:21 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 34 33 35 6 (set (reg:SI 86)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":52:21 -1
+     (nil))
+(insn 35 34 36 6 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 ptrBook+0 S4 A32])
+        (reg:SI 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":52:21 -1
+     (nil))
+(insn 36 35 37 6 (set (reg/f:SI 87)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 ptrBook+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":53:5 -1
+     (nil))
+(insn 37 36 38 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 87)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":53:5 -1
+     (nil))
+(call_insn 38 37 39 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("load_books") [flags 0x43]  <function_decl 047b9168 load_books>) [0 load_books S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":53:5 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 39 38 40 6 (set (reg/f:SI 88)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 ptrBook+0 S4 A32])) -1
+     (nil))
+(insn 40 39 41 6 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [6 __ptr+0 S4 A32])
+        (reg/f:SI 88)) -1
+     (nil))
+(insn 41 40 42 6 (set (reg/f:SI 89)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -20 [0xffffffffffffffec])) [6 __ptr+0 S4 A32])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(insn 42 41 43 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 89)) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(call_insn 43 42 63 6 (call (mem:QI (symbol_ref:SI ("__mingw_free") [flags 0x43]  <function_decl 0476a528 __mingw_free>) [0 __mingw_free S1 A8])
+        (const_int 4 [0x4])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 63 43 45 6 (const_int 0 [0]) "c:\devtools\mingw\include\stdlib.h":586:1 -1
+     (nil))
+(insn 45 63 46 6 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC2") [flags 0x2]  <var_decl 047a0268 *LC2>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":56:21 -1
+     (nil))
+(insn 46 45 47 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC5") [flags 0x2]  <var_decl 047a0370 *LC5>)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":56:21 -1
+     (nil))
+(call_insn 47 46 48 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("fopen") [flags 0x43]  <function_decl 0476a7f8 fopen>) [0 fopen S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":56:21 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 48 47 49 6 (set (reg:SI 90)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":56:21 -1
+     (nil))
+(insn 49 48 50 6 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 ptrLoan+0 S4 A32])
+        (reg:SI 90)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":56:21 -1
+     (nil))
+(insn 50 49 51 6 (set (reg/f:SI 91)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 ptrLoan+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":57:5 -1
+     (nil))
+(insn 51 50 52 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 91)) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":57:5 -1
+     (nil))
+(call_insn 52 51 53 6 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("load_loans") [flags 0x43]  <function_decl 047b9960 load_loans>) [0 load_loans S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":57:5 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 53 52 54 6 (set (reg/f:SI 92)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 ptrLoan+0 S4 A32])) -1
+     (nil))
+(insn 54 53 55 6 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [6 __ptr+0 S4 A32])
+        (reg/f:SI 92)) -1
+     (nil))
+(insn 55 54 56 6 (set (reg/f:SI 93)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -16 [0xfffffffffffffff0])) [6 __ptr+0 S4 A32])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(insn 56 55 57 6 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 93)) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(call_insn 57 56 64 6 (call (mem:QI (symbol_ref:SI ("__mingw_free") [flags 0x43]  <function_decl 0476a528 __mingw_free>) [0 __mingw_free S1 A8])
+        (const_int 4 [0x4])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 64 57 59 6 (const_int 0 [0]) "c:\devtools\mingw\include\stdlib.h":586:1 -1
+     (nil))
+(call_insn 59 64 0 6 (call (mem:QI (symbol_ref:SI ("boot_interface") [flags 0x43]  <function_decl 047b9a50 boot_interface>) [0 boot_interface S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 1\main.c":61:5 -1
+     (nil)
+    (nil))
