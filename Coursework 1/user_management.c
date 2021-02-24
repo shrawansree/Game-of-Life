@@ -160,7 +160,6 @@ int register_users(struct User* user, int type){
     user->isAdmin = type;
     usersbase[numUsers].isAdmin = user->isAdmin;
     numUsers++;
-    free(newUser);
     printf("\nSuccessfully Added User!");
     return 0;
 }

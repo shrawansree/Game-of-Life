@@ -263,7 +263,7 @@ void register_interface(int type){
         printf("\n You are the first user. Therefore you will be the admin of the system. ");
 
         do{
-            status = register_users( create_new_user(), 1); //creates a new user with admin type
+            status = register_users( create_new_user(), type); //creates a new user with admin type
         }   while( status == -1);
 
         FILE* ptrWUser = fopen("usersbase.txt","w+");

@@ -43,11 +43,13 @@ void main(){
     FILE* ptrUser = fopen("usersbase.txt","r+");
     if(ptrUser == NULL){
         register_interface(1); //if no previous users are created : create admin on first boot
+        free(ptrUser);
     }
     else{
         load_users(ptrUser);
+        free(ptrUser);
     }
-    free(ptrUser);
+    
 
     FILE* ptrBook = fopen("library.txt","r+");
     load_books(ptrBook); //load books if previously created

@@ -1,3 +1,1 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\library.dir/objects.a
-C:\DevTools\MinGW\bin\ar.exe cr CMakeFiles\library.dir/objects.a @CMakeFiles\library.dir\objects1.rsp
-C:\DevTools\MinGW\bin\gcc.exe -std=c99 -fdump-rtl-expand -g -Wl,--whole-archive CMakeFiles\library.dir/objects.a -Wl,--no-whole-archive -o library.exe -Wl,--out-implib,liblibrary.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\library.dir\linklibs.rsp
+/usr/bin/cc  -std=c99 -g    CMakeFiles/library.dir/main.c.o CMakeFiles/library.dir/user_management.c.o CMakeFiles/library.dir/book_management.c.o CMakeFiles/library.dir/interface_management.c.o CMakeFiles/library.dir/loan_management.c.o  -o library -rdynamic 

@@ -1,3 +1,1 @@
-E:/_Achu documents/UNI/COMP1921/Coursework 1/build/CMakeFiles/edit_cache.dir
-E:/_Achu documents/UNI/COMP1921/Coursework 1/build/CMakeFiles/library.dir
-E:/_Achu documents/UNI/COMP1921/Coursework 1/build/CMakeFiles/rebuild_cache.dir
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/build/CMakeFiles/library.dir
