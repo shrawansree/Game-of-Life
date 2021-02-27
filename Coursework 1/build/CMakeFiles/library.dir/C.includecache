@@ -6,9 +6,17 @@
 
 #IncludeRegexTransform: 
 
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/book_management.c
+library_management.h
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/library_management.h
+
 /home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/book_management.h
 stdio.h
 -
+
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/interface_management.c
+library_management.h
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/library_management.h
 
 /home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/interface_management.h
 stdio.h
@@ -30,11 +38,19 @@ loan_management.h
 interface_management.h
 /home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/interface_management.h
 
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/loan_management.c
+library_management.h
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/library_management.h
+
 /home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/loan_management.h
 stdio.h
 -
 
 /home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/main.c
+library_management.h
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/library_management.h
+
+/home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/user_management.c
 library_management.h
 /home/cserv1_a/elec_msc/el20ss/CODE/el20ss/Coursework 1/library_management.h
 
