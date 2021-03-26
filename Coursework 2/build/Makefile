@@ -187,35 +187,69 @@ GOL/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/build
 .PHONY : GOL/fast
 
+#=============================================================================
+# Target rules for targets named GOL-test
+
+# Build rule for target.
+GOL-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 GOL-test
+.PHONY : GOL-test
+
+# fast build rule for target.
+GOL-test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/build
+.PHONY : GOL-test/fast
+
 # target to build an object file
 Game_interface.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_interface.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_interface.obj
 .PHONY : Game_interface.obj
 
 # target to preprocess a source file
 Game_interface.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_interface.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_interface.i
 .PHONY : Game_interface.i
 
 # target to generate assembly for a file
 Game_interface.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_interface.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_interface.s
 .PHONY : Game_interface.s
 
 # target to build an object file
 Game_logic.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_logic.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_logic.obj
 .PHONY : Game_logic.obj
 
 # target to preprocess a source file
 Game_logic.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_logic.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_logic.i
 .PHONY : Game_logic.i
 
 # target to generate assembly for a file
 Game_logic.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_logic.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_logic.s
 .PHONY : Game_logic.s
+
+# target to build an object file
+Unity/src/unity.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Unity/src/unity.obj
+.PHONY : Unity/src/unity.obj
+
+# target to preprocess a source file
+Unity/src/unity.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Unity/src/unity.i
+.PHONY : Unity/src/unity.i
+
+# target to generate assembly for a file
+Unity/src/unity.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Unity/src/unity.s
+.PHONY : Unity/src/unity.s
 
 # target to build an object file
 main.obj:
@@ -232,6 +266,21 @@ main.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/main.s
 .PHONY : main.s
 
+# target to build an object file
+test_Logic.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/test_Logic.obj
+.PHONY : test_Logic.obj
+
+# target to preprocess a source file
+test_Logic.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/test_Logic.i
+.PHONY : test_Logic.i
+
+# target to generate assembly for a file
+test_Logic.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/test_Logic.s
+.PHONY : test_Logic.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -245,15 +294,22 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... GOL
+	@echo ... GOL-test
 	@echo ... Game_interface.obj
 	@echo ... Game_interface.i
 	@echo ... Game_interface.s
 	@echo ... Game_logic.obj
 	@echo ... Game_logic.i
 	@echo ... Game_logic.s
+	@echo ... Unity/src/unity.obj
+	@echo ... Unity/src/unity.i
+	@echo ... Unity/src/unity.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... test_Logic.obj
+	@echo ... test_Logic.i
+	@echo ... test_Logic.s
 .PHONY : help
 
 

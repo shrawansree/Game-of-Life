@@ -18,13 +18,6 @@ void new_game();
 void continue_game();
     //continues from previously created session
 
-
-const char* is_edge_cell(int row, int col);
-    //function that checks if the cell is an edge cell
-    //returns "ey" : "edge yes" if edge cell, "en" : "edge no" if not edge cell
-    //returns "tr/tl" : "top right/top left" or 
-    //"br/bl" : "bottom right/ bottom left" if special case edge cell (corner cells)
-
 int calculate_cell_status(int row, int col , int current_status);
     //calculates the status of the cell based on its position in the grid
     //and the existence of its neighbour cells
@@ -34,17 +27,16 @@ int calculate_cell_status(int row, int col , int current_status);
 void evolve_cells();
     //calculates the status of each cell in the grid and produces the next generation of cells
 
-
-int check_horizontal(int row, int col, const char* is_edge);
+int check_horizontal(int row, int col);
     //returns the count of horizontal neighbours of a particular cell
 
-int check_vertical(int row, int col, const char* is_edge);
+int check_vertical(int row, int col);
     //returns the count of vertical neighbours of a particular cell
 
-int check_diagonal(int row, int col, const char* is_edge);
+int check_diagonal(int row, int col);
     //returns the count of diagonal neighbours of a particular cell
 
-int check_antidiagonal(int row, int col, const char* is_edge);
+int check_antidiagonal(int row, int col);
     //returns the count of antidiagonal neighbours of a particular cell
 
 int is_game_over();

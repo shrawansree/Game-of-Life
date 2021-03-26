@@ -65,3 +65,55 @@ void show_grid(){
     }
     printf("\n");
 }
+
+int load_status(FILE *filename){
+    //function to read previous game data from a file
+    //returns 0 if successfully read and stored data to program memory
+    //returns -1 if error
+    if(filename == NULL) return -1;
+    else{
+        free(grid);
+
+        fscanf(filename,"\nThe last saved generation :%d",&Game_generation);
+        fscanf(filename,"\nThe last saved env. Rows :%d",&MaxRow);
+        fscanf(filename,"\nThe last saved env. Cols :%d\n",&MaxCol);
+
+        grid = (int**)malloc(MaxRow * sizeof(int*));
+        for_row{
+           grid[row] = (int*)malloc(MaxCol * sizeof(int));
+        }
+
+        for_row{
+            for_col{
+                fscanf(filename,"|%d|",&grid[row][col]);
+            }
+            fscanf(filename,"\n",NULL);
+        }
+
+        fclose(filename);
+        return 0;
+    }
+}
+
+int save_status(FILE *filename){
+    //function to save game data to a file
+    //returns 0 if successfully saved data to file
+    //returns -1 if error
+    if(filename == NULL) return -1;
+    else{
+        fprintf(filename,"\nThe last saved generation :%d",Game_generation);
+        fprintf(filename,"\nThe last saved env. Rows :%d",MaxRow);
+        fprintf(filename,"\nThe last saved env. Cols :%d\n",MaxCol);
+
+        for_row{
+            for_col{
+                fprintf(filename,"|%d|",grid[row][col]);
+            }
+            fprintf(filename,"\n",NULL);
+        }
+
+        fclose(filename);
+        return 0;
+    }
+
+}

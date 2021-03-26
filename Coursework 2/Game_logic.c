@@ -43,68 +43,59 @@ int check_row_col(int row, int col){
     }
 }
 
-const char* is_edge_cell(int row, int col){
-    //function that checks if the cell is an edge cell
-    //returns "ey" : "edge yes" if edge cell, "en" : "edge no" if not edge cell
-    //returns "tr/tl" : "top right/top left" or 
-    //"br/bl" : "bottom right/ bottom left" if special case edge cell (corner cells)
-
-    if(row == 0 || col == 0){
-        if(row == 0 && col == 0) return "tl";
-        else if(row == 0 && col == MaxCol-1) return "tr";
-        else return "ey";
-    }
-    else if( row == MaxRow-1 || col == MaxCol-1){
-        if(row == MaxRow-1 && col == MaxCol-1) return "br";
-        else if(row == MaxRow-1 && col ==0) return "bl";
-        else return "ey";
-    }
-    else return "en";
-
-}
-
-int check_horizontal(int row, int col, const char* is_edge){
+int check_horizontal(int row, int col){
     //returns the count of horizontal neighbours of a particular cell
     int count = 0;
 
-    //if(is_edge == "en"){
-        if( grid[row + 1][col] == 1) count+= 1;
-        if( grid[row - 1][col] == 1) count+= 1;
-        return count;
-    //}
 
+    if( row + 1 < MaxRow){
+        if( grid[row + 1][col] == 1) count+= 1;
+    }
+    if( row - 1 > 0){
+        if( grid[row - 1][col] == 1) count+= 1;
+    }
+        return count;
 }
 
-int check_verticals(int row, int col, const char* is_edge){
+int check_vertical(int row, int col){
     //returns the count of vertical neighbours of a particular cell
     int count = 0;
 
-    //if(is_edge == "en"){
+    if( col + 1 < MaxCol){
         if( grid[row][col + 1] == 1) count+= 1;
+    }
+    if( col - 1 > 0){
         if( grid[row][col - 1] == 1) count+= 1;
+    }
         return count;
-    //}
+
 
 }
 
-int check_diagonal(int row, int col, const char* is_edge){
+int check_diagonal(int row, int col){
     //returns the count of diagonal neighbours of a particular cell
     int count = 0;
 
-    //if(is_edge == "en"){
+    if( row + 1 < MaxRow && col + 1 < MaxCol){
         if( grid[row + 1][col + 1] == 1) count+= 1;
+    }
+    if( row - 1 > 0 && col - 1 > 0){
         if( grid[row - 1][col - 1] == 1) count+= 1;
+    }
         return count;
-    //}
 
 }
 
-int check_antidiagonal(int row, int col, const char* is_edge){
+int check_antidiagonal(int row, int col){
     //returns the count of anti digonal neighbours of a particular cell
     int count = 0;
-    //if(is_edge == "en"){
+
+    if( row + 1 < MaxRow && col - 1 > 0){
         if( grid[row + 1][col - 1] == 1) count+= 1;
+    }
+    if( row - 1 > 0 && col + 1 < MaxCol){
         if( grid[row - 1][col + 1] == 1) count+= 1;
+    }
         return count;
     //}
 }
@@ -115,12 +106,10 @@ int calculate_cell_status(int row, int col , int current_status){
     //returns 0 if cell dies, returns 1 if remains alive or comes alive
     //by reproduction
 
-    const char* is_edge = is_edge_cell(row,col);
-
-    int status_count = check_horizontal(row,col,is_edge)
-                    + check_verticals(row,col,is_edge)
-                +check_diagonal(row,col,is_edge)
-            +check_antidiagonal(row,col,is_edge);
+    int status_count = check_horizontal(row,col)
+                    +check_vertical(row,col)
+                +check_diagonal(row,col)
+            +check_antidiagonal(row,col);
 
     if(status_count <= 1) return 0;
     else if(status_count <= 3){
@@ -167,8 +156,8 @@ void new_game(){
         col = returnInt("Enter width of game grid : ");
     }while(check_row_col(row,col) == -1);
 
-    MaxRow = row;
-    MaxCol = col;
+    MaxRow = col;
+    MaxCol = row;
     
     grid = (int**)malloc(MaxRow * sizeof(int*));
     for_row{
@@ -186,10 +175,9 @@ void continue_game(){
     //continues from previously created session
     //prompt_continue_game();
 
-    FILE *ptr = fopen("saved_state.txt","r+");
-    load_status(ptr);
-    free(ptr);
-
+    FILE *ptrL = fopen("saved_state.txt","r+");
+    load_status(ptrL);
+ 
     show_grid();
 
     return;
@@ -210,5 +198,8 @@ int game_start(int game_type){
         evolve_cells();
         returnString(">>>Press Enter to continue ");
     }
+
+    FILE *ptrS = fopen("saved_state.txt","w+");
+    save_status(ptrS);
 
 }

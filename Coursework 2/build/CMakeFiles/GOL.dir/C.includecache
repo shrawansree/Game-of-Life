@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.c
+Game_main.h
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_main.h
+
 E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.h
 
 E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.c
@@ -25,4 +29,8 @@ Game_logic.h
 E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.h
 Game_interface.h
 E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 2/main.c
+Game_main.h
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_main.h
 
