@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.c
+Game_main.h
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_main.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.h
+
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_main.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+Game_logic.h
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.h
+Game_interface.h
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.h
+

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL.dir\\main.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\main.c\"",
+  "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/main.c"
+},
+{
+  "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL.dir\\Game_logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_logic.c\"",
+  "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.c"
+},
+{
+  "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL.dir\\Game_interface.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_interface.c\"",
+  "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.c"
+}
+]

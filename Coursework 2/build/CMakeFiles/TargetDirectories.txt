@@ -1,0 +1,7 @@
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/rebuild_cache.dir
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/GOL.dir
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/install/local.dir
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/install.dir
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/edit_cache.dir
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/list_install_components.dir
+E:/_Achu documents/UNI/COMP1921/Coursework 2/build/CMakeFiles/install/strip.dir

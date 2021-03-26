@@ -1,0 +1,2779 @@
+
+;; Function printf (printf, funcdef_no=1, decl_uid=1383, cgraph_uid=2, symbol_order=1)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Removing jump 17.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (parallel [
+            (set (reg:SI 86)
+                (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])))
+            (clobber (reg:CC 17 flags))
+        ]) "c:\devtools\mingw\include\stdio.h":424:35 -1
+     (nil))
+(insn 6 5 7 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __local_argv+0 S4 A32])
+        (reg:SI 86)) "c:\devtools\mingw\include\stdio.h":424:35 -1
+     (nil))
+(insn 7 6 8 2 (set (reg/f:SI 82 [ __local_argv.2_1 ])
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 __local_argv+0 S4 A32])) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 8 7 9 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg/f:SI 82 [ __local_argv.2_1 ])) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 9 8 10 2 (set (reg/f:SI 87)
+        (mem/f/c:SI (reg/f:SI 76 virtual-incoming-args) [1 __format+0 S4 A32])) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 10 9 11 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 87)) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(call_insn 11 10 12 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("__mingw_vprintf") [flags 0x43]  <function_decl 06c23708 __mingw_vprintf>) [0 __mingw_vprintf S1 A8])
+            (const_int 8 [0x8]))) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 12 11 13 2 (set (reg/v:SI 83 [ __retval ])
+        (reg:SI 0 ax)) "c:\devtools\mingw\include\stdio.h":425:14 -1
+     (nil))
+(insn 13 12 16 2 (set (reg:SI 84 [ _8 ])
+        (reg/v:SI 83 [ __retval ])) "c:\devtools\mingw\include\stdio.h":427:10 -1
+     (nil))
+(insn 16 13 20 2 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _8 ])) "c:\devtools\mingw\include\stdio.h":427:10 -1
+     (nil))
+(insn 20 16 21 2 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "c:\devtools\mingw\include\stdio.h":428:1 -1
+     (nil))
+(insn 21 20 0 2 (use (reg/i:SI 0 ax)) "c:\devtools\mingw\include\stdio.h":428:1 -1
+     (nil))
+
+;; Function check_row_col (check_row_col, funcdef_no=20, decl_uid=1942, cgraph_uid=21, symbol_order=24)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 43.
+Merging block 11 into block 10...
+Merged blocks 10 and 11.
+Merged 10 and 11 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 2 8 2 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":33:7 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (lt (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 14)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":33:7 -1
+     (nil)
+ -> 14)
+(note 9 8 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 9 13 4 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":33:16 -1
+     (nil))
+(jump_insn 13 12 14 4 (set (pc)
+        (if_then_else (ge (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":33:16 -1
+     (nil)
+ -> 21)
+(code_label 14 13 15 5 4 (nil) [1 uses])
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 5 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC0") [flags 0x2]  <var_decl 06cca898 *LC0>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":34:9 -1
+     (nil))
+(call_insn 17 16 18 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x3]  <function_decl 06c23960 printf>) [0 printf S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":34:9 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 18 17 19 5 (set (reg:SI 84 [ _3 ])
+        (const_int -1 [0xffffffffffffffff])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":35:16 -1
+     (nil))
+(jump_insn 19 18 20 5 (set (pc)
+        (label_ref 40)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":35:16 -1
+     (nil)
+ -> 40)
+(barrier 20 19 21)
+(code_label 21 20 22 6 5 (nil) [1 uses])
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 6 (set (reg:SI 82 [ MaxRow.0_1 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":37:12 -1
+     (nil))
+(insn 24 23 25 6 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (reg:SI 82 [ MaxRow.0_1 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":37:7 -1
+     (nil))
+(jump_insn 25 24 26 6 (set (pc)
+        (if_then_else (gt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 30)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":37:7 -1
+     (nil)
+ -> 30)
+(note 26 25 27 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 27 26 28 7 (set (reg:SI 83 [ MaxCol.1_2 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":37:28 -1
+     (nil))
+(insn 28 27 29 7 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (reg:SI 83 [ MaxCol.1_2 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":37:21 -1
+     (nil))
+(jump_insn 29 28 30 7 (set (pc)
+        (if_then_else (le (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 37)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":37:21 -1
+     (nil)
+ -> 37)
+(code_label 30 29 31 8 7 (nil) [1 uses])
+(note 31 30 32 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 8 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC1") [flags 0x2]  <var_decl 06cca8f0 *LC1>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":38:9 -1
+     (nil))
+(call_insn 33 32 34 8 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x3]  <function_decl 06c23960 printf>) [0 printf S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":38:9 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 34 33 35 8 (set (reg:SI 84 [ _3 ])
+        (const_int -1 [0xffffffffffffffff])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":39:16 -1
+     (nil))
+(jump_insn 35 34 36 8 (set (pc)
+        (label_ref 40)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":39:16 -1
+     (nil)
+ -> 40)
+(barrier 36 35 37)
+(code_label 37 36 38 9 8 (nil) [1 uses])
+(note 38 37 39 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 39 38 40 9 (set (reg:SI 84 [ _3 ])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":42:16 -1
+     (nil))
+(code_label 40 39 41 10 6 (nil) [2 uses])
+(note 41 40 42 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 42 41 46 10 (set (reg:SI 85 [ <retval> ])
+        (reg:SI 84 [ _3 ])) -1
+     (nil))
+(insn 46 42 47 10 (set (reg/i:SI 0 ax)
+        (reg:SI 85 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":44:1 -1
+     (nil))
+(insn 47 46 0 10 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":44:1 -1
+     (nil))
+
+;; Function is_edge_cell (is_edge_cell, funcdef_no=21, decl_uid=1949, cgraph_uid=22, symbol_order=25)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+;; Generating RTL for gimple basic block 13
+
+;; Generating RTL for gimple basic block 14
+
+;; Generating RTL for gimple basic block 15
+
+;; Generating RTL for gimple basic block 16
+
+;; Generating RTL for gimple basic block 17
+
+;; Generating RTL for gimple basic block 18
+
+;; Generating RTL for gimple basic block 19
+
+;; Generating RTL for gimple basic block 20
+
+;; Generating RTL for gimple basic block 21
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 89.
+Merging block 23 into block 22...
+Merged blocks 22 and 23.
+Merged 22 and 23 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":52:7 -1
+     (nil))
+(jump_insn 6 5 7 2 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 10)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":52:7 -1
+     (nil)
+ -> 10)
+(note 7 6 8 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 8 7 9 4 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":52:17 -1
+     (nil))
+(jump_insn 9 8 10 4 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 39)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":52:17 -1
+     (nil)
+ -> 39)
+(code_label 10 9 11 5 10 (nil) [1 uses])
+(note 11 10 12 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 12 11 13 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":53:11 -1
+     (nil))
+(jump_insn 13 12 14 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":53:11 -1
+     (nil)
+ -> 21)
+(note 14 13 15 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 15 14 16 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":53:21 -1
+     (nil))
+(jump_insn 16 15 17 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":53:21 -1
+     (nil)
+ -> 21)
+(note 17 16 18 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 18 17 19 7 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC2") [flags 0x2]  <var_decl 06cca948 *LC2>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":53:41 -1
+     (nil))
+(jump_insn 19 18 20 7 (set (pc)
+        (label_ref 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":53:41 -1
+     (nil)
+ -> 86)
+(barrier 20 19 21)
+(code_label 21 20 22 8 12 (nil) [2 uses])
+(note 22 21 23 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 8 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:16 -1
+     (nil))
+(jump_insn 24 23 25 8 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 34)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:16 -1
+     (nil)
+ -> 34)
+(note 25 24 26 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 26 25 27 9 (set (reg:SI 82 [ MaxCol.3_1 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:42 -1
+     (nil))
+(insn 27 26 28 9 (parallel [
+            (set (reg:SI 83 [ _2 ])
+                (plus:SI (reg:SI 82 [ MaxCol.3_1 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:42 -1
+     (nil))
+(insn 28 27 29 9 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (reg:SI 83 [ _2 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:26 -1
+     (nil))
+(jump_insn 29 28 30 9 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 34)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:26 -1
+     (nil)
+ -> 34)
+(note 30 29 31 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 31 30 32 10 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC3") [flags 0x2]  <var_decl 06cca9a0 *LC3>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:53 -1
+     (nil))
+(jump_insn 32 31 33 10 (set (pc)
+        (label_ref 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":54:53 -1
+     (nil)
+ -> 86)
+(barrier 33 32 34)
+(code_label 34 33 35 11 14 (nil) [2 uses])
+(note 35 34 36 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 36 35 37 11 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC4") [flags 0x2]  <var_decl 06cca9f8 *LC4>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":55:21 -1
+     (nil))
+(jump_insn 37 36 38 11 (set (pc)
+        (label_ref 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":55:21 -1
+     (nil)
+ -> 86)
+(barrier 38 37 39)
+(code_label 39 38 40 12 11 (nil) [1 uses])
+(note 40 39 41 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 12 (set (reg:SI 84 [ MaxRow.4_3 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:27 -1
+     (nil))
+(insn 42 41 43 12 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (plus:SI (reg:SI 84 [ MaxRow.4_3 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:27 -1
+     (nil))
+(insn 43 42 44 12 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (reg:SI 85 [ _4 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:12 -1
+     (nil))
+(jump_insn 44 43 45 12 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 50)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:12 -1
+     (nil)
+ -> 50)
+(note 45 44 46 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 46 45 47 13 (set (reg:SI 86 [ MaxCol.5_5 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:46 -1
+     (nil))
+(insn 47 46 48 13 (parallel [
+            (set (reg:SI 87 [ _6 ])
+                (plus:SI (reg:SI 86 [ MaxCol.5_5 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:46 -1
+     (nil))
+(insn 48 47 49 13 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (reg:SI 87 [ _6 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:30 -1
+     (nil))
+(jump_insn 49 48 50 13 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 83)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":57:30 -1
+     (nil)
+ -> 83)
+(code_label 50 49 51 14 15 (nil) [1 uses])
+(note 51 50 52 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 52 51 53 14 (set (reg:SI 88 [ MaxRow.6_7 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:25 -1
+     (nil))
+(insn 53 52 54 14 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (plus:SI (reg:SI 88 [ MaxRow.6_7 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:25 -1
+     (nil))
+(insn 54 53 55 14 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (reg:SI 89 [ _8 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:11 -1
+     (nil))
+(jump_insn 55 54 56 14 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 65)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:11 -1
+     (nil)
+ -> 65)
+(note 56 55 57 15 [bb 15] NOTE_INSN_BASIC_BLOCK)
+(insn 57 56 58 15 (set (reg:SI 90 [ MaxCol.7_9 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:44 -1
+     (nil))
+(insn 58 57 59 15 (parallel [
+            (set (reg:SI 91 [ _10 ])
+                (plus:SI (reg:SI 90 [ MaxCol.7_9 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:44 -1
+     (nil))
+(insn 59 58 60 15 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (reg:SI 91 [ _10 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:28 -1
+     (nil))
+(jump_insn 60 59 61 15 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 65)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:28 -1
+     (nil)
+ -> 65)
+(note 61 60 62 16 [bb 16] NOTE_INSN_BASIC_BLOCK)
+(insn 62 61 63 16 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC5") [flags 0x2]  <var_decl 06ccaa50 *LC5>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:55 -1
+     (nil))
+(jump_insn 63 62 64 16 (set (pc)
+        (label_ref 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":58:55 -1
+     (nil)
+ -> 86)
+(barrier 64 63 65)
+(code_label 65 64 66 17 17 (nil) [2 uses])
+(note 66 65 67 17 [bb 17] NOTE_INSN_BASIC_BLOCK)
+(insn 67 66 68 17 (set (reg:SI 92 [ MaxRow.8_11 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:30 -1
+     (nil))
+(insn 68 67 69 17 (parallel [
+            (set (reg:SI 93 [ _12 ])
+                (plus:SI (reg:SI 92 [ MaxRow.8_11 ])
+                    (const_int -1 [0xffffffffffffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:30 -1
+     (nil))
+(insn 69 68 70 17 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])
+            (reg:SI 93 [ _12 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:16 -1
+     (nil))
+(jump_insn 70 69 71 17 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 78)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:16 -1
+     (nil)
+ -> 78)
+(note 71 70 72 18 [bb 18] NOTE_INSN_BASIC_BLOCK)
+(insn 72 71 73 18 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 4 [0x4])) [3 col+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:33 -1
+     (nil))
+(jump_insn 73 72 74 18 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 78)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:33 -1
+     (nil)
+ -> 78)
+(note 74 73 75 19 [bb 19] NOTE_INSN_BASIC_BLOCK)
+(insn 75 74 76 19 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC6") [flags 0x2]  <var_decl 06ccaaa8 *LC6>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:52 -1
+     (nil))
+(jump_insn 76 75 77 19 (set (pc)
+        (label_ref 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":59:52 -1
+     (nil)
+ -> 86)
+(barrier 77 76 78)
+(code_label 78 77 79 20 18 (nil) [2 uses])
+(note 79 78 80 20 [bb 20] NOTE_INSN_BASIC_BLOCK)
+(insn 80 79 81 20 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC4") [flags 0x2]  <var_decl 06cca9f8 *LC4>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":60:21 -1
+     (nil))
+(jump_insn 81 80 82 20 (set (pc)
+        (label_ref 86)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":60:21 -1
+     (nil)
+ -> 86)
+(barrier 82 81 83)
+(code_label 83 82 84 21 16 (nil) [1 uses])
+(note 84 83 85 21 [bb 21] NOTE_INSN_BASIC_BLOCK)
+(insn 85 84 86 21 (set (reg/f:SI 94 [ _13 ])
+        (symbol_ref/f:SI ("*LC7") [flags 0x2]  <var_decl 06ccab00 *LC7>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":62:17 -1
+     (nil))
+(code_label 86 85 87 22 13 (nil) [6 uses])
+(note 87 86 88 22 [bb 22] NOTE_INSN_BASIC_BLOCK)
+(insn 88 87 92 22 (set (reg/f:SI 95 [ <retval> ])
+        (reg/f:SI 94 [ _13 ])) -1
+     (nil))
+(insn 92 88 93 22 (set (reg/i:SI 0 ax)
+        (reg/f:SI 95 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":64:1 -1
+     (nil))
+(insn 93 92 0 22 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":64:1 -1
+     (nil))
+
+;; Function check_horizontal (check_horizontal, funcdef_no=22, decl_uid=1958, cgraph_uid=23, symbol_order=26)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+Removing jump 42.
+Merging block 9 into block 7...
+Merged blocks 7 and 9.
+Merged 7 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":68:9 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 82 [ grid.9_1 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:17 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 83 [ row.10_2 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:17 -1
+     (nil))
+(insn 8 7 9 2 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (plus:SI (reg:SI 83 [ row.10_2 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:17 -1
+     (nil))
+(insn 9 8 10 2 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (ashift:SI (reg:SI 84 [ _3 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:17 -1
+     (nil))
+(insn 10 9 11 2 (parallel [
+            (set (reg/f:SI 86 [ _5 ])
+                (plus:SI (reg/f:SI 82 [ grid.9_1 ])
+                    (reg:SI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:17 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 87 [ _6 ])
+        (mem/f:SI (reg/f:SI 86 [ _5 ]) [4 *_5+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:17 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 88 [ col.11_7 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:26 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (ashift:SI (reg:SI 88 [ col.11_7 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:26 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (set (reg/f:SI 90 [ _9 ])
+                (plus:SI (reg/f:SI 87 [ _6 ])
+                    (reg:SI 89 [ _8 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:26 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 91 [ _10 ])
+        (mem:SI (reg/f:SI 90 [ _9 ]) [3 *_9+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:26 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 91 [ _10 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:11 -1
+     (nil))
+(jump_insn 17 16 18 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:11 -1
+     (nil)
+ -> 20)
+(note 18 17 19 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 4 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":71:43 -1
+     (nil))
+(code_label 20 19 21 5 20 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 5 (set (reg/f:SI 92 [ grid.12_11 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:17 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 93 [ row.13_12 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:17 -1
+     (nil))
+(insn 24 23 25 5 (parallel [
+            (set (reg:SI 94 [ _13 ])
+                (plus:SI (reg:SI 93 [ row.13_12 ])
+                    (const_int 1073741823 [0x3fffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:17 -1
+     (nil))
+(insn 25 24 26 5 (parallel [
+            (set (reg:SI 95 [ _14 ])
+                (ashift:SI (reg:SI 94 [ _13 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:17 -1
+     (nil))
+(insn 26 25 27 5 (parallel [
+            (set (reg/f:SI 96 [ _15 ])
+                (plus:SI (reg/f:SI 92 [ grid.12_11 ])
+                    (reg:SI 95 [ _14 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:17 -1
+     (nil))
+(insn 27 26 28 5 (set (reg/f:SI 97 [ _16 ])
+        (mem/f:SI (reg/f:SI 96 [ _15 ]) [4 *_15+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:17 -1
+     (nil))
+(insn 28 27 29 5 (set (reg:SI 98 [ col.14_17 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:26 -1
+     (nil))
+(insn 29 28 30 5 (parallel [
+            (set (reg:SI 99 [ _18 ])
+                (ashift:SI (reg:SI 98 [ col.14_17 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:26 -1
+     (nil))
+(insn 30 29 31 5 (parallel [
+            (set (reg/f:SI 100 [ _19 ])
+                (plus:SI (reg/f:SI 97 [ _16 ])
+                    (reg:SI 99 [ _18 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:26 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:SI 101 [ _20 ])
+        (mem:SI (reg/f:SI 100 [ _19 ]) [3 *_19+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:26 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 101 [ _20 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:11 -1
+     (nil))
+(jump_insn 33 32 34 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 36)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:11 -1
+     (nil)
+ -> 36)
+(note 34 33 35 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 6 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":72:43 -1
+     (nil))
+(code_label 36 35 37 7 21 (nil) [1 uses])
+(note 37 36 38 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 41 7 (set (reg:SI 102 [ _29 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":73:16 -1
+     (nil))
+(insn 41 38 45 7 (set (reg:SI 103 [ <retval> ])
+        (reg:SI 102 [ _29 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":73:16 -1
+     (nil))
+(insn 45 41 46 7 (set (reg/i:SI 0 ax)
+        (reg:SI 103 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":76:1 -1
+     (nil))
+(insn 46 45 0 7 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":76:1 -1
+     (nil))
+
+;; Function check_verticals (check_verticals, funcdef_no=23, decl_uid=2007, cgraph_uid=24, symbol_order=27)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+Removing jump 42.
+Merging block 9 into block 7...
+Merged blocks 7 and 9.
+Merged 7 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":80:9 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 82 [ grid.15_1 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:17 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 83 [ row.16_2 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:17 -1
+     (nil))
+(insn 8 7 9 2 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (ashift:SI (reg:SI 83 [ row.16_2 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:17 -1
+     (nil))
+(insn 9 8 10 2 (parallel [
+            (set (reg/f:SI 85 [ _4 ])
+                (plus:SI (reg/f:SI 82 [ grid.15_1 ])
+                    (reg:SI 84 [ _3 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:17 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 86 [ _5 ])
+        (mem/f:SI (reg/f:SI 85 [ _4 ]) [4 *_4+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:17 -1
+     (nil))
+(insn 11 10 12 2 (set (reg:SI 87 [ col.17_6 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:22 -1
+     (nil))
+(insn 12 11 13 2 (parallel [
+            (set (reg:SI 88 [ _7 ])
+                (plus:SI (reg:SI 87 [ col.17_6 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:22 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (ashift:SI (reg:SI 88 [ _7 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:22 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (set (reg/f:SI 90 [ _9 ])
+                (plus:SI (reg/f:SI 86 [ _5 ])
+                    (reg:SI 89 [ _8 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:22 -1
+     (nil))
+(insn 15 14 16 2 (set (reg:SI 91 [ _10 ])
+        (mem:SI (reg/f:SI 90 [ _9 ]) [3 *_9+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:22 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 91 [ _10 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:11 -1
+     (nil))
+(jump_insn 17 16 18 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 20)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:11 -1
+     (nil)
+ -> 20)
+(note 18 17 19 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 19 18 20 4 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":83:43 -1
+     (nil))
+(code_label 20 19 21 5 24 (nil) [1 uses])
+(note 21 20 22 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 22 21 23 5 (set (reg/f:SI 92 [ grid.18_11 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:17 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 93 [ row.19_12 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:17 -1
+     (nil))
+(insn 24 23 25 5 (parallel [
+            (set (reg:SI 94 [ _13 ])
+                (ashift:SI (reg:SI 93 [ row.19_12 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:17 -1
+     (nil))
+(insn 25 24 26 5 (parallel [
+            (set (reg/f:SI 95 [ _14 ])
+                (plus:SI (reg/f:SI 92 [ grid.18_11 ])
+                    (reg:SI 94 [ _13 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:17 -1
+     (nil))
+(insn 26 25 27 5 (set (reg/f:SI 96 [ _15 ])
+        (mem/f:SI (reg/f:SI 95 [ _14 ]) [4 *_14+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:17 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 97 [ col.20_16 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:22 -1
+     (nil))
+(insn 28 27 29 5 (parallel [
+            (set (reg:SI 98 [ _17 ])
+                (plus:SI (reg:SI 97 [ col.20_16 ])
+                    (const_int 1073741823 [0x3fffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:22 -1
+     (nil))
+(insn 29 28 30 5 (parallel [
+            (set (reg:SI 99 [ _18 ])
+                (ashift:SI (reg:SI 98 [ _17 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:22 -1
+     (nil))
+(insn 30 29 31 5 (parallel [
+            (set (reg/f:SI 100 [ _19 ])
+                (plus:SI (reg/f:SI 96 [ _15 ])
+                    (reg:SI 99 [ _18 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:22 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:SI 101 [ _20 ])
+        (mem:SI (reg/f:SI 100 [ _19 ]) [3 *_19+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:22 -1
+     (nil))
+(insn 32 31 33 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 101 [ _20 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:11 -1
+     (nil))
+(jump_insn 33 32 34 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 36)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:11 -1
+     (nil)
+ -> 36)
+(note 34 33 35 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 36 6 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":84:43 -1
+     (nil))
+(code_label 36 35 37 7 25 (nil) [1 uses])
+(note 37 36 38 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 38 37 41 7 (set (reg:SI 102 [ _29 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":85:16 -1
+     (nil))
+(insn 41 38 45 7 (set (reg:SI 103 [ <retval> ])
+        (reg:SI 102 [ _29 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":85:16 -1
+     (nil))
+(insn 45 41 46 7 (set (reg/i:SI 0 ax)
+        (reg:SI 103 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":88:1 -1
+     (nil))
+(insn 46 45 0 7 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":88:1 -1
+     (nil))
+
+;; Function check_diagonal (check_diagonal, funcdef_no=24, decl_uid=1966, cgraph_uid=25, symbol_order=28)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+Removing jump 44.
+Merging block 9 into block 7...
+Merged blocks 7 and 9.
+Merged 7 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":92:9 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 82 [ grid.21_1 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:17 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 83 [ row.22_2 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:17 -1
+     (nil))
+(insn 8 7 9 2 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (plus:SI (reg:SI 83 [ row.22_2 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:17 -1
+     (nil))
+(insn 9 8 10 2 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (ashift:SI (reg:SI 84 [ _3 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:17 -1
+     (nil))
+(insn 10 9 11 2 (parallel [
+            (set (reg/f:SI 86 [ _5 ])
+                (plus:SI (reg/f:SI 82 [ grid.21_1 ])
+                    (reg:SI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:17 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 87 [ _6 ])
+        (mem/f:SI (reg/f:SI 86 [ _5 ]) [4 *_5+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:17 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 88 [ col.23_7 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:26 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (plus:SI (reg:SI 88 [ col.23_7 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:26 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (set (reg:SI 90 [ _9 ])
+                (ashift:SI (reg:SI 89 [ _8 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:26 -1
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (set (reg/f:SI 91 [ _10 ])
+                (plus:SI (reg/f:SI 87 [ _6 ])
+                    (reg:SI 90 [ _9 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:26 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 92 [ _11 ])
+        (mem:SI (reg/f:SI 91 [ _10 ]) [3 *_10+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:26 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 92 [ _11 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:11 -1
+     (nil))
+(jump_insn 18 17 19 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:11 -1
+     (nil)
+ -> 21)
+(note 19 18 20 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 4 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":95:47 -1
+     (nil))
+(code_label 21 20 22 5 28 (nil) [1 uses])
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg/f:SI 93 [ grid.24_12 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:17 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 94 [ row.25_13 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:17 -1
+     (nil))
+(insn 25 24 26 5 (parallel [
+            (set (reg:SI 95 [ _14 ])
+                (plus:SI (reg:SI 94 [ row.25_13 ])
+                    (const_int 1073741823 [0x3fffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:17 -1
+     (nil))
+(insn 26 25 27 5 (parallel [
+            (set (reg:SI 96 [ _15 ])
+                (ashift:SI (reg:SI 95 [ _14 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:17 -1
+     (nil))
+(insn 27 26 28 5 (parallel [
+            (set (reg/f:SI 97 [ _16 ])
+                (plus:SI (reg/f:SI 93 [ grid.24_12 ])
+                    (reg:SI 96 [ _15 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:17 -1
+     (nil))
+(insn 28 27 29 5 (set (reg/f:SI 98 [ _17 ])
+        (mem/f:SI (reg/f:SI 97 [ _16 ]) [4 *_16+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:17 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 99 [ col.26_18 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:26 -1
+     (nil))
+(insn 30 29 31 5 (parallel [
+            (set (reg:SI 100 [ _19 ])
+                (plus:SI (reg:SI 99 [ col.26_18 ])
+                    (const_int 1073741823 [0x3fffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:26 -1
+     (nil))
+(insn 31 30 32 5 (parallel [
+            (set (reg:SI 101 [ _20 ])
+                (ashift:SI (reg:SI 100 [ _19 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:26 -1
+     (nil))
+(insn 32 31 33 5 (parallel [
+            (set (reg/f:SI 102 [ _21 ])
+                (plus:SI (reg/f:SI 98 [ _17 ])
+                    (reg:SI 101 [ _20 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:26 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 103 [ _22 ])
+        (mem:SI (reg/f:SI 102 [ _21 ]) [3 *_21+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:26 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 103 [ _22 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:11 -1
+     (nil))
+(jump_insn 35 34 36 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:11 -1
+     (nil)
+ -> 38)
+(note 36 35 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":96:47 -1
+     (nil))
+(code_label 38 37 39 7 29 (nil) [1 uses])
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 43 7 (set (reg:SI 104 [ _31 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":97:16 -1
+     (nil))
+(insn 43 40 47 7 (set (reg:SI 105 [ <retval> ])
+        (reg:SI 104 [ _31 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":97:16 -1
+     (nil))
+(insn 47 43 48 7 (set (reg/i:SI 0 ax)
+        (reg:SI 105 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":100:1 -1
+     (nil))
+(insn 48 47 0 7 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":100:1 -1
+     (nil))
+
+;; Function check_antidiagonal (check_antidiagonal, funcdef_no=25, decl_uid=1970, cgraph_uid=26, symbol_order=29)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+Removing jump 44.
+Merging block 9 into block 7...
+Merged blocks 7 and 9.
+Merged 7 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":104:9 -1
+     (nil))
+(insn 6 5 7 2 (set (reg/f:SI 82 [ grid.27_1 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:17 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 83 [ row.28_2 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:17 -1
+     (nil))
+(insn 8 7 9 2 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (plus:SI (reg:SI 83 [ row.28_2 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:17 -1
+     (nil))
+(insn 9 8 10 2 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (ashift:SI (reg:SI 84 [ _3 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:17 -1
+     (nil))
+(insn 10 9 11 2 (parallel [
+            (set (reg/f:SI 86 [ _5 ])
+                (plus:SI (reg/f:SI 82 [ grid.27_1 ])
+                    (reg:SI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:17 -1
+     (nil))
+(insn 11 10 12 2 (set (reg/f:SI 87 [ _6 ])
+        (mem/f:SI (reg/f:SI 86 [ _5 ]) [4 *_5+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:17 -1
+     (nil))
+(insn 12 11 13 2 (set (reg:SI 88 [ col.29_7 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:26 -1
+     (nil))
+(insn 13 12 14 2 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (plus:SI (reg:SI 88 [ col.29_7 ])
+                    (const_int 1073741823 [0x3fffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:26 -1
+     (nil))
+(insn 14 13 15 2 (parallel [
+            (set (reg:SI 90 [ _9 ])
+                (ashift:SI (reg:SI 89 [ _8 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:26 -1
+     (nil))
+(insn 15 14 16 2 (parallel [
+            (set (reg/f:SI 91 [ _10 ])
+                (plus:SI (reg/f:SI 87 [ _6 ])
+                    (reg:SI 90 [ _9 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:26 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 92 [ _11 ])
+        (mem:SI (reg/f:SI 91 [ _10 ]) [3 *_10+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:26 -1
+     (nil))
+(insn 17 16 18 2 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 92 [ _11 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:11 -1
+     (nil))
+(jump_insn 18 17 19 2 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:11 -1
+     (nil)
+ -> 21)
+(note 19 18 20 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 20 19 21 4 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":106:47 -1
+     (nil))
+(code_label 21 20 22 5 32 (nil) [1 uses])
+(note 22 21 23 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 5 (set (reg/f:SI 93 [ grid.30_12 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:17 -1
+     (nil))
+(insn 24 23 25 5 (set (reg:SI 94 [ row.31_13 ])
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:17 -1
+     (nil))
+(insn 25 24 26 5 (parallel [
+            (set (reg:SI 95 [ _14 ])
+                (plus:SI (reg:SI 94 [ row.31_13 ])
+                    (const_int 1073741823 [0x3fffffff])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:17 -1
+     (nil))
+(insn 26 25 27 5 (parallel [
+            (set (reg:SI 96 [ _15 ])
+                (ashift:SI (reg:SI 95 [ _14 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:17 -1
+     (nil))
+(insn 27 26 28 5 (parallel [
+            (set (reg/f:SI 97 [ _16 ])
+                (plus:SI (reg/f:SI 93 [ grid.30_12 ])
+                    (reg:SI 96 [ _15 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:17 -1
+     (nil))
+(insn 28 27 29 5 (set (reg/f:SI 98 [ _17 ])
+        (mem/f:SI (reg/f:SI 97 [ _16 ]) [4 *_16+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:17 -1
+     (nil))
+(insn 29 28 30 5 (set (reg:SI 99 [ col.32_18 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:26 -1
+     (nil))
+(insn 30 29 31 5 (parallel [
+            (set (reg:SI 100 [ _19 ])
+                (plus:SI (reg:SI 99 [ col.32_18 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:26 -1
+     (nil))
+(insn 31 30 32 5 (parallel [
+            (set (reg:SI 101 [ _20 ])
+                (ashift:SI (reg:SI 100 [ _19 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:26 -1
+     (nil))
+(insn 32 31 33 5 (parallel [
+            (set (reg/f:SI 102 [ _21 ])
+                (plus:SI (reg/f:SI 98 [ _17 ])
+                    (reg:SI 101 [ _20 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:26 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 103 [ _22 ])
+        (mem:SI (reg/f:SI 102 [ _21 ]) [3 *_21+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:26 -1
+     (nil))
+(insn 34 33 35 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 103 [ _22 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:11 -1
+     (nil))
+(jump_insn 35 34 36 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 38)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:11 -1
+     (nil)
+ -> 38)
+(note 36 35 37 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 37 36 38 6 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":107:47 -1
+     (nil))
+(code_label 38 37 39 7 33 (nil) [1 uses])
+(note 39 38 40 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 43 7 (set (reg:SI 104 [ _31 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 count+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":108:16 -1
+     (nil))
+(insn 43 40 47 7 (set (reg:SI 105 [ <retval> ])
+        (reg:SI 104 [ _31 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":108:16 -1
+     (nil))
+(insn 47 43 48 7 (set (reg/i:SI 0 ax)
+        (reg:SI 105 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":110:1 -1
+     (nil))
+(insn 48 47 0 7 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":110:1 -1
+     (nil))
+
+;; Function calculate_cell_status (calculate_cell_status, funcdef_no=26, decl_uid=1953, cgraph_uid=27, symbol_order=30)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 83.
+Merging block 12 into block 11...
+Merged blocks 11 and 12.
+Merged 11 and 12 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:SI 90)
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil))
+(insn 6 5 7 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 90)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil))
+(insn 7 6 8 2 (set (reg:SI 91)
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil))
+(insn 8 7 9 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 91)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil))
+(call_insn 9 8 10 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("is_edge_cell") [flags 0x3]  <function_decl 06c6a0f0 is_edge_cell>) [0 is_edge_cell S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 10 9 11 2 (set (reg:SI 92)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil))
+(insn 11 10 12 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 is_edge+0 S4 A32])
+        (reg:SI 92)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":118:27 -1
+     (nil))
+(insn 12 11 13 2 (set (reg/f:SI 93)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 is_edge+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(insn 13 12 14 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0  S4 A32])
+        (reg/f:SI 93)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(insn 14 13 15 2 (set (reg:SI 94)
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(insn 15 14 16 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 94)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(insn 16 15 17 2 (set (reg:SI 95)
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(insn 17 16 18 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 95)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(call_insn 18 17 19 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("check_horizontal") [flags 0x3]  <function_decl 06c6a258 check_horizontal>) [0 check_horizontal S1 A8])
+            (const_int 12 [0xc]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                            (const_int 8 [0x8])) [0  S4 A32]))
+                (nil)))))
+(insn 19 18 20 2 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:24 -1
+     (nil))
+(insn 20 19 21 2 (set (reg/f:SI 96)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 is_edge+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(insn 21 20 22 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0  S4 A32])
+        (reg/f:SI 96)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(insn 22 21 23 2 (set (reg:SI 97)
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(insn 23 22 24 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 97)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(insn 24 23 25 2 (set (reg:SI 98)
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(insn 25 24 26 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 98)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(call_insn 26 25 27 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("check_verticals") [flags 0x3]  <function_decl 06c6a8e8 check_verticals>) [0 check_verticals S1 A8])
+            (const_int 12 [0xc]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                            (const_int 8 [0x8])) [0  S4 A32]))
+                (nil)))))
+(insn 27 26 28 2 (set (reg:SI 83 [ _2 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:23 -1
+     (nil))
+(insn 28 27 29 2 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (plus:SI (reg:SI 82 [ _1 ])
+                    (reg:SI 83 [ _2 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":121:21 -1
+     (nil))
+(insn 29 28 30 2 (set (reg/f:SI 99)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 is_edge+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(insn 30 29 31 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0  S4 A32])
+        (reg/f:SI 99)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(insn 31 30 32 2 (set (reg:SI 100)
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(insn 32 31 33 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 100)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(insn 33 32 34 2 (set (reg:SI 101)
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(insn 34 33 35 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 101)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(call_insn 35 34 36 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("check_diagonal") [flags 0x3]  <function_decl 06c6a348 check_diagonal>) [0 check_diagonal S1 A8])
+            (const_int 12 [0xc]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                            (const_int 8 [0x8])) [0  S4 A32]))
+                (nil)))))
+(insn 36 35 37 2 (set (reg:SI 85 [ _4 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:18 -1
+     (nil))
+(insn 37 36 38 2 (parallel [
+            (set (reg:SI 86 [ _5 ])
+                (plus:SI (reg:SI 84 [ _3 ])
+                    (reg:SI 85 [ _4 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":122:17 -1
+     (nil))
+(insn 38 37 39 2 (set (reg/f:SI 102)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [1 is_edge+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(insn 39 38 40 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0  S4 A32])
+        (reg/f:SI 102)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(insn 40 39 41 2 (set (reg:SI 103)
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 4 [0x4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(insn 41 40 42 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 103)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(insn 42 41 43 2 (set (reg:SI 104)
+        (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(insn 43 42 44 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 104)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(call_insn 44 43 45 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("check_antidiagonal") [flags 0x3]  <function_decl 06c6a3c0 check_antidiagonal>) [0 check_antidiagonal S1 A8])
+            (const_int 12 [0xc]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                            (const_int 8 [0x8])) [0  S4 A32]))
+                (nil)))))
+(insn 45 44 46 2 (set (reg:SI 87 [ _6 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":123:14 -1
+     (nil))
+(insn 46 45 47 2 (parallel [
+            (set (reg:SI 105)
+                (plus:SI (reg:SI 86 [ _5 ])
+                    (reg:SI 87 [ _6 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:9 -1
+     (nil))
+(insn 47 46 50 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 status_count+0 S4 A32])
+        (reg:SI 105)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":120:9 -1
+     (nil))
+(insn 50 47 51 2 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [3 status_count+0 S4 A32])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":125:7 -1
+     (nil))
+(jump_insn 51 50 52 2 (set (pc)
+        (if_then_else (gt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 56)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":125:7 -1
+     (nil)
+ -> 56)
+(note 52 51 53 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 53 52 54 4 (set (reg:SI 88 [ _7 ])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":125:34 -1
+     (nil))
+(jump_insn 54 53 55 4 (set (pc)
+        (label_ref 80)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":125:34 -1
+     (nil)
+ -> 80)
+(barrier 55 54 56)
+(code_label 56 55 57 5 36 (nil) [1 uses])
+(note 57 56 60 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 60 57 61 5 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [3 status_count+0 S4 A32])
+            (const_int 3 [0x3]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":126:12 -1
+     (nil))
+(jump_insn 61 60 62 5 (set (pc)
+        (if_then_else (gt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 77)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":126:12 -1
+     (nil)
+ -> 77)
+(note 62 61 63 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 63 62 64 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [3 status_count+0 S4 A32])
+            (const_int 3 [0x3]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":127:11 -1
+     (nil))
+(jump_insn 64 63 65 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 72)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":127:11 -1
+     (nil)
+ -> 72)
+(note 65 64 66 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 66 65 67 7 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                    (const_int 8 [0x8])) [3 current_status+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":127:30 -1
+     (nil))
+(jump_insn 67 66 68 7 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 72)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":127:30 -1
+     (nil)
+ -> 72)
+(note 68 67 69 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 69 68 70 8 (set (reg:SI 88 [ _7 ])
+        (const_int 1 [0x1])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":127:61 -1
+     (nil))
+(jump_insn 70 69 71 8 (set (pc)
+        (label_ref 80)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":127:61 -1
+     (nil)
+ -> 80)
+(barrier 71 70 72)
+(code_label 72 71 73 9 39 (nil) [2 uses])
+(note 73 72 74 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 74 73 75 9 (set (reg:SI 88 [ _7 ])
+        (mem/c:SI (plus:SI (reg/f:SI 76 virtual-incoming-args)
+                (const_int 8 [0x8])) [3 current_status+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":128:21 -1
+     (nil))
+(jump_insn 75 74 76 9 (set (pc)
+        (label_ref 80)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":128:21 -1
+     (nil)
+ -> 80)
+(barrier 76 75 77)
+(code_label 77 76 78 10 38 (nil) [1 uses])
+(note 78 77 79 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 79 78 80 10 (set (reg:SI 88 [ _7 ])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":130:17 -1
+     (nil))
+(code_label 80 79 81 11 37 (nil) [3 uses])
+(note 81 80 82 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 82 81 86 11 (set (reg:SI 89 [ <retval> ])
+        (reg:SI 88 [ _7 ])) -1
+     (nil))
+(insn 86 82 87 11 (set (reg/i:SI 0 ax)
+        (reg:SI 89 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":132:1 -1
+     (nil))
+(insn 87 86 0 11 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":132:1 -1
+     (nil))
+
+;; Function evolve_cells (evolve_cells, funcdef_no=27, decl_uid=1954, cgraph_uid=28, symbol_order=31)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 10 into block 9...
+Merged blocks 9 and 10.
+Merged 9 and 10 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(jump_insn 6 5 7 2 (set (pc)
+        (label_ref 47)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil)
+ -> 47)
+(barrier 7 6 50)
+(code_label 50 7 8 4 44 (nil) [1 uses])
+(note 8 50 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(jump_insn 10 9 11 4 (set (pc)
+        (label_ref 39)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil)
+ -> 39)
+(barrier 11 10 42)
+(code_label 42 11 12 5 43 (nil) [1 uses])
+(note 12 42 13 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 13 12 14 5 (set (reg/f:SI 82 [ grid.33_1 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:63 -1
+     (nil))
+(insn 14 13 15 5 (set (reg:SI 83 [ row.34_2 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:63 -1
+     (nil))
+(insn 15 14 16 5 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (ashift:SI (reg:SI 83 [ row.34_2 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:63 -1
+     (nil))
+(insn 16 15 17 5 (parallel [
+            (set (reg/f:SI 85 [ _4 ])
+                (plus:SI (reg/f:SI 82 [ grid.33_1 ])
+                    (reg:SI 84 [ _3 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:63 -1
+     (nil))
+(insn 17 16 18 5 (set (reg/f:SI 86 [ _5 ])
+        (mem/f:SI (reg/f:SI 85 [ _4 ]) [4 *_4+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:63 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 87 [ col.35_6 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:68 -1
+     (nil))
+(insn 19 18 20 5 (parallel [
+            (set (reg:SI 88 [ _7 ])
+                (ashift:SI (reg:SI 87 [ col.35_6 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:68 -1
+     (nil))
+(insn 20 19 21 5 (parallel [
+            (set (reg/f:SI 89 [ _8 ])
+                (plus:SI (reg/f:SI 86 [ _5 ])
+                    (reg:SI 88 [ _7 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:68 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 90 [ _9 ])
+        (mem:SI (reg/f:SI 89 [ _8 ]) [3 *_8+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(insn 22 21 23 5 (set (reg/f:SI 91 [ grid.36_10 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:13 -1
+     (nil))
+(insn 23 22 24 5 (set (reg:SI 92 [ row.37_11 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:13 -1
+     (nil))
+(insn 24 23 25 5 (parallel [
+            (set (reg:SI 93 [ _12 ])
+                (ashift:SI (reg:SI 92 [ row.37_11 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:13 -1
+     (nil))
+(insn 25 24 26 5 (parallel [
+            (set (reg/f:SI 94 [ _13 ])
+                (plus:SI (reg/f:SI 91 [ grid.36_10 ])
+                    (reg:SI 93 [ _12 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:13 -1
+     (nil))
+(insn 26 25 27 5 (set (reg/f:SI 95 [ _14 ])
+        (mem/f:SI (reg/f:SI 94 [ _13 ]) [4 *_13+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:13 -1
+     (nil))
+(insn 27 26 28 5 (set (reg:SI 96 [ col.38_15 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:18 -1
+     (nil))
+(insn 28 27 29 5 (parallel [
+            (set (reg:SI 97 [ _16 ])
+                (ashift:SI (reg:SI 96 [ col.38_15 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:18 -1
+     (nil))
+(insn 29 28 30 5 (parallel [
+            (set (reg/f:SI 98 [ _17 ])
+                (plus:SI (reg/f:SI 95 [ _14 ])
+                    (reg:SI 97 [ _16 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:18 -1
+     (nil))
+(insn 30 29 31 5 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 8 [0x8])) [0  S4 A32])
+        (reg:SI 90 [ _9 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(insn 31 30 32 5 (set (reg:SI 104)
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(insn 32 31 33 5 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 104)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(insn 33 32 34 5 (set (reg:SI 105)
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(insn 34 33 35 5 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 105)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(call_insn 35 34 36 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("calculate_cell_status") [flags 0x3]  <function_decl 06c6a168 calculate_cell_status>) [0 calculate_cell_status S1 A8])
+            (const_int 12 [0xc]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                            (const_int 8 [0x8])) [0  S4 A32]))
+                (nil)))))
+(insn 36 35 37 5 (set (reg:SI 99 [ _18 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:26 -1
+     (nil))
+(insn 37 36 38 5 (set (mem:SI (reg/f:SI 98 [ _17 ]) [3 *_17+0 S4 A32])
+        (reg:SI 99 [ _18 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":137:24 -1
+     (nil))
+(insn 38 37 39 5 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(code_label 39 38 40 6 42 (nil) [1 uses])
+(note 40 39 41 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 43 6 (set (reg:SI 100 [ MaxCol.39_19 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(insn 43 41 44 6 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])
+            (reg:SI 100 [ MaxCol.39_19 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(jump_insn 44 43 45 6 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 42)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil)
+ -> 42)
+(note 45 44 46 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 46 45 47 7 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(code_label 47 46 48 8 41 (nil) [1 uses])
+(note 48 47 49 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 49 48 51 8 (set (reg:SI 101 [ MaxRow.40_20 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(insn 51 49 52 8 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+            (reg:SI 101 [ MaxRow.40_20 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil))
+(jump_insn 52 51 53 8 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 50)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":136:5 -1
+     (nil)
+ -> 50)
+(note 53 52 54 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 55 9 (set (reg:SI 102 [ Game_generation.41_21 ])
+        (mem/c:SI (symbol_ref:SI ("Game_generation")  <var_decl 06be9ec8 Game_generation>) [3 Game_generation+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":140:20 -1
+     (nil))
+(insn 55 54 56 9 (parallel [
+            (set (reg:SI 103 [ _22 ])
+                (plus:SI (reg:SI 102 [ Game_generation.41_21 ])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":140:20 -1
+     (nil))
+(insn 56 55 57 9 (set (mem/c:SI (symbol_ref:SI ("Game_generation")  <var_decl 06be9ec8 Game_generation>) [3 Game_generation+0 S4 A32])
+        (reg:SI 103 [ _22 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":140:20 -1
+     (nil))
+(call_insn 57 56 0 9 (call (mem:QI (symbol_ref:SI ("show_grid") [flags 0x43]  <function_decl 06c6a618 show_grid>) [0 show_grid S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":142:5 -1
+     (nil)
+    (nil))
+
+;; Function is_game_over (is_game_over, funcdef_no=28, decl_uid=1971, cgraph_uid=29, symbol_order=32)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 55.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(jump_insn 6 5 7 2 (set (pc)
+        (label_ref 41)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil)
+ -> 41)
+(barrier 7 6 44)
+(code_label 44 7 8 4 51 (nil) [1 uses])
+(note 8 44 9 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 9 8 10 4 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(jump_insn 10 9 11 4 (set (pc)
+        (label_ref 33)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil)
+ -> 33)
+(barrier 11 10 36)
+(code_label 36 11 12 5 50 (nil) [1 uses])
+(note 12 36 13 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 13 12 14 5 (set (reg/f:SI 82 [ grid.42_1 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:16 -1
+     (nil))
+(insn 14 13 15 5 (set (reg:SI 83 [ row.43_2 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:16 -1
+     (nil))
+(insn 15 14 16 5 (parallel [
+            (set (reg:SI 84 [ _3 ])
+                (ashift:SI (reg:SI 83 [ row.43_2 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:16 -1
+     (nil))
+(insn 16 15 17 5 (parallel [
+            (set (reg/f:SI 85 [ _4 ])
+                (plus:SI (reg/f:SI 82 [ grid.42_1 ])
+                    (reg:SI 84 [ _3 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:16 -1
+     (nil))
+(insn 17 16 18 5 (set (reg/f:SI 86 [ _5 ])
+        (mem/f:SI (reg/f:SI 85 [ _4 ]) [4 *_4+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:16 -1
+     (nil))
+(insn 18 17 19 5 (set (reg:SI 87 [ col.44_6 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:21 -1
+     (nil))
+(insn 19 18 20 5 (parallel [
+            (set (reg:SI 88 [ _7 ])
+                (ashift:SI (reg:SI 87 [ col.44_6 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:21 -1
+     (nil))
+(insn 20 19 21 5 (parallel [
+            (set (reg/f:SI 89 [ _8 ])
+                (plus:SI (reg/f:SI 86 [ _5 ])
+                    (reg:SI 88 [ _7 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:21 -1
+     (nil))
+(insn 21 20 22 5 (set (reg:SI 90 [ _9 ])
+        (mem:SI (reg/f:SI 89 [ _8 ]) [3 *_8+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:21 -1
+     (nil))
+(insn 22 21 23 5 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 90 [ _9 ])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:11 -1
+     (nil))
+(jump_insn 23 22 24 5 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 28)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":150:11 -1
+     (nil)
+ -> 28)
+(note 24 23 25 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 6 (set (reg:SI 93 [ _13 ])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":151:20 -1
+     (nil))
+(jump_insn 26 25 27 6 (set (pc)
+        (label_ref 52)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":151:20 -1
+     (nil)
+ -> 52)
+(barrier 27 26 28)
+(code_label 28 27 29 7 48 (nil) [1 uses])
+(note 29 28 30 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 30 29 31 7 (set (reg:SI 93 [ _13 ])
+        (const_int 1 [0x1])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":154:20 -1
+     (nil))
+(jump_insn 31 30 32 7 (set (pc)
+        (label_ref 52)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":154:20 -1
+     (nil)
+ -> 52)
+(barrier 32 31 33)
+(code_label 33 32 34 8 47 (nil) [1 uses])
+(note 34 33 35 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(insn 35 34 37 8 (set (reg:SI 91 [ MaxCol.45_10 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(insn 37 35 38 8 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -8 [0xfffffffffffffff8])) [3 col+0 S4 A32])
+            (reg:SI 91 [ MaxCol.45_10 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(jump_insn 38 37 39 8 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 36)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil)
+ -> 36)
+(note 39 38 40 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 40 39 41 9 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(code_label 41 40 42 10 46 (nil) [1 uses])
+(note 42 41 43 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(insn 43 42 45 10 (set (reg:SI 92 [ MaxRow.46_11 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(insn 45 43 46 10 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+            (reg:SI 92 [ MaxRow.46_11 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil))
+(jump_insn 46 45 47 10 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 44)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":149:5 -1
+     (nil)
+ -> 44)
+(note 47 46 48 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(insn 48 47 49 11 (clobber (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":157:1 -1
+     (nil))
+(insn 49 48 50 11 (clobber (reg:SI 94 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":157:1 -1
+     (nil))
+(jump_insn 50 49 51 11 (set (pc)
+        (label_ref 57)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":157:1 -1
+     (nil)
+ -> 57)
+(barrier 51 50 52)
+(code_label 52 51 53 12 49 (nil) [2 uses])
+(note 53 52 54 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 57 12 (set (reg:SI 94 [ <retval> ])
+        (reg:SI 93 [ _13 ])) -1
+     (nil))
+(code_label 57 54 60 13 45 (nil) [1 uses])
+(note 60 57 58 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 58 60 59 13 (set (reg/i:SI 0 ax)
+        (reg:SI 94 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":157:1 -1
+     (nil))
+(insn 59 58 0 13 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":157:1 -1
+     (nil))
+
+;; Function new_game (new_game, funcdef_no=29, decl_uid=1945, cgraph_uid=30, symbol_order=33)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+
+try_optimize_cfg iteration 1
+
+Merging block 8 into block 7...
+Merged blocks 7 and 8.
+Merged 7 and 8 without moving.
+Merging block 9 into block 7...
+Merged blocks 7 and 9.
+Merged 7 and 9 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 21 2 NOTE_INSN_FUNCTION_BEG)
+(code_label 21 2 4 3 54 (nil) [1 uses])
+(note 4 21 5 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 5 4 6 3 (set (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])
+        (const_int 9999 [0x270f])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":164:16 -1
+     (nil))
+(insn 6 5 7 3 (set (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])
+        (const_int 9999 [0x270f])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":165:16 -1
+     (nil))
+(insn 7 6 8 3 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC8") [flags 0x2]  <var_decl 06ccabb0 *LC8>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":166:15 -1
+     (nil))
+(call_insn 8 7 9 3 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("returnInt") [flags 0x43]  <function_decl 06c6a528 returnInt>) [0 returnInt S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":166:15 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 9 8 10 3 (set (reg:SI 96)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":166:15 -1
+     (nil))
+(insn 10 9 11 3 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 row+0 S4 A32])
+        (reg:SI 96)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":166:15 -1
+     (nil))
+(insn 11 10 12 3 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC9") [flags 0x2]  <var_decl 06ccac08 *LC9>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":167:15 -1
+     (nil))
+(call_insn 12 11 13 3 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("returnInt") [flags 0x43]  <function_decl 06c6a528 returnInt>) [0 returnInt S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":167:15 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 13 12 14 3 (set (reg:SI 97)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":167:15 -1
+     (nil))
+(insn 14 13 15 3 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 col+0 S4 A32])
+        (reg:SI 97)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":167:15 -1
+     (nil))
+(insn 15 14 16 3 (set (reg:SI 98)
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:12 -1
+     (nil))
+(insn 16 15 17 3 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (reg:SI 98)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:12 -1
+     (nil))
+(insn 17 16 18 3 (set (reg:SI 99)
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:12 -1
+     (nil))
+(insn 18 17 19 3 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 99)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:12 -1
+     (nil))
+(call_insn 19 18 20 3 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("check_row_col") [flags 0x3]  <function_decl 06c51e10 check_row_col>) [0 check_row_col S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:12 -1
+     (nil)
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 20 19 22 3 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:12 -1
+     (nil))
+(insn 22 20 23 3 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 82 [ _1 ])
+            (const_int -1 [0xffffffffffffffff]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:5 -1
+     (nil))
+(jump_insn 23 22 24 3 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":168:5 -1
+     (nil)
+ -> 21)
+(note 24 23 25 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 4 (set (reg:SI 100)
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":170:12 -1
+     (nil))
+(insn 26 25 27 4 (set (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])
+        (reg:SI 100)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":170:12 -1
+     (nil))
+(insn 27 26 28 4 (set (reg:SI 101)
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -12 [0xfffffffffffffff4])) [3 col+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":171:12 -1
+     (nil))
+(insn 28 27 29 4 (set (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])
+        (reg:SI 101)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":171:12 -1
+     (nil))
+(insn 29 28 30 4 (set (reg:SI 83 [ MaxRow.47_2 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (nil))
+(insn 30 29 31 4 (set (reg:SI 84 [ MaxRow.48_3 ])
+        (reg:SI 83 [ MaxRow.47_2 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (nil))
+(insn 31 30 32 4 (parallel [
+            (set (reg:SI 85 [ _4 ])
+                (ashift:SI (reg:SI 84 [ MaxRow.48_3 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (nil))
+(insn 32 31 33 4 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 85 [ _4 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (nil))
+(call_insn 33 32 34 4 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("malloc") [flags 0x43]  <function_decl 06bd20f0 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 34 33 35 4 (set (reg/f:SI 102)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (expr_list:REG_NOALIAS (reg/f:SI 102)
+        (nil)))
+(insn 35 34 36 4 (set (reg/f:SI 86 [ _5 ])
+        (reg/f:SI 102)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:19 -1
+     (nil))
+(insn 36 35 37 4 (set (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])
+        (reg/f:SI 86 [ _5 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":173:10 -1
+     (nil))
+(insn 37 36 38 4 (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":174:5 -1
+     (nil))
+(jump_insn 38 37 39 4 (set (pc)
+        (label_ref 54)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":174:5 -1
+     (nil)
+ -> 54)
+(barrier 39 38 57)
+(code_label 57 39 40 5 56 (nil) [1 uses])
+(note 40 57 41 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 41 40 42 5 (set (reg:SI 87 [ MaxCol.49_6 ])
+        (mem/c:SI (symbol_ref:SI ("MaxCol")  <var_decl 06be9f78 MaxCol>) [3 MaxCol+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (nil))
+(insn 42 41 43 5 (set (reg:SI 88 [ MaxCol.50_7 ])
+        (reg:SI 87 [ MaxCol.49_6 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (nil))
+(insn 43 42 44 5 (parallel [
+            (set (reg:SI 89 [ _8 ])
+                (ashift:SI (reg:SI 88 [ MaxCol.50_7 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (nil))
+(insn 44 43 45 5 (set (reg/f:SI 90 [ grid.51_9 ])
+        (mem/f/c:SI (symbol_ref:SI ("grid")  <var_decl 06be9e70 grid>) [2 grid+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:13 -1
+     (nil))
+(insn 45 44 46 5 (set (reg:SI 91 [ row.52_10 ])
+        (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:13 -1
+     (nil))
+(insn 46 45 47 5 (parallel [
+            (set (reg:SI 92 [ _11 ])
+                (ashift:SI (reg:SI 91 [ row.52_10 ])
+                    (const_int 2 [0x2])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:13 -1
+     (nil))
+(insn 47 46 48 5 (parallel [
+            (set (reg/f:SI 93 [ _12 ])
+                (plus:SI (reg/f:SI 90 [ grid.51_9 ])
+                    (reg:SI 92 [ _11 ])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:13 -1
+     (nil))
+(insn 48 47 49 5 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg:SI 89 [ _8 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (nil))
+(call_insn 49 48 50 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("malloc") [flags 0x43]  <function_decl 06bd20f0 malloc>) [0 __builtin_malloc S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 50 49 51 5 (set (reg/f:SI 103)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (expr_list:REG_NOALIAS (reg/f:SI 103)
+        (nil)))
+(insn 51 50 52 5 (set (reg/f:SI 94 [ _13 ])
+        (reg/f:SI 103)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:27 -1
+     (nil))
+(insn 52 51 53 5 (set (mem/f:SI (reg/f:SI 93 [ _12 ]) [4 *_12+0 S4 A32])
+        (reg/f:SI 94 [ _13 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":175:19 -1
+     (nil))
+(insn 53 52 54 5 (parallel [
+            (set (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                        (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+                (plus:SI (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                            (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+                    (const_int 1 [0x1])))
+            (clobber (reg:CC 17 flags))
+        ]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":174:5 -1
+     (nil))
+(code_label 54 53 55 6 55 (nil) [1 uses])
+(note 55 54 56 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 56 55 58 6 (set (reg:SI 95 [ MaxRow.53_14 ])
+        (mem/c:SI (symbol_ref:SI ("MaxRow")  <var_decl 06be9f20 MaxRow>) [3 MaxRow+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":174:5 -1
+     (nil))
+(insn 58 56 59 6 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                    (const_int -4 [0xfffffffffffffffc])) [3 row+0 S4 A32])
+            (reg:SI 95 [ MaxRow.53_14 ]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":174:5 -1
+     (nil))
+(jump_insn 59 58 60 6 (set (pc)
+        (if_then_else (lt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 57)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":174:5 -1
+     (nil)
+ -> 57)
+(note 60 59 61 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 61 60 62 7 (set (mem/c:SI (symbol_ref:SI ("Game_generation")  <var_decl 06be9ec8 Game_generation>) [3 Game_generation+0 S4 A32])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":178:21 -1
+     (nil))
+(call_insn 62 61 63 7 (call (mem:QI (symbol_ref:SI ("reset_grid") [flags 0x43]  <function_decl 06c6a5a0 reset_grid>) [0 reset_grid S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":179:5 -1
+     (nil)
+    (nil))
+(call_insn 63 62 68 7 (call (mem:QI (symbol_ref:SI ("show_grid") [flags 0x43]  <function_decl 06c6a618 show_grid>) [0 show_grid S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":180:5 -1
+     (nil)
+    (nil))
+(insn 68 63 0 7 (const_int 0 [0]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":182:5 -1
+     (nil))
+
+;; Function continue_game (continue_game, funcdef_no=30, decl_uid=1946, cgraph_uid=31, symbol_order=34)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Merging block 4 into block 2...
+Merged blocks 2 and 4.
+Merged 2 and 4 without moving.
+Forwarding edge 2->5 to 6 failed.
+Merging block 5 into block 2...
+Merged blocks 2 and 5.
+Merged 2 and 5 without moving.
+Merging block 6 into block 2...
+Merged blocks 2 and 6.
+Merged 2 and 6 without moving.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (mem:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                (const_int 4 [0x4])) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC10") [flags 0x2]  <var_decl 06ccac60 *LC10>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":189:17 -1
+     (nil))
+(insn 6 5 7 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC11") [flags 0x2]  <var_decl 06ccacb8 *LC11>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":189:17 -1
+     (nil))
+(call_insn 7 6 8 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("fopen") [flags 0x43]  <function_decl 06c23000 fopen>) [0 fopen S1 A8])
+            (const_int 8 [0x8]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":189:17 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (expr_list:SI (use (mem/f:SI (plus:SI (reg/f:SI 79 virtual-outgoing-args)
+                        (const_int 4 [0x4])) [0  S4 A32]))
+            (nil))))
+(insn 8 7 9 2 (set (reg:SI 82)
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":189:17 -1
+     (nil))
+(insn 9 8 10 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [5 ptr+0 S4 A32])
+        (reg:SI 82)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":189:17 -1
+     (nil))
+(insn 10 9 11 2 (set (reg/f:SI 83)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [5 ptr+0 S4 A32])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":190:5 -1
+     (nil))
+(insn 11 10 12 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 83)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":190:5 -1
+     (nil))
+(call_insn 12 11 13 2 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("load_status") [flags 0x43]  <function_decl 06c6a690 load_status>) [0 load_status S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":190:5 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 13 12 14 2 (set (reg/f:SI 84)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -4 [0xfffffffffffffffc])) [5 ptr+0 S4 A32])) -1
+     (nil))
+(insn 14 13 15 2 (set (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [6 __ptr+0 S4 A32])
+        (reg/f:SI 84)) -1
+     (nil))
+(insn 15 14 16 2 (set (reg/f:SI 85)
+        (mem/f/c:SI (plus:SI (reg/f:SI 77 virtual-stack-vars)
+                (const_int -8 [0xfffffffffffffff8])) [6 __ptr+0 S4 A32])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(insn 16 15 17 2 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (reg/f:SI 85)) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (nil))
+(call_insn 17 16 24 2 (call (mem:QI (symbol_ref:SI ("__mingw_free") [flags 0x43]  <function_decl 06c51bb8 __mingw_free>) [0 __mingw_free S1 A8])
+        (const_int 4 [0x4])) "c:\devtools\mingw\include\stdlib.h":586:3 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 24 17 19 2 (const_int 0 [0]) "c:\devtools\mingw\include\stdlib.h":586:1 -1
+     (nil))
+(call_insn 19 24 25 2 (call (mem:QI (symbol_ref:SI ("show_grid") [flags 0x43]  <function_decl 06c6a618 show_grid>) [0 show_grid S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":193:5 -1
+     (nil)
+    (nil))
+(insn 25 19 0 2 (const_int 0 [0]) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":195:5 -1
+     (nil))
+
+;; Function game_start (game_start, funcdef_no=31, decl_uid=1944, cgraph_uid=32, symbol_order=35)
+
+
+;; Generating RTL for gimple basic block 2
+
+;; Generating RTL for gimple basic block 3
+
+;; Generating RTL for gimple basic block 4
+
+;; Generating RTL for gimple basic block 5
+
+;; Generating RTL for gimple basic block 6
+
+;; Generating RTL for gimple basic block 7
+
+;; Generating RTL for gimple basic block 8
+
+;; Generating RTL for gimple basic block 9
+
+;; Generating RTL for gimple basic block 10
+
+;; Generating RTL for gimple basic block 11
+
+;; Generating RTL for gimple basic block 12
+
+
+try_optimize_cfg iteration 1
+
+Merging block 3 into block 2...
+Merged blocks 2 and 3.
+Merged 2 and 3 without moving.
+Removing jump 55.
+
+
+try_optimize_cfg iteration 2
+
+
+
+;;
+;; Full RTL generated for this function:
+;;
+(note 1 0 3 NOTE_INSN_DELETED)
+(note 3 1 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 7 2 NOTE_INSN_FUNCTION_BEG)
+(insn 7 2 8 2 (set (reg:CCGC 17 flags)
+        (compare:CCGC (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 game_type+0 S4 A32])
+            (const_int 1 [0x1]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":202:7 -1
+     (nil))
+(jump_insn 8 7 9 2 (set (pc)
+        (if_then_else (gt (reg:CCGC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 14)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":202:7 -1
+     (nil)
+ -> 14)
+(note 9 8 12 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 12 9 13 4 (set (reg:CCGOC 17 flags)
+        (compare:CCGOC (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 game_type+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":202:20 -1
+     (nil))
+(jump_insn 13 12 14 4 (set (pc)
+        (if_then_else (ge (reg:CCGOC 17 flags)
+                (const_int 0 [0]))
+            (label_ref 21)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":202:20 -1
+     (nil)
+ -> 21)
+(code_label 14 13 15 5 61 (nil) [1 uses])
+(note 15 14 16 5 [bb 5] NOTE_INSN_BASIC_BLOCK)
+(insn 16 15 17 5 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC12") [flags 0x2]  <var_decl 06ccad10 *LC12>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":203:9 -1
+     (nil))
+(call_insn 17 16 18 5 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("printf") [flags 0x3]  <function_decl 06c23960 printf>) [0 printf S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":203:9 -1
+     (expr_list:REG_EH_REGION (const_int 0 [0])
+        (nil))
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(insn 18 17 19 5 (set (reg:SI 83 [ _12 ])
+        (const_int -1 [0xffffffffffffffff])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":204:16 -1
+     (nil))
+(jump_insn 19 18 20 5 (set (pc)
+        (label_ref 52)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":204:16 -1
+     (nil)
+ -> 52)
+(barrier 20 19 21)
+(code_label 21 20 22 6 62 (nil) [1 uses])
+(note 22 21 23 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 24 6 (set (reg:CCZ 17 flags)
+        (compare:CCZ (mem/c:SI (reg/f:SI 76 virtual-incoming-args) [3 game_type+0 S4 A32])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":206:12 -1
+     (nil))
+(jump_insn 24 23 25 6 (set (pc)
+        (if_then_else (ne (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 29)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":206:12 -1
+     (nil)
+ -> 29)
+(note 25 24 26 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(call_insn 26 25 27 7 (call (mem:QI (symbol_ref:SI ("new_game") [flags 0x3]  <function_decl 06c6a000 new_game>) [0 new_game S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":206:31 -1
+     (nil)
+    (nil))
+(jump_insn 27 26 28 7 (set (pc)
+        (label_ref 32)) -1
+     (nil)
+ -> 32)
+(barrier 28 27 29)
+(code_label 29 28 30 8 64 (nil) [1 uses])
+(note 30 29 31 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(call_insn 31 30 32 8 (call (mem:QI (symbol_ref:SI ("continue_game") [flags 0x3]  <function_decl 06c6a078 continue_game>) [0 continue_game S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":207:10 -1
+     (nil)
+    (nil))
+(code_label 32 31 33 9 65 (nil) [1 uses])
+(note 33 32 34 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(jump_insn 34 33 35 9 (set (pc)
+        (label_ref 40)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":209:10 -1
+     (nil)
+ -> 40)
+(barrier 35 34 44)
+(code_label 44 35 36 10 67 (nil) [1 uses])
+(note 36 44 37 10 [bb 10] NOTE_INSN_BASIC_BLOCK)
+(call_insn 37 36 38 10 (call (mem:QI (symbol_ref:SI ("evolve_cells") [flags 0x3]  <function_decl 06c6a1e0 evolve_cells>) [0 evolve_cells S1 A8])
+        (const_int 0 [0])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":210:9 -1
+     (nil)
+    (nil))
+(insn 38 37 39 10 (set (mem:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32])
+        (symbol_ref/f:SI ("*LC13") [flags 0x2]  <var_decl 06ccad68 *LC13>)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":211:9 -1
+     (nil))
+(call_insn 39 38 40 10 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("returnString") [flags 0x43]  <function_decl 06c6a4b0 returnString>) [0 returnString S1 A8])
+            (const_int 4 [0x4]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":211:9 -1
+     (nil)
+    (expr_list:SI (use (mem/f:SI (reg/f:SI 79 virtual-outgoing-args) [0  S4 A32]))
+        (nil)))
+(code_label 40 39 41 11 66 (nil) [1 uses])
+(note 41 40 42 11 [bb 11] NOTE_INSN_BASIC_BLOCK)
+(call_insn 42 41 43 11 (set (reg:SI 0 ax)
+        (call (mem:QI (symbol_ref:SI ("is_game_over") [flags 0x3]  <function_decl 06c6a438 is_game_over>) [0 is_game_over S1 A8])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":209:11 -1
+     (nil)
+    (nil))
+(insn 43 42 45 11 (set (reg:SI 82 [ _1 ])
+        (reg:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":209:11 -1
+     (nil))
+(insn 45 43 46 11 (set (reg:CCZ 17 flags)
+        (compare:CCZ (reg:SI 82 [ _1 ])
+            (const_int 0 [0]))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":209:10 -1
+     (nil))
+(jump_insn 46 45 47 11 (set (pc)
+        (if_then_else (eq (reg:CCZ 17 flags)
+                (const_int 0 [0]))
+            (label_ref 44)
+            (pc))) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":209:10 -1
+     (nil)
+ -> 44)
+(note 47 46 48 12 [bb 12] NOTE_INSN_BASIC_BLOCK)
+(insn 48 47 49 12 (clobber (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":214:1 -1
+     (nil))
+(insn 49 48 50 12 (clobber (reg:SI 84 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":214:1 -1
+     (nil))
+(jump_insn 50 49 51 12 (set (pc)
+        (label_ref 57)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":214:1 -1
+     (nil)
+ -> 57)
+(barrier 51 50 52)
+(code_label 52 51 53 13 63 (nil) [1 uses])
+(note 53 52 54 13 [bb 13] NOTE_INSN_BASIC_BLOCK)
+(insn 54 53 57 13 (set (reg:SI 84 [ <retval> ])
+        (reg:SI 83 [ _12 ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":204:16 -1
+     (nil))
+(code_label 57 54 60 14 60 (nil) [1 uses])
+(note 60 57 58 14 [bb 14] NOTE_INSN_BASIC_BLOCK)
+(insn 58 60 59 14 (set (reg/i:SI 0 ax)
+        (reg:SI 84 [ <retval> ])) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":214:1 -1
+     (nil))
+(insn 59 58 0 14 (use (reg/i:SI 0 ax)) "E:\_Achu documents\UNI\COMP1921\Coursework 2\Game_logic.c":214:1 -1
+     (nil))
