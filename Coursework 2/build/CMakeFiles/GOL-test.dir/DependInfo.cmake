@@ -14,6 +14,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
   "../Unity/include"
+  "C:/DevTools/SDL2/include/SDL2"
   )
 
 # Targets to which this target links.

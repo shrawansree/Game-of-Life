@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/GOL.dir/Game_SDL.obj"
   "CMakeFiles/GOL.dir/Game_interface.obj"
   "CMakeFiles/GOL.dir/Game_logic.obj"
   "CMakeFiles/GOL.dir/main.obj"

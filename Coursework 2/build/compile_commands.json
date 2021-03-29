@@ -1,37 +1,42 @@
 [
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL.dir\\main.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\main.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL.dir\\main.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\main.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/main.c"
 },
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL.dir\\Game_logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_logic.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL.dir\\Game_logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_logic.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.c"
 },
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL.dir\\Game_interface.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_interface.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL.dir\\Game_interface.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_interface.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.c"
 },
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL-test.dir\\test_Logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\test_Logic.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL.dir\\Game_SDL.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_SDL.c\"",
+  "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_SDL.c"
+},
+{
+  "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL-test.dir\\test_Logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\test_Logic.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/test_Logic.c"
 },
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL-test.dir\\Game_logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_logic.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL-test.dir\\Game_logic.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_logic.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_logic.c"
 },
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL-test.dir\\Game_interface.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_interface.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL-test.dir\\Game_interface.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Game_interface.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_interface.c"
 },
 {
   "directory": "E:/_Achu documents/UNI/COMP1921/Coursework 2/build",
-  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -fdump-rtl-expand -g -o CMakeFiles\\GOL-test.dir\\Unity\\src\\unity.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Unity\\src\\unity.c\"",
+  "command": "C:\\DevTools\\MinGW\\bin\\gcc.exe  @CMakeFiles/GOL-test.dir/includes_C.rsp -std=c99 -L;Coursework;2\" -L\"SDL2/include/SDL2\" -L\"SDL2/lib\" -lSDL2 -lSDL2_image\" -g -o CMakeFiles\\GOL-test.dir\\Unity\\src\\unity.obj -c \"E:\\_Achu documents\\UNI\\COMP1921\\Coursework 2\\Unity\\src\\unity.c\"",
   "file": "E:/_Achu documents/UNI/COMP1921/Coursework 2/Unity/src/unity.c"
 }
 ]

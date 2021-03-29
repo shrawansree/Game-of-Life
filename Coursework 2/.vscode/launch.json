@@ -8,7 +8,7 @@
             "name": "gcc.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/GOL-test.exe",
+            "program": "${workspaceFolder}/build/GOL.exe",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",

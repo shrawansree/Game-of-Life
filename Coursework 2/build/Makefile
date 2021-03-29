@@ -201,6 +201,21 @@ GOL-test/fast:
 .PHONY : GOL-test/fast
 
 # target to build an object file
+Game_SDL.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_SDL.obj
+.PHONY : Game_SDL.obj
+
+# target to preprocess a source file
+Game_SDL.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_SDL.i
+.PHONY : Game_SDL.i
+
+# target to generate assembly for a file
+Game_SDL.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_SDL.s
+.PHONY : Game_SDL.s
+
+# target to build an object file
 Game_interface.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL.dir\build.make CMakeFiles/GOL.dir/Game_interface.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\GOL-test.dir\build.make CMakeFiles/GOL-test.dir/Game_interface.obj
@@ -295,6 +310,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... GOL
 	@echo ... GOL-test
+	@echo ... Game_SDL.obj
+	@echo ... Game_SDL.i
+	@echo ... Game_SDL.s
 	@echo ... Game_interface.obj
 	@echo ... Game_interface.i
 	@echo ... Game_interface.s

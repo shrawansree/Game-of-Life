@@ -3,7 +3,7 @@
 University of Leeds
 School of Computing
 COMP1921 - Programming Project
-Coursework 1
+Coursework 2
 
 I confirm that the following code has been developed and written by me and it is entirely the result of my own work.
 I also confirm that I have not copied any parts of this program from another person or any other source or facilitated someone to copy this program from me.
@@ -18,10 +18,11 @@ Date Work Commenced: 19th March 2021
 #include "Game_main.h"
 //************************************************************************
 //global variables
+int **grid;
+int** grid_hold;
+int Game_generation;
 int MaxRow;
 int MaxCol;
-int** grid;
-int Game_generation;
 //************************************************************************
 //function implementation
 
@@ -51,7 +52,7 @@ int check_horizontal(int row, int col){
     if( row + 1 < MaxRow){
         if( grid[row + 1][col] == 1) count+= 1;
     }
-    if( row - 1 > 0){
+    if( row - 1 >= 0){
         if( grid[row - 1][col] == 1) count+= 1;
     }
         return count;
@@ -64,7 +65,7 @@ int check_vertical(int row, int col){
     if( col + 1 < MaxCol){
         if( grid[row][col + 1] == 1) count+= 1;
     }
-    if( col - 1 > 0){
+    if( col - 1 >= 0){
         if( grid[row][col - 1] == 1) count+= 1;
     }
         return count;
@@ -79,7 +80,7 @@ int check_diagonal(int row, int col){
     if( row + 1 < MaxRow && col + 1 < MaxCol){
         if( grid[row + 1][col + 1] == 1) count+= 1;
     }
-    if( row - 1 > 0 && col - 1 > 0){
+    if( row - 1 >= 0 && col - 1 >= 0){
         if( grid[row - 1][col - 1] == 1) count+= 1;
     }
         return count;
@@ -90,10 +91,10 @@ int check_antidiagonal(int row, int col){
     //returns the count of anti digonal neighbours of a particular cell
     int count = 0;
 
-    if( row + 1 < MaxRow && col - 1 > 0){
+    if( row + 1 < MaxRow && col - 1 >= 0){
         if( grid[row + 1][col - 1] == 1) count+= 1;
     }
-    if( row - 1 > 0 && col + 1 < MaxCol){
+    if( row - 1 >= 0 && col + 1 < MaxCol){
         if( grid[row - 1][col + 1] == 1) count+= 1;
     }
         return count;
@@ -111,19 +112,28 @@ int calculate_cell_status(int row, int col , int current_status){
                 +check_diagonal(row,col)
             +check_antidiagonal(row,col);
 
-    if(status_count <= 1) return 0;
-    else if(status_count <= 3){
-        if(status_count == 3 && current_status == 0) return 1;
-        else return current_status;
-    }
-    else return 0;
-
+    if(status_count <=1 && current_status == 1) return 0;
+        else if(status_count <= 3 && current_status == 1) return 1;
+        else if(status_count > 3 && current_status == 1 ) return 0;
+        else{
+            if(status_count == 3 && current_status == 0) return 1;
+            else return 0;
+        } 
 }
 
 void evolve_cells(){
     //calculates the status of each cell in the grid and produces the next generation of cells
+    grid_hold = (int**)malloc(MaxRow * sizeof(int*));
+        for_row{ //temp holder for new grid values
+           grid_hold[row] = (int*)malloc(MaxCol * sizeof(int));
+        }
+
     for_row_col{
-        grid[row][col] = calculate_cell_status(row, col , grid[row][col]);
+        grid_hold[row][col] = calculate_cell_status(row, col , grid[row][col]);
+    }
+
+    for_row_col{
+        grid[row][col] = grid_hold[row][col];
     }
 
     Game_generation++;
@@ -139,10 +149,9 @@ int is_game_over(){
         if(grid[row][col] == 1){
             return 0;
         }
-        else{
-            return 1;
-        }
     }
+    return 1;
+    
 }
 
 void new_game(){

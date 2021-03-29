@@ -16,16 +16,22 @@ Date Work Commenced: 19th March 2021
 *************************************************************************/
 //additional headers
 #include "Game_main.h"
-#define SDL_MAIN_HANDLED //SDL support
-#include "SDL2/include/SDL2/SDL.h"
 //************************************************************************
 //global varaibles
-int **grid;
 
 //************************************************************************
 
-void main(){
+void main(int argc, char** argv){
     /*Initialise SDL*/
+    start_window();
+    draw_grid();
 
-    game_start(0);
+    do{
+        draw_cells();
+        evolve_cells();
+        SDL_Delay(5000);
+    }   while(is_game_over() == 0);
+
+    end_cleanup();
+    exit(0);
 }

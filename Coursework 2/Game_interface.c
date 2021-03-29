@@ -3,7 +3,7 @@
 University of Leeds
 School of Computing
 COMP1921 - Programming Project
-Coursework 1
+Coursework 2
 
 I confirm that the following code has been developed and written by me and it is entirely the result of my own work.
 I also confirm that I have not copied any parts of this program from another person or any other source or facilitated someone to copy this program from me.
@@ -75,8 +75,8 @@ int load_status(FILE *filename){
         free(grid);
 
         fscanf(filename,"\nThe last saved generation :%d",&Game_generation);
-        fscanf(filename,"\nThe last saved env. Rows :%d",&MaxRow);
-        fscanf(filename,"\nThe last saved env. Cols :%d\n",&MaxCol);
+        fscanf(filename,"\nThe last saved env. Rows :%d",&MaxCol);
+        fscanf(filename,"\nThe last saved env. Cols :%d\n",&MaxRow);
 
         grid = (int**)malloc(MaxRow * sizeof(int*));
         for_row{

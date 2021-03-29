@@ -16,10 +16,17 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeRCInformation.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/CMakeSystemSpecificInitialize.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/CheckCSourceCompiles.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/CheckIncludeFile.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/CheckLibraryExists.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU-C.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU-CXX.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Compiler/GNU.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/FindPackageHandleStandardArgs.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/FindPackageMessage.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/FindThreads.cmake"
+  "C:/Program Files/CMake/share/cmake-3.19/Modules/Internal/CheckSourceCompiles.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Platform/Windows-GNU-C-ABI.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Platform/Windows-GNU-C.cmake"
   "C:/Program Files/CMake/share/cmake-3.19/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
@@ -33,6 +40,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.19.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.19.4/CMakeRCCompiler.cmake"
   "CMakeFiles/3.19.4/CMakeSystem.cmake"
+  "../cmake/FindSDL2.cmake"
+  "../cmake/FindSDL2_image.cmake"
   )
 
 # The corresponding makefile is:
