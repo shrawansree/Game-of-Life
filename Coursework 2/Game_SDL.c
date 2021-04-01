@@ -34,19 +34,18 @@ SDL_Window* gameWindow;
 //function implementation
 void draw_grid(){
     //sets up and draws grid based on the number of cells present 
-    SDL_SetRenderDrawColor(gameRender, 20, 20, 20, 255);
-    SDL_RenderClear(gameRender);
-    SDL_SetRenderDrawColor(gameRender, 45, 45,
-                               45, 255);
+    SDL_SetRenderDrawColor(gameRender, 255, 0,
+                               0, SDL_ALPHA_OPAQUE);
 
-    for (int i = 0; i < MaxRow * CELL_SIZE; i += CELL_SIZE) {
-        SDL_RenderDrawLine(gameRender, i, 0, i, window_width);
+    for (int i = 0; i <= (1 + MaxRow * CELL_SIZE) ; i += CELL_SIZE) {
+        SDL_RenderDrawLine(gameRender, i, 0, i,window_height);
     }
 
-    for (int j = 0; j < MaxCol * CELL_SIZE; j += CELL_SIZE) {
-        SDL_RenderDrawLine(gameRender, 0, j, window_height, j);
+    for (int j = 0; j <= (1 + MaxCol * CELL_SIZE) ; j += CELL_SIZE) {
+        SDL_RenderDrawLine(gameRender, 0, j, window_width, j);
     }
 
+    SDL_RenderPresent(gameRender);
 }
 
 void start_window(){
@@ -60,7 +59,7 @@ void start_window(){
     printf("SDL successfully initialised!\n");
  
     //load data from file
-    FILE *ptrL = fopen("saved_state.txt","r+");
+    FILE *ptrL = fopen("loadstate.txt","r+");
     load_status(ptrL);
 
     //size of window
@@ -82,10 +81,14 @@ void end_cleanup(){
     SDL_DestroyRenderer(gameRender);
     SDL_DestroyWindow(gameWindow);
     SDL_Quit();
+    exit(0);
 }
 
 void draw_cells(){
     //fills grid with cells 
+    SDL_SetRenderDrawColor(gameRender, 20, 20, 20, 255);
+    SDL_RenderClear(gameRender);
+
     for_row_col{
         SDL_SetRenderDrawColor(gameRender, 20, 20, 20, 255);
         cell.x = col * CELL_SIZE;
@@ -95,7 +98,39 @@ void draw_cells(){
         }
         SDL_RenderFillRect(gameRender, &cell);
     }
-
     SDL_RenderPresent(gameRender);
     return;
+}
+
+int check_event(){
+    //checks for save events from user
+
+    SDL_Event event;
+
+    if(SDL_PollEvent(&event)){
+        switch(event.type){
+            //different user input events
+            case SDL_KEYDOWN:{
+                switch(event.key.keysym.sym){
+                    case SDLK_ESCAPE:{
+                        end_cleanup();
+                    }
+
+                    case SDLK_s:{
+                        FILE* ptrs = fopen("savestate.txt","w+");
+                        save_status(ptrs);
+                        break;
+                    }
+
+                    default:
+                        break;
+                }
+            }
+
+            default:
+                break;
+        }
+    }
+
+    return 1;
 }

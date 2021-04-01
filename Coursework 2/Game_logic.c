@@ -26,24 +26,6 @@ int MaxCol;
 //************************************************************************
 //function implementation
 
-int check_row_col(int row, int col){
-    //validate rows and cols
-    //returns -1 if invalid rows or cols
-    //returns 0 if valid
-
-    if(row < 0 || col < 0){
-        printf("\n*Co-ordinates cannot contain negative numbers*");
-        return -1;
-    }
-    if(row > MaxRow || col > MaxCol){
-        printf("\n*Co-ordinates cannot exceed environment boundaries*");
-        return -1;
-    }
-    else{
-        return 0;
-    }
-}
-
 int check_horizontal(int row, int col){
     //returns the count of horizontal neighbours of a particular cell
     int count = 0;
@@ -135,10 +117,6 @@ void evolve_cells(){
     for_row_col{
         grid[row][col] = grid_hold[row][col];
     }
-
-    Game_generation++;
-
-    show_grid();
 }
 
 int is_game_over(){
@@ -152,63 +130,4 @@ int is_game_over(){
     }
     return 1;
     
-}
-
-void new_game(){
-    //function initialises a new game from scratch
-    //prompt_newgame();
-    int row,col;
-    do{
-        MaxRow = INT_LIMIT;
-        MaxCol = INT_LIMIT;
-        row = returnInt("Enter height of game grid : ");
-        col = returnInt("Enter width of game grid : ");
-    }while(check_row_col(row,col) == -1);
-
-    MaxRow = col;
-    MaxCol = row;
-    
-    grid = (int**)malloc(MaxRow * sizeof(int*));
-    for_row{
-        grid[row] = (int*)malloc(MaxCol * sizeof(int));
-    }
-
-    Game_generation = 0;
-    reset_grid();
-    show_grid();
-
-    return;
-}
-
-void continue_game(){
-    //continues from previously created session
-    //prompt_continue_game();
-
-    FILE *ptrL = fopen("saved_state.txt","r+");
-    load_status(ptrL);
- 
-    show_grid();
-
-    return;
-}
-
-int game_start(int game_type){
-    //called at the start of the program to initialise the grid state
-    //if game_type = 0 : starts from a fresh grid
-    //if game_type = 1 : starts from pre-deteremined state read from file
-    if(game_type>1 || game_type < 0){
-        printf("\n * Invalid Type * ");
-        return -1;
-    }
-    else if( game_type == 0 ) new_game();
-    else continue_game();
-
-    while(is_game_over() == 0){
-        evolve_cells();
-        returnString(">>>Press Enter to continue ");
-    }
-
-    FILE *ptrS = fopen("saved_state.txt","w+");
-    save_status(ptrS);
-
 }

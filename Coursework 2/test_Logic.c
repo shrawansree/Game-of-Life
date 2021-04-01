@@ -49,7 +49,6 @@ void test_evolve(){
     //checks if new generations are successfully created
     while(is_game_over() == 0){
         evolve_cells();
-        returnString(">>>Press Enter to continue ");
     }
 }
 
@@ -67,7 +66,6 @@ void main(){
 
     FILE *ptrL = fopen("saved_state.txt","r+");
     load_status(ptrL);
-    show_grid();
 
     row = 0;
     col = 0;

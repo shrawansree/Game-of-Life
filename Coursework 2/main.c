@@ -24,14 +24,15 @@ Date Work Commenced: 19th March 2021
 void main(int argc, char** argv){
     /*Initialise SDL*/
     start_window();
-    draw_grid();
-
     do{
         draw_cells();
+        draw_grid();
         evolve_cells();
-        SDL_Delay(5000);
-    }   while(is_game_over() == 0);
+        SDL_Delay(1000);
+    }   while(is_game_over() == 0 && Game_generation--);
 
+    FILE* ptrs = fopen("savestate.txt","w+");
+    save_status(ptrs);
+    
     end_cleanup();
-    exit(0);
 }

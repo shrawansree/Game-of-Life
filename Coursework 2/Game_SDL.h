@@ -27,4 +27,7 @@ void draw_cells();
 void end_cleanup();
 //destroys SDL enviroment
 
+int check_event();
+//checks for user save 
+
 #endif

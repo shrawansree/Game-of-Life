@@ -18,54 +18,6 @@ Date Work Commenced: 25th March 2021
 #include "Game_main.h"
 //************************************************************************
 
-
-const char* returnString(const char *prompt) {
-    //function to return string
-    fflush(stdin);
-	printf("\n%s",prompt);
-
-    size_t size = 32;
-    char temp[MAX_STRING];
-    char *output = malloc(sizeof(char)*MAX_STRING);
-
-    fgets(temp,MAX_STRING-1,stdin);
-
-    if(temp == NULL) return NULL;
-
-    temp[strcspn(temp,"\n")] = 0;
-    strcpy(output, temp);
-	return output;
-}
-
-int returnInt(const char *prompt){
-    //returns int input from user
-    fflush(stdin);
-	printf("\n%s",prompt);
-
-    int output = -1;
-    fscanf(stdin,"%d",&output);
-    return output;
-}
-
-void reset_grid(){
-    //resets the grid to all empty cells
-    for_row_col{
-        grid[row][col] = 0;
-    }
-}
-
-void show_grid(){
-    //displays the grid on the cli
-    printf("\n");
-    for_row{
-        for_col{
-            printf("%d ",grid[row][col]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
-
 int load_status(FILE *filename){
     //function to read previous game data from a file
     //returns 0 if successfully read and stored data to program memory
@@ -74,9 +26,16 @@ int load_status(FILE *filename){
     else{
         free(grid);
 
-        fscanf(filename,"\nThe last saved generation :%d",&Game_generation);
-        fscanf(filename,"\nThe last saved env. Rows :%d",&MaxCol);
-        fscanf(filename,"\nThe last saved env. Cols :%d\n",&MaxRow);
+        fscanf(filename,"\nThe number of iterrations (Generations) to process :%d",&Game_generation);
+        fscanf(filename,"\nThe number of grid. Rows :%d",&MaxCol);
+        fscanf(filename,"\nThe number of grid. Cols :%d\n",&MaxRow);
+
+        if(MaxRow == 0 || MaxCol == 0){
+            printf("\n * Error. Invalid read from file * ");
+        }
+        if(Game_generation == 0){
+            printf("\n * Error. Invalid read from file * ");
+        }
 
         grid = (int**)malloc(MaxRow * sizeof(int*));
         for_row{
@@ -101,9 +60,9 @@ int save_status(FILE *filename){
     //returns -1 if error
     if(filename == NULL) return -1;
     else{
-        fprintf(filename,"\nThe last saved generation :%d",Game_generation);
-        fprintf(filename,"\nThe last saved env. Rows :%d",MaxRow);
-        fprintf(filename,"\nThe last saved env. Cols :%d\n",MaxCol);
+        fprintf(filename,"\nThe number of iterrations (Generations) to process :%d",Game_generation);
+        fprintf(filename,"\nThe number of grid. Rows :%d",MaxCol);
+        fprintf(filename,"\nThe number of grid. Cols :%d\n",MaxRow);
 
         for_row{
             for_col{
