@@ -36,7 +36,7 @@ void main(int argc, char** argv){
             }   while(!is_started);
 
             evolve_cells();
-            SDL_Delay(1000);
+            SDL_Delay(500);
         }   while(is_game_over() == 0 && Game_generation--);
 
         FILE* ptrs = fopen("savestate.txt","w+");
