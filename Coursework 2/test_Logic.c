@@ -22,27 +22,28 @@ int col;
 //functions implementation
 void test_horizontal(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(1, check_horizontal(row,col) );
+    TEST_ASSERT_EQUAL_INT(0, check_horizontal(row,col) );
 }
 
 void test_vertical(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(1, check_vertical(row,col) );
+    TEST_ASSERT_EQUAL_INT(0, check_vertical(row,col) );
 }
 
 void test_diagonal(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(1, check_diagonal(row,col) );
+    TEST_ASSERT_EQUAL_INT(2, check_diagonal(row,col) );
+
 }
 
 void test_antidiagonal(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(0, check_antidiagonal(row,col) );
+    TEST_ASSERT_EQUAL_INT(2, check_antidiagonal(row,col) );
 }
 
 void test_cell_status(){
     //checks if cell's next status is properly set
-    TEST_ASSERT_EQUAL_INT(1 , calculate_cell_status(0 , 0 , grid[0][0]));
+    TEST_ASSERT_EQUAL_INT(0 , calculate_cell_status(row , col , grid[row][col]));
 }
 
 void test_evolve(){
@@ -50,6 +51,11 @@ void test_evolve(){
     while(is_game_over() == 0){
         evolve_cells();
     }
+}
+
+void test_edgeCase(){
+    //checks cell status for my test grid
+    TEST_ASSERT_EQUAL_INT(0, calculate_cell_status(0,0, grid[row][col]));
 }
 
 
@@ -64,18 +70,26 @@ void tearDown(){
 void main(){
     UNITY_BEGIN();
 
-    FILE *ptrL = fopen("saved_state.txt","r+");
+    FILE *ptrL = fopen("teststate.txt","r+");
     load_status(ptrL);
 
-    row = 0;
-    col = 0;
+    row = 1;
+    col = 1;
 
-    RUN_TEST(test_horizontal);
-    RUN_TEST(test_vertical);
-    RUN_TEST(test_diagonal);
-    RUN_TEST(test_antidiagonal);
-    RUN_TEST(test_cell_status);
-    RUN_TEST(test_evolve);
+    //standard cases
+    while(row < MaxRow -1){
+        RUN_TEST(test_horizontal);
+        RUN_TEST(test_vertical);
+        RUN_TEST(test_diagonal);
+        RUN_TEST(test_antidiagonal);
+        RUN_TEST(test_cell_status);
+        
+        row++;
+        col++;
+
+    }
+    //edge cases
+    RUN_TEST(test_edgeCase);
 
     UNITY_END();
 }

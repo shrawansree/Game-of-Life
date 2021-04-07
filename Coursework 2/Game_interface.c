@@ -17,6 +17,41 @@ Date Work Commenced: 25th March 2021
 //additional headers
 #include "Game_main.h"
 //************************************************************************
+int load_status_new(FILE *filename){
+    //function to read previous game data from a file
+    //returns 0 if successfully read and stored data to program memory
+    //returns -1 if error
+    if(filename == NULL) return -1;
+    else{
+        free(grid);
+
+        fscanf(filename,"\nThe number of iterrations (Generations) to process :%d",&Game_generation);
+        fscanf(filename,"\nThe number of grid. Rows :%d",&MaxCol);
+        fscanf(filename,"\nThe number of grid. Cols :%d\n",&MaxRow);
+
+        if(MaxRow == 0 || MaxCol == 0){
+            printf("\n * Error. Invalid read from file * ");
+        }
+        if(Game_generation == 0){
+            printf("\n * Error. Invalid read from file * ");
+        }
+
+        grid = (int**)malloc(MaxRow * sizeof(int*));
+        for_row{
+           grid[row] = (int*)malloc(MaxCol * sizeof(int));
+        }
+
+        reset_grid();
+
+        if(MaxRow >25 || MaxCol>25){
+            #undef CELL_SIZE
+            #define CELL_SIZE 10
+        }
+
+        fclose(filename);
+        return 0;
+    }
+}
 
 int load_status(FILE *filename){
     //function to read previous game data from a file
@@ -49,6 +84,11 @@ int load_status(FILE *filename){
             fscanf(filename,"\n",NULL);
         }
 
+        if(MaxRow >25 || MaxCol>25){
+            #undef CELL_SIZE
+            #define CELL_SIZE 10
+        }
+
         fclose(filename);
         return 0;
     }
@@ -75,4 +115,12 @@ int save_status(FILE *filename){
         return 0;
     }
 
+}
+
+void reset_grid(){
+    //resets the grid to zero
+    for_row_col{
+        grid[row][col] = 0;
+    }
+    return;
 }

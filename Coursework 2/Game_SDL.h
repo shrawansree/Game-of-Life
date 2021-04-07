@@ -15,7 +15,7 @@ extern int window_width;
 extern SDL_Renderer *gameRender;
 extern SDL_Window* gameWindow;
 
-void start_window();
+void start_window(int type);
 //starts and initialises SDL environment
 
 void draw_grid();

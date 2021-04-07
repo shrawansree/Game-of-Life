@@ -37,14 +37,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "GOL::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GOL-Debug-c1d5b9e2241aa11b2bfa.json",
+					"jsonFile" : "target-GOL-Debug-a00dd910504c2b4dd140.json",
 					"name" : "GOL",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "GOL-test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GOL-test-Debug-1867efe3762472d5215a.json",
+					"jsonFile" : "target-GOL-test-Debug-ff96922d2a59a1d58a6a.json",
 					"name" : "GOL-test",
 					"projectIndex" : 0
 				}

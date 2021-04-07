@@ -18,21 +18,30 @@ Date Work Commenced: 19th March 2021
 #include "Game_main.h"
 //************************************************************************
 //global varaibles
-
+SDL_bool is_started = SDL_FALSE;
 //************************************************************************
 
 void main(int argc, char** argv){
     /*Initialise SDL*/
-    start_window();
+    start_window(0);
+    int temp_gen = Game_generation;
     do{
-        draw_cells();
-        draw_grid();
+        do{
+            draw_cells();
+            draw_grid();
+            check_event();
+            SDL_Delay(100);
+        }   while(!is_started);
+
         evolve_cells();
         SDL_Delay(1000);
     }   while(is_game_over() == 0 && Game_generation--);
 
     FILE* ptrs = fopen("savestate.txt","w+");
+    Game_generation = temp_gen;
     save_status(ptrs);
     
     end_cleanup();
+    SDL_Quit();
+    exit(0);
 }

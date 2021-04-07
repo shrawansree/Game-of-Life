@@ -2,6 +2,11 @@
 #define GAME_INTERFACE_GUARD__H 
 
 //function implementation
+int load_status_new(FILE *filename);
+    //function to read previous game data from a file
+    //returns 0 if successfully read and stored data to program memory
+    //returns -1 if error
+
 int load_status(FILE *filename);
     //function to read previous game data from a file
     //returns 0 if successfully read and stored data to program memory

@@ -48,7 +48,7 @@ void draw_grid(){
     SDL_RenderPresent(gameRender);
 }
 
-void start_window(){
+void start_window(int type){
     //initialise SDL
     if(SDL_Init(SDL_INIT_EVERYTHING) != 0 ){
         printf("Error initializing SDL : %s\n", SDL_GetError());
@@ -59,8 +59,14 @@ void start_window(){
     printf("SDL successfully initialised!\n");
  
     //load data from file
-    FILE *ptrL = fopen("loadstate.txt","r+");
-    load_status(ptrL);
+    if(type == 0){
+        FILE *ptrL = fopen("savestate.txt","r+");
+        load_status(ptrL);
+    }
+    else if(type == 1){
+        FILE *ptrL = fopen("loadstate.txt","r+");
+        load_status_new(ptrL);
+    }
 
     //size of window
     window_width = (MaxRow * CELL_SIZE);
@@ -80,8 +86,6 @@ void start_window(){
 void end_cleanup(){
     SDL_DestroyRenderer(gameRender);
     SDL_DestroyWindow(gameWindow);
-    SDL_Quit();
-    exit(0);
 }
 
 void draw_cells(){
@@ -122,9 +126,42 @@ int check_event(){
                         break;
                     }
 
+                    case SDLK_r:{
+                        reset_grid();
+                        break;
+                    }
+
+                    case SDLK_SPACE:{
+                        if(!is_started){
+                            is_started = !is_started;
+                        }
+                        break;
+                    }
+
+                    case SDLK_l:{
+                        end_cleanup();
+                        start_window(1);
+                        break;
+                    }
+
                     default:
                         break;
                 }
+                break;
+            }
+
+            case SDL_MOUSEBUTTONDOWN:{
+                if(is_started == 0){
+                    int sel_col = (event.motion.x / CELL_SIZE);
+                    int sel_row = (event.motion.y / CELL_SIZE);
+                    if(grid[sel_row][sel_col] == 0){
+                        grid[sel_row][sel_col] = 1;
+                    }
+                    else{
+                        grid[sel_row][sel_col] = 0;
+                    }
+                }
+                break;
             }
 
             default:

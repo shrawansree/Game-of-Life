@@ -16,7 +16,7 @@ include_directories(Unity/include)
 include_directories(${SDL2_INCLUDE_DIRS})
 include_directories(${SDL2_IMAGE_DIRS})
 
-set(CMAKE_C_FLAGS "-std=c99 -L"Coursework 2" -L"SDL2/include/SDL2" -L"SDL2/lib" -lSDL2 -lSDL2_image")
+set(CMAKE_C_FLAGS "-std=c99 -L"Coursework 2" -L"SDL2/include/SDL2" -L"SDL2/lib" -lSDL2 -lSDL2_image ")
 
 add_executable(GOL main.c Game_logic.c Game_interface.c Game_SDL.c)
 target_link_libraries(GOL ${SDL2_LIBRARIES})

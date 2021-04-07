@@ -19,4 +19,6 @@ extern int Game_generation;
 extern int MaxRow;
 extern int MaxCol;
 
+extern SDL_bool is_started;
+
 #endif

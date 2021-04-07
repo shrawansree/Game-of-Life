@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = @CMakeFiles/GOL-test.dir/includes_C.rsp
 
-C_FLAGS = -std=c99 -L;Coursework;2" -L"SDL2/include/SDL2" -L"SDL2/lib" -lSDL2 -lSDL2_image" -g
+C_FLAGS = -std=c99 -L;Coursework;2" -L"SDL2/include/SDL2" -L"SDL2/lib" -lSDL2 -lSDL2_image " -g
 

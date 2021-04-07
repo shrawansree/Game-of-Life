@@ -2,6 +2,7 @@
 #define GAME_LOGIC_GUARD__H 
 
 //functions
+
 int check_row_col(int row, int col);
     //validate rows and cols
     //returns -1 if invalid rows or cols
