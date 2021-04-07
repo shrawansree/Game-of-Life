@@ -118,6 +118,8 @@ int check_event(){
                 switch(event.key.keysym.sym){
                     case SDLK_ESCAPE:{
                         end_cleanup();
+                        SDL_Quit();
+                        exit(0);
                     }
 
                     case SDLK_s:{

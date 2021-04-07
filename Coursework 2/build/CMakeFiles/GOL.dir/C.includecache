@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_SDL.c
+Game_main.h
+E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_main.h
+
 E:/_Achu documents/UNI/COMP1921/Coursework 2/Game_SDL.h
 SDL2/include/SDL2/SDL.h
 E:/_Achu documents/UNI/COMP1921/Coursework 2/SDL2/include/SDL2/SDL.h

@@ -25,23 +25,23 @@ void main(int argc, char** argv){
     /*Initialise SDL*/
     start_window(0);
     int temp_gen = Game_generation;
-    do{
-        do{
-            draw_cells();
-            draw_grid();
-            check_event();
-            SDL_Delay(100);
-        }   while(!is_started);
-
-        evolve_cells();
-        SDL_Delay(1000);
-    }   while(is_game_over() == 0 && Game_generation--);
-
-    FILE* ptrs = fopen("savestate.txt","w+");
-    Game_generation = temp_gen;
-    save_status(ptrs);
     
-    end_cleanup();
-    SDL_Quit();
-    exit(0);
+    while(1){
+        do{
+            do{
+                draw_cells();
+                draw_grid();
+                check_event();
+                SDL_Delay(100);
+            }   while(!is_started);
+
+            evolve_cells();
+            SDL_Delay(1000);
+        }   while(is_game_over() == 0 && Game_generation--);
+
+        FILE* ptrs = fopen("savestate.txt","w+");
+        Game_generation = temp_gen;
+        save_status(ptrs);
+        is_started = SDL_FALSE;
+    }
 }
