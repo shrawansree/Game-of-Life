@@ -19,6 +19,7 @@ Date Work Commenced: 19th March 2021
 //************************************************************************
 //global varaibles
 SDL_bool is_started = SDL_FALSE;
+
 //************************************************************************
 
 void main(int argc, char** argv){

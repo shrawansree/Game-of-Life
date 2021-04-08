@@ -16,34 +16,35 @@ Date Work Commenced: 25th March 2021
 *************************************************************************/
 //additional headers
 #include "Game_main.h"
+int **grid;
+int Game_generation;
+int MaxRow;
+int MaxCol;
 //************************************************************************
 int load_status_new(FILE *filename){
     //function to read previous game data from a file
     //returns 0 if successfully read and stored data to program memory
     //returns -1 if error
     if(filename == NULL) return -1;
-    else{
-        char holder[61];
+     else{
+        free(grid);
 
-        fgets(holder,60,filename);
-        sscanf(holder,"%*[^:]:%d%[^\n]",&Game_generation);
-            
-        fgets(holder,60,filename);
-        sscanf(holder,"%*[^:]:%d%[^\n]",&MaxCol);
-
-        fgets(holder,60,filename);
-        sscanf(holder,"%*[^:]:%d%[^\n]",&MaxRow);
+        fscanf(filename,"Iterrations:%d\n",&Game_generation);
+        fscanf(filename,"Rows:%d\n",&MaxCol);
+        fscanf(filename,"Columns:%d\n",&MaxRow);
 
         if(MaxRow == 0 || MaxCol == 0){
-            printf("\n * Error. Invalid read from file * ");
+            printf(" * Error. Invalid read from file * \n");
+            return -1;
         }
         if(Game_generation == 0){
-            printf("\n * Error. Invalid read from file * ");
+            printf(" * Error. Invalid read from file * \n");
+            return -1;
         }
 
         grid = (int**)malloc(MaxRow * sizeof(int*));
         for_row{
-            grid[row] = (int*)malloc(MaxCol * sizeof(int));
+           grid[row] = (int*)malloc(MaxCol * sizeof(int));
         }
 
         reset_grid();
@@ -65,40 +66,31 @@ int load_status(FILE *filename){
     if(filename == NULL) return -1;
     else{
         free(grid);
-            char holder[61];
 
-            fgets(holder,60,filename);
-            sscanf(holder,"%*[^:]:%d%[^\n]",&Game_generation);
-            
-            fgets(holder,60,filename);
-            sscanf(holder,"%*[^:]:%d%[^\n]",&MaxCol);
+        fscanf(filename,"Iterrations:%d\n",&Game_generation);
+        fscanf(filename,"Rows:%d\n",&MaxCol);
+        fscanf(filename,"Columns:%d\n",&MaxRow);
 
-            fgets(holder,60,filename);
-            sscanf(holder,"%*[^:]:%d%[^\n]",&MaxRow);
+        if(MaxRow == 0 || MaxCol == 0){
+            printf(" * Error. Invalid read from file * \n");
+            return -1;
+        }
+        if(Game_generation == 0){
+            printf(" * Error. Invalid read from file * \n");
+            return -1;
+        }
 
-            if(MaxRow == 0 || MaxCol == 0){
-                printf("\n * Error. Invalid read from file * ");
+        grid = (int**)malloc(MaxRow * sizeof(int*));
+        for_row{
+           grid[row] = (int*)malloc(MaxCol * sizeof(int));
+        }
+
+        for_row{
+            for_col{
+                fscanf(filename,"%d\t",&grid[row][col]);
             }
-            if(Game_generation == 0){
-                printf("\n * Error. Invalid read from file * ");
-            }
-
-            grid = (int**)malloc(MaxRow * sizeof(int*));
-            for_row{
-            grid[row] = (int*)malloc(MaxCol * sizeof(int));
-            }
-
-            int c;
-            for_row{
-                for_col{
-                    c = fgetc(filename);
-                    while(c != 48 || c != 49){
-                        if(c == 48) {grid[row][col] = 0; break;}
-                        else if(c == 49){grid[row][col] = 1; break;}
-                        else c = fgetc(filename);
-                    }
-                }
-            }
+            fscanf(filename,"\n",NULL);
+        }
 
         if(MaxRow >25 || MaxCol>25){
             #undef CELL_SIZE
@@ -116,13 +108,13 @@ int save_status(FILE *filename){
     //returns -1 if error
     if(filename == NULL) return -1;
     else{
-        fprintf(filename,"Itteration:%d\n",Game_generation);
-        fprintf(filename,"Rows:%d\n",MaxCol);
+        fprintf(filename,"Iterrations:%d\n",Game_generation);
+        fprintf(filename,"Rows :%d\n",MaxCol);
         fprintf(filename,"Columns:%d\n",MaxRow);
 
         for_row{
             for_col{
-                fprintf(filename,"%d",grid[row][col]);
+                fprintf(filename,"%d\t",grid[row][col]);
             }
             fprintf(filename,"\n",NULL);
         }

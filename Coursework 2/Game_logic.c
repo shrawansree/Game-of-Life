@@ -18,11 +18,7 @@ Date Work Commenced: 19th March 2021
 #include "Game_main.h"
 //************************************************************************
 //global variables
-int **grid;
 int** grid_hold;
-int Game_generation;
-int MaxRow;
-int MaxCol;
 //************************************************************************
 //function implementation
 
