@@ -33,7 +33,7 @@ void main(int argc, char** argv){
                 draw_cells();
                 draw_grid();
                 check_event();
-                SDL_Delay(100);
+                SDL_Delay(50);
             }   while(!is_started);
 
             evolve_cells();

@@ -8,14 +8,14 @@
             "name": "gcc.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/GOL.exe",
+            "program": "${workspaceFolder}/build/GOL",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\DevTools\\MinGW\\bin\\gdb.exe",
+            "miDebuggerPath": "",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",

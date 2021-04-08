@@ -1,3 +1,1 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\GOL-test.dir/objects.a
-C:\DevTools\MinGW\bin\ar.exe cr CMakeFiles\GOL-test.dir/objects.a @CMakeFiles\GOL-test.dir\objects1.rsp
-C:\DevTools\MinGW\bin\gcc.exe -std=c99 -L;Coursework;2" -L"SDL2/include/SDL2" -L"SDL2/lib" -lSDL2 -lSDL2_image " -g -Wl,--whole-archive CMakeFiles\GOL-test.dir/objects.a -Wl,--no-whole-archive -o GOL-test.exe -Wl,--out-implib,libGOL-test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\GOL-test.dir\linklibs.rsp
+/usr/bin/cc  -std=c99 -lSDL2 -lSDL2_image -g    CMakeFiles/GOL-test.dir/test_Logic.c.o CMakeFiles/GOL-test.dir/Game_logic.c.o CMakeFiles/GOL-test.dir/Game_interface.c.o CMakeFiles/GOL-test.dir/Unity/src/unity.c.o  -o GOL-test -rdynamic 
