@@ -14,7 +14,7 @@
 
 5. The grid cells can be changed from dead to alive and vice-versa by clicking on them. Live cells are white and dead cells are black
 
-6. Once you are satisified with the grid size and layout of cells, press 'space' to begin the simulation. During run time press 'space'to make changes to the grid. The simulation will run for the predetermined number of "generations" or steps.
+6. Once you are satisified with the grid size and layout of cells, press 'space' to begin the simulation. During run time press 'space' to make changes to the grid. The simulation will run for the predetermined number of "generations" or steps.
 
 7. Once the simulation is complete, the application with come to a halt
 
