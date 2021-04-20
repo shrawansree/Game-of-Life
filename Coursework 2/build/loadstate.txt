@@ -1,3 +1,0 @@
-Iterrations:10
-Rows:20
-Columns:20

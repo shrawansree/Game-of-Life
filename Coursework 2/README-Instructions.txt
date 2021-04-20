@@ -3,9 +3,9 @@ THIS IS A README FILE FOR GAMEOFLIFE :
 
 INSTRUCTIONS   :
     1.The game starts from the last saved state.
-    2.To start a new game with a new grid size generation cycles, 
+    2.To start a new game with a new grid size & generation cycles, 
         please change loadstate.txt
-    3. Once loadstate.txt has been adjusted to your liking,
+    3. Once loadstate.txt has been adjusted to your liking and saved,
         start the application and press 'l'. This will load the new 
         parameters into the system
     4. If you would like to continue from the previous state, no changes are necessary

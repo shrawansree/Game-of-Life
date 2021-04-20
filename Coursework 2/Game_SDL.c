@@ -18,8 +18,8 @@ Date Work Commenced: 25th March 2021
 //additional headers
 #include "Game_main.h"
 //************************************************************************
-int window_width = 0;
-int window_height = 0;
+static int window_width = 0;
+static int window_height = 0;
 
 SDL_Rect cell = {
         .x = 0,
@@ -28,8 +28,8 @@ SDL_Rect cell = {
         .h = CELL_SIZE,
 };
 
-SDL_Renderer *gameRender;
-SDL_Window* gameWindow;
+static SDL_Renderer *gameRender;
+static SDL_Window* gameWindow;
 
 //function implementation
 void draw_grid(){
@@ -60,11 +60,11 @@ void start_window(int type){
  
     //load data from file
     if(type == 0){
-        FILE *ptrL = fopen("savestate.txt","r+");
+        FILE *ptrL = fopen("../savestate.txt","r+");
         load_status(ptrL);
     }
     else if(type == 1){
-        FILE *ptrL = fopen("loadstate.txt","r+");
+        FILE *ptrL = fopen("../loadstate.txt","r+");
         load_status_new(ptrL);
     }
 
@@ -123,7 +123,7 @@ int check_event(){
                     }
 
                     case SDLK_s:{
-                        FILE* ptrs = fopen("savestate.txt","w+");
+                        FILE* ptrs = fopen("../savestate.txt","w+");
                         save_status(ptrs);
                         break;
                     }
@@ -134,7 +134,7 @@ int check_event(){
                     }
 
                     case SDLK_SPACE:{
-                        if(!is_started){
+                        if(!is_started || is_started){
                             is_started = !is_started;
                         }
                         break;

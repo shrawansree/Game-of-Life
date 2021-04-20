@@ -18,7 +18,7 @@ Date Work Commenced: 19th March 2021
 #include "Game_main.h"
 //************************************************************************
 //global variables
-int** grid_hold;
+static int** grid_hold;
 //************************************************************************
 //function implementation
 

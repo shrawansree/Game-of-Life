@@ -72,11 +72,11 @@ int load_status(FILE *filename){
         fscanf(filename,"Columns:%d\n",&MaxRow);
 
         if(MaxRow == 0 || MaxCol == 0){
-            printf(" * Error. Invalid read from file * \n");
+            printf(" * Error. Invalid read from file : Rows & Cols* \n");
             return -1;
         }
         if(Game_generation == 0){
-            printf(" * Error. Invalid read from file * \n");
+            printf(" * Error. Invalid read from file : Generations * \n");
             return -1;
         }
 

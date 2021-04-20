@@ -17,28 +17,40 @@ Date Work Commenced: 25th March 2021
 #include "Game_main.h"
 #include "unity.h"
 //vairables to pass into functions to test
-int row;
-int col;
+static int row;
+static int col;
+FILE* testfile; 
 //functions implementation
+void load_grid_new(){
+    //checks if grid loads a fresh session correctly from file
+    TEST_ASSERT_EQUAL_INT(0, load_status_new(testfile));
+}
+
+void load_grid(){
+    //checks if grid loads previous session correctly from file
+    TEST_ASSERT_EQUAL_INT(0, load_status(testfile));
+}
+
+
 void test_horizontal(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(0, check_horizontal(row,col) );
+    TEST_ASSERT_EQUAL_INT(2, check_horizontal(row,col) );
 }
 
 void test_vertical(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(0, check_vertical(row,col) );
+    TEST_ASSERT_EQUAL_INT(2, check_vertical(row,col) );
 }
 
 void test_diagonal(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(2, check_diagonal(row,col) );
+    TEST_ASSERT_EQUAL_INT(0, check_diagonal(row,col) );
 
 }
 
 void test_antidiagonal(){
     //checks if the check_direction functions work as required
-    TEST_ASSERT_EQUAL_INT(2, check_antidiagonal(row,col) );
+    TEST_ASSERT_EQUAL_INT(0, check_antidiagonal(row,col) );
 }
 
 void test_cell_status(){
@@ -70,8 +82,9 @@ void tearDown(){
 void main(){
     UNITY_BEGIN();
 
-    FILE *ptrL = fopen("teststate.txt","r+");
-    load_status(ptrL);
+    testfile = fopen("../teststate.txt","r+");
+//  RUN_TEST(load_grid_new);
+    RUN_TEST(load_grid);
 
     row = 1;
     col = 1;
@@ -86,7 +99,6 @@ void main(){
         
         row++;
         col++;
-
     }
     //edge cases
     RUN_TEST(test_edgeCase);
