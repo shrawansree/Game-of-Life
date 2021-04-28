@@ -19,3 +19,15 @@ INSTRUCTIONS   :
     9. If you would like to continue testing, you can press 'r' to reset the grid, or continue with the
         present grid.
         
+
+[GitHub Repo - Link](https://gitlab.com/comp1921_2021/el20ss.git)
+
+![Repo History - Part 2](https://i.imgur.com/lnrdx5R.png)/ Attached in /images folder
+
+![Repo History - Part 1](https://i.imgur.com/7o85b9r.png)
+
+
+**FindSDL2 files are downloaded from a 3rd party website. The files are self referencing.
+They can be found in /cmake folder
+FindSDL2 - referred from : https://trenki2.github.io/blog/2017/06/02/using-sdl2-with-cmake/
+FindSDL2-Image - referred from : https://trenki2.github.io/blog/2017/07/04/using-sdl2-image-with-cmake/
