@@ -1,4 +1,4 @@
-<h1><b>**Game of Life - COMP 1921 Coursework 2**</b></h1>
+<h1><b>**Game of Life</b></h1>
 <h2>**as implemented by Shrawan Sreekumar : el20ss@leeds.ac.uk**</h2>
 
 <h3> **INSTRUCTIONS** </h3>
